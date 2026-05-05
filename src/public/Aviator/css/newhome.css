@@ -771,7 +771,7 @@ to { background-position: 60px 60px; }
     flex-direction: column;
     width: 100%;
     padding: 0 .21333rem;
-    margin-top: 9.26667rem;
+    margin-top: 1px;
     background: rgba(12,10,26,.7);
     border-radius: .13333rem
 }
@@ -785,7 +785,7 @@ to { background-position: 60px 60px; }
     align-items: center;
     width: 100%;
     height: 1.36rem;
-    padding: .14667rem .25333rem .14667rem .26667rem;
+    /* padding: .14667rem .25333rem .14667rem .26667rem; */
     background: transparent;
     border: none;
     border-bottom: .01333rem solid rgba(255,255,255,.1);
@@ -1870,7 +1870,7 @@ to { background-position: 60px 60px; }
     -webkit-justify-content: space-between;
     justify-content: space-between;
     height: 1.17333rem;
-    padding: 0 .4rem;
+    /* padding: 0 .4rem; */
     background-color: var(--bg_color_L1)
 }
 

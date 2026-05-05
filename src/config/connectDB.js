@@ -16,11 +16,12 @@ const mysql = require('mysql2/promise');
 // const mysql = require('mysql2/promise');
 
 const connection = mysql.createPool({
-  host: '127.0.0.1',  // or '127.0.0.1'
-  user: 'avaitorgame',
-  password: 'Avatior123',
-  database: 'gamedb'
-});
+        host: '127.0.0.1',
+        user: 'lokesh',
+        password: 'lokeshkumar123',
+        database: 'cgame',
+        port: 3306
+    });
 
 // #1D4268
 

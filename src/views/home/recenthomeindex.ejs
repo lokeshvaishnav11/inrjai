@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aviator Game</title>
+    <!-- Or your Home page title -->
+    <link rel="shortcut icon" href="/images/banners/logo.png"
+      type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}"
+      type="image/png" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!--====== Material Design Icons CSS ======-->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!--====== mCustomScrollbar CSS ======-->
+    <link rel="stylesheet"
+      href="/Aviator/css/jquery.mCustomScrollbar.min.css" />
+
+    <!--====== Pretty Checkbox CSS ======-->
+    <link rel="stylesheet" href="Aviator/css/pretty-checkbox.min.css" />
+    <!--====== Cuntry Selection CSS ======-->
+    <link rel="stylesheet" href="Aviator/css/niceCountryInput.css" />
+    <link rel="stylesheet" type="text/css"
+      href="Aviator/css/jquery.ccpicker.css">
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="/Aviator/css/bootstrap.css" />
+
+    <!--====== Owl Carousel CSS ======-->
+    <link rel="stylesheet" href="Aviator/css/owl.carousel.min.css" />
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="/Aviator/css/style.css" />
+
+    <!-- ====== Toastr CSS ====== -->
+    <link rel="stylesheet" href="/Aviator/css/toastr.min.css" />
+
+    <!-- ====== Datatable CSS ====== -->
+    <link rel="stylesheet" href="/Aviator/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="/Aviator/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="/Aviator/css/newhome.css" />
+    <link rel="stylesheet" href="/Aviator/css/jaihome.css" />
+
+
+    <script crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--====== Material Design Icons CSS ======-->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"> -->
+
+    <!-- ========== EMBEDDED CSS FOR POPUP AND CORE STYLES ========== -->
+
+
+    <!-- ========== EMBEDDED CSS END ========== -->
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-99RTD5DZML"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-99RTD5DZML');
+</script>
+
+
+
+  <body>
+    <!-- =============================== -->
+    <!-- Existing Home Page Content      -->
+    <!-- =============================== -->
+  
+
+
+     <div id="app" data-v-app="">
+
+  <div
+      data-v-6666ec94=""
+      id="home"
+      class="purple-home"
+      style="
+        --f13b4d11-currentFontFamily:
+          &quot;Roboto&quot;, &quot;Inter&quot;, sans-serif;
+      "
+    >
+      <!-- 顶部导航栏占位 -->
+      <div data-v-6666ec94="" class="purple-home__nav-placeholder"></div>
+      <!-- 顶部导航栏 fixed -->
+         <% if (money !==false) { %>
+    <%- include('headerxxx', { money, ekyc ,username}) %>
+    <% } else { %>
+      <div data-v-6666ec94="" class="purple-home__nav">
+        <!--v-if--><!-- 已登录：左(余额) 中(logo) 右(下载+语言) --><!-- 未登录：左(logo) 右(Login + Register) -->
+        <div data-v-6666ec94="" class="purple-home__nav-left">
+          <img
+            data-v-6666ec94=""
+            src="/images/banners/logo.png"
+            alt="logo"
+            class="purple-home__nav-logo"
+          />
+        </div>
+        <div data-v-6666ec94="" class="purple-home__nav-auth">
+          <button data-v-6666ec94="" class="purple-home__nav-auth__login" onclick="window.location.href='/login'" data-v-6666ec94>
+            Login</button
+          ><button data-v-6666ec94="" class="purple-home__nav-auth__register" onclick="window.location.href='/register'"  data-v-6666ec94>
+            Register
+          </button>
+        </div>
+      </div>
+         <% } %>
+      <!-- 头部轮播图 -->
+
+    <%- include("bestswiper", {
+  images: [
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165751seps.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165613cgpq.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220526avv6.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260328165737pj8m.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922084392lt.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202604232203507sx7.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_202603292214229onc.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329220946t17w.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_2026032922212632fe.jpg",
+    "https://ossimg.jaiclubpay.com/jaiclub/banner/Banner_20260329222202iyvc.jpg"
+  ]
+}) %>
+     
+      
+      <!-- 滚动通知栏 -->
+      <div data-v-6666ec94="" class="noticeBar__container">
+        <img
+          src="https://jaiclub365.com/assets/svg/noticeBarSpeaker-0ddc3721.svg"
+          class="notice_svg"
+        />
+        <div class="noticeBar__container-body">
+          <div class="noticeBar__container-body-text">
+            🎉🎉🎉Welcome to join the Jaiclub platform. We provide a brand new
+            gaming experience and a comprehensive range of popular games.
+            ❤️‍🔥❤️‍🔥❤️‍🔥You are welcome to register at Jaiclub and participate in the
+            game. Thank you.
+          </div>
+        </div>
+        <button class="hotIcon">Detail</button>
+      </div>
+      <!-- 游戏分类标签 -->
+      <div data-v-2c772a7d="" data-v-6666ec94="" class="game-tabs">
+        <div data-v-2c772a7d="" class="game-tabs__scroll">
+          <div
+            data-v-2c772a7d=""
+            class="game-tabs__scroll-indicator"
+            style="
+              width: 108px;
+              transform: translate3d(0px, 0px, 0px);
+              transition: none;
+            "
+          ></div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item active">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195836xmjh.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Popular</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195804ia1x.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Lottery</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755279vxy.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Mini games</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175501m13j.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Slots</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175552qchj.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Fishing</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200219ci94.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">PVC</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755127vud.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Casino</span>
+          </div>
+          <div data-v-2c772a7d="" class="game-tabs__scroll-item">
+            <img
+              data-v-2c772a7d=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200239w59n.png"
+              class="game-tabs__scroll-item__icon"
+            /><span data-v-2c772a7d="">Sports</span>
+          </div>
+        </div>
+      </div>
+      <!-- 当前分类的游戏区块 --><!-- 彩票类型 --><!-- 其他类型（通用网格） -->
+      <div data-v-d5b035b5="" class="game-section">
+        <div data-v-e656ed2c="" data-v-d5b035b5="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Popular</span
+              >
+            </div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <div data-v-e656ed2c="" class="section-header__right">
+            <!--v-if--><span
+              data-v-e656ed2c=""
+              class="section-header__right-all"
+              >ALL</span
+            ><svg
+              data-v-e656ed2c=""
+              class="section-header__right-arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                data-v-e656ed2c=""
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div data-v-d5b035b5="" class="game-section__grid">
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/ARLottery/WinGo_30S_20260328174820851.jpg"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/ARLottery/WinGo_30S_20260328174820851.jpg"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/800.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/800.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/810.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/810.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/910.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/910.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/804.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/804.png"
+            />
+          </div>
+          <div data-v-d5b035b5="" class="game-section__grid-item">
+            <img
+              data-v-d5b035b5=""
+              class=""
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/124.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/TB_Chess/124.png"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 推荐游戏 -->
+      <div data-v-b313c6ed="" data-v-6666ec94="" class="recommended-games">
+        <div data-v-e656ed2c="" data-v-b313c6ed="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Recommended Games</span
+              >
+            </div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <!--v-if-->
+        </div>
+        <div data-v-b313c6ed="" class="recommended-games__list">
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/51.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/51.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/223.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/223.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/109.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/109.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover ar-lazyload"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/CQ9/19.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/CQ9/19.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover ar-lazyload"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/35.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/35.png"
+            />
+          </div>
+          <div data-v-b313c6ed="" class="recommended-games__list-item">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover ar-lazyload"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/MG/SMG_wildfireWins.png"
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/MG/SMG_wildfireWins.png"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 精选游戏 -->
+      <div data-v-6804144f="" data-v-6666ec94="" class="featured-game">
+        <div data-v-6804144f="" class="featured-game__card">
+          <!-- 左侧游戏封面 -->
+          <div data-v-6804144f="" class="featured-game__cover">
+            <img
+              data-v-6804144f=""
+              src="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/GameBox/10003_20260408154838711.jpg"
+              alt=""
+              class="featured-game__cover-img"
+            />
+          </div>
+          <!-- 右侧信息区 -->
+          <div data-v-6804144f="" class="featured-game__info">
+            <h3 data-v-6804144f="" class="featured-game__info-name">
+              Power Of The Kraken
+            </h3>
+            <div class="featured-game__info-row" data-v-6804144f="">
+              <span class="featured-game__info-row__stars" data-v-6804144f=""
+                >★★★★★</span
+              ><span class="featured-game__info-row__tag" data-v-6804144f=""
+                >5.0 | Score</span
+              >
+            </div>
+            <div class="featured-game__info-row" data-v-6804144f="">
+              <span class="featured-game__info-row__label" data-v-6804144f=""
+                >Slot Game</span
+              ><span class="featured-game__info-row__tag" data-v-6804144f=""
+                >#01 | Rank</span
+              >
+            </div>
+            <div class="featured-game__info-row" data-v-6804144f="">
+              <span class="featured-game__info-row__label" data-v-6804144f=""
+                >300K Winner</span
+              ><span class="featured-game__info-row__tag" data-v-6804144f=""
+                >1500x | Max Win</span
+              >
+            </div>
+            <button
+              data-v-6804144f=""
+              class="purple-gradient-btn featured-game__info-btn"
+            >
+              Play Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- 中奖信息 -->
+      <div data-v-6666ec94="" class="purple-home__section-card">
+        <div data-v-e656ed2c="" data-v-6666ec94="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Winning information</span
+              >
+            </div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <!--v-if-->
+        </div>
+        <div
+          data-v-ffb14677=""
+          data-v-6666ec94=""
+          class="luckyWinners__container"
+        >
+          <h1 data-v-ffb14677="">Winning information</h1>
+          <div data-v-ffb14677="" class="luckyWinners__container-wrapper">
+            <div data-v-ffb14677="" style="position: relative">
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://jaiclub365.com/assets/png/18-52955242.webp"
+                    src="https://jaiclub365.com/assets/png/18-52955242.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***PYQ</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹1,625.00</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/8-ea087ede.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***KOL</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹573.50</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/14-a397ff6b.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***KRA</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260423171751p8q5.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260423171751p8q5.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹85.96</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/11-925c456e.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***IOV</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹442.00</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/6-7c7f5203.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***CPK</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹387.96</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+              <div
+                data-v-ffb14677=""
+                class="luckyWinners__container-wrapper__item"
+              >
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-img"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="/assets/png/8-ea087ede.webp"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-info"
+                >
+                  <h1 data-v-ffb14677="">Mem***PFV</h1>
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winType"
+                >
+                  <img
+                    data-v-ffb14677=""
+                    class="ar-lazyload"
+                    data-origin="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                    src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png"
+                  />
+                </div>
+                <div
+                  data-v-ffb14677=""
+                  class="luckyWinners__container-wrapper__item-winAmount"
+                >
+                  <h1 data-v-ffb14677="">Receive ₹700.80</h1>
+                  <span data-v-ffb14677="">Winning amount</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 今日盈利排行榜 -->
+      <div data-v-6666ec94="" class="purple-home__section-card">
+        <div data-v-e656ed2c="" data-v-6666ec94="" class="section-header">
+          <div data-v-e656ed2c="" class="section-header__title">
+            <div data-v-e656ed2c="" class="section-header__title-bg">
+              <span
+                data-v-e656ed2c=""
+                class="section-header__title-bg__inner"
+              ></span
+              ><span data-v-e656ed2c="" class="section-header__title-bg__text"
+                >Today's earnings chart</span
+              >
+            </div>
+            <div data-v-e656ed2c="" class="section-header__title-tail"></div>
+          </div>
+          <!--v-if-->
+        </div>
+        <div data-v-68403b00="" data-v-6666ec94="" class="profit-rank">
+          <div data-v-68403b00="" class="profit-rank__content">
+            <!-- 领奖台 -->
+            <div data-v-68403b00="" class="profit-rank__podium">
+              <!-- 人物信息 -->
+              <div data-v-68403b00="" class="profit-rank__podium-people">
+                <div
+                  data-v-68403b00=""
+                  class="profit-rank__podium-item profit-rank__podium-item--1st"
+                  style="order: 2"
+                >
+                  <!-- 头像框 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__avatar"
+                    style="
+                      background: url(&quot;https://jaiclub365.com/assets/png/border1-3b6518ec.webp&quot;)
+                        center center / 100% 100% no-repeat;
+                    "
+                  >
+                    <img
+                      data-v-68403b00=""
+                      data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                      class="ar-lazyload"
+                      data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      
+                    />
+                  </div>
+                  <!-- 头像下方三角形 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__triangle"
+                  ></div>
+                  <span
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__name"
+                    >Mem***KCX</span
+                  >
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__amount"
+                  >
+                    <img
+                      data-v-68403b00=""
+                      src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                      class="coin-icon"
+                    /><span data-v-68403b00="">₹12,418,671,912.08</span>
+                  </div>
+                </div>
+                <div
+                  data-v-68403b00=""
+                  class="profit-rank__podium-item profit-rank__podium-item--2nd"
+                  style="order: 1"
+                >
+                  <!-- 头像框 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__avatar"
+                    style="
+                      background: url(&quot;https://jaiclub365.com/assets/png/border2-7a806be7.webp&quot;)
+                        center center / 100% 100% no-repeat;
+                    "
+                  >
+                    <img
+                      data-v-68403b00=""
+                      data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                      class="ar-lazyload"
+                      data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+
+                    />
+                  </div>
+                  <!-- 头像下方三角形 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__triangle"
+                  ></div>
+                  <span
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__name"
+                    >Mem***4H1</span
+                  >
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__amount"
+                  >
+                    <img
+                      data-v-68403b00=""
+                      src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                      class="coin-icon"
+                    /><span data-v-68403b00="">₹618,565,853.08</span>
+                  </div>
+                </div>
+                <div
+                  data-v-68403b00=""
+                  class="profit-rank__podium-item profit-rank__podium-item--3rd"
+                  style="order: 3"
+                >
+                  <!-- 头像框 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__avatar"
+                    style="
+                      background: url(&quot;https://jaiclub365.com/assets/png/border3-cfec4a7d.webp&quot;)
+                        center center / 100% 100% no-repeat;
+                    "
+                  >
+                    <img
+                      data-v-68403b00=""
+                      data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                      class="ar-lazyload"
+                      data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                      src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                    />
+                  </div>
+                  <!-- 头像下方三角形 -->
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__triangle"
+                  ></div>
+                  <span
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__name"
+                    >Mem***CVN</span
+                  >
+                  <div
+                    data-v-68403b00=""
+                    class="profit-rank__podium-item__amount"
+                  >
+                    <img
+                      data-v-68403b00=""
+                      src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                      class="coin-icon"
+                    /><span data-v-68403b00="">₹43,737,680.28</span>
+                  </div>
+                </div>
+              </div>
+              <!-- 光圈背景 --><img
+                data-v-68403b00=""
+                src="https://jaiclub365.com/assets/png/rankHalo-e3eae9c5.webp"
+                class="profit-rank__podium-halo"
+              /><!-- 领奖台图片 --><img
+                data-v-68403b00=""
+                src="https://jaiclub365.com/assets/png/DailyProfitRankStage-397321b9.webp"
+                class="profit-rank__podium-stage"
+              />
+            </div>
+            <!-- 排行列表 -->
+            <div data-v-68403b00="" class="profit-rank__list">
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">4</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                  src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***WD9</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹34,675,982.88</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">5</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***J40</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹12,054,000.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">6</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***GL1</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹11,760,000.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">7</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***7CF</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹9,241,400.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">8</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***70N</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹8,986,600.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">9</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***IZ7</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹4,515,840.00</span
+                >
+              </div>
+              <div data-v-68403b00="" class="profit-rank__list-item">
+                <span data-v-68403b00="" class="profit-rank__list-item__rank"
+                  ><img
+                    data-v-68403b00=""
+                    src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp"
+                    class="rank-wreath"
+                  /><i data-v-68403b00="">10</i></span
+                ><img
+                  data-v-68403b00=""
+                  data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                  class="profit-rank__list-item__avatar ar-lazyload"
+                  data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                     src="https://jaiclub365.com/assets/png/1-a6662edb.webp"
+                /><span data-v-68403b00="" class="profit-rank__list-item__name"
+                  >Mem***FDH</span
+                ><span data-v-68403b00="" class="profit-rank__list-item__amount"
+                  >₹4,312,392.00</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 合作厂商 -->
+      <div data-v-420bb38c="" data-v-6666ec94="" class="partner-logos">
+        <div data-v-420bb38c="" class="partner-logos__grid">
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/PG-1cd445cb.svg"
+              alt="PG"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/JDB-4f6ca794.svg"
+              alt="JDB"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/JILI-ff172107.svg"
+              alt="JILI"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/ARpay-c4c23942.svg"
+              alt="AR pay"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/AG-4786cd6a.svg"
+              alt="AG"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/Evo-880723fb.svg"
+              alt="Evo"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/CQ9-e6cb65fb.svg"
+              alt="CQ9"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/9G-99701e62.svg"
+              alt="9G"
+            />
+          </div>
+          <div data-v-420bb38c="" class="partner-logos__grid-item">
+            <img
+              data-v-420bb38c=""
+              src="https://jaiclub365.com/assets/svg/PP-a3f59e4c.svg"
+              alt="PP"
+            />
+          </div>
+        </div>
+        <div data-v-420bb38c="" class="partner-logos__text">
+          <p data-v-420bb38c="" class="partner-logos__text-item">
+            <span data-v-420bb38c="" class="dot"></span
+            ><span data-v-420bb38c=""
+              >The platform advocates fairness, justice, and openness. We mainly
+              operate fair lottery, blockchain games, casinos, and slot machine
+              games.</span
+            >
+          </p>
+          <p data-v-420bb38c="" class="partner-logos__text-item">
+            <span data-v-420bb38c="" class="dot"></span
+            ><span data-v-420bb38c=""
+              >Jai club works with more than 10,000 online live game dealers and
+              slot games, all of which are verified fair games.</span
+            >
+          </p>
+          <p data-v-420bb38c="" class="partner-logos__text-item">
+            <span data-v-420bb38c="" class="dot"></span
+            ><span data-v-420bb38c=""
+              >Jai club supports fast deposit and withdrawal, and looks forward
+              to your visit.</span
+            >
+          </p>
+          <p data-v-420bb38c="" class="partner-logos__text-warning">
+            Gambling can be addictive, please play rationally.<br
+              data-v-420bb38c=""
+            />
+            Jai club only accepts customers above the age of 18.
+          </p>
+        </div>
+      </div>
+      <!-- 下载PWA应用 --><!-- <DownloadPWA /> --><!-- 邀请转盘 -->
+      <div
+        data-v-6666ec94=""
+        class="float"
+        style="
+          --d9cf7d89-reBenefitBgUrl: url(&quot;/assets/png/reBenefits-c784b658.png&quot;);
+          --d9cf7d89-rewardCenterBgUrl: url(&quot;/assets/png/rewardCenter-f8f2277a.png&quot;);
+          --d9cf7d89-bigTurntableBgUrl: url(&quot;/assets/png/turntable_icon-9b14cf81.png&quot;);
+          --d9cf7d89-homeBigTurntableBgUrl: url(&quot;/assets/png/turntable-4464ae2e.png&quot;);
+          --d9cf7d89-telegramBgUrl: url(&quot;/assets/png/tg_bg-8a7ff21e.png&quot;);
+          --d9cf7d89-changlongIconUrl: url(&quot;/assets/svg/changlong-54cbfdac.svg&quot;);
+          transition: 0.3s;
+        "
+      >
+        <!-- 会员回归奖励 --><!--v-if--><!-- 奖金弹窗 -->
+        <div class="rewardCenter float-entry"></div>
+        <!-- 邀请转盘组件 --><!--v-if--><!-- 大转盘组件 -->
+        <div class="big-turntable float-entry"></div>
+        <!-- Telegram组件 --><!--v-if--><!-- 长龙组件 -->
+        <div class="changlongEnter float-entry"></div>
+      </div>
+      <!-- 公告弹窗 --><!----><!----><!-- 获奖弹窗 -->
+      <div data-v-c0caae78="" data-v-6666ec94="" class="dialog inactive">
+        <div
+          data-v-c0caae78=""
+          class="dialog__container"
+          role="dialog"
+          tabindex="0"
+        >
+          <div data-v-c0caae78="" class="dialog__container-img">
+            <img
+              data-v-c0caae78=""
+              alt=""
+              class=""
+              data-origin="/assets/png/superjackpotHome-72bbeb43.webp"
+              src="https://jaiclub365.com/assets/png/superjackpotHome-72bbeb43.webp"
+            />
+          </div>
+          <div data-v-c0caae78="" class="dialog__container-title">
+            <h1 data-v-c0caae78="">Congratulation</h1>
+          </div>
+          <div data-v-c0caae78="" class="dialog__container-content">
+            <div data-v-6666ec94="" class="Laundry-Con">
+              <div data-v-6666ec94="" class="Laundry-Con_tip">
+                Get 【Super Jackpot】!
+              </div>
+              <div data-v-6666ec94="" class="Landty-Con-tips">
+                Visit the [Super Jackpot] page to claim your reward
+              </div>
+            </div>
+          </div>
+          <div data-v-c0caae78="" class="dialog__container-footer">
+            <!--v-if--><button data-v-c0caae78="">OK</button>
+          </div>
+        </div>
+        <div data-v-c0caae78="" class="dialog__outside"></div>
+      </div>
+    </div>
+
+     <%- include('footerxx') %>
+
+    </div>
+
+
+
+
+
+ 
+    <!-- End loginPopupOverlay -->
+
+    <!-- Loading Overlay Structure (Keep as is) -->
+ 
+
+    <!-- ========================== -->
+    <!-- Scripts                    -->
+    <!-- ========================== -->
+    <!-- 1. jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 2. Your existing home page scripts (sidebar, dummy data interval) -->
+    <script>
+            // Sidebar Logic
+            const menuToggle = document.getElementById("menuToggle");
+            const sidebar = document.getElementById("sidebar");
+            const closeSidebar = document.getElementById("closeSidebar");
+            const sidebarLoginLink = document.getElementById("sidebarLoginLink");
+
+            if (menuToggle && sidebar && closeSidebar) {
+              menuToggle.addEventListener("click", (e) => {
+                e.stopPropagation();
+                sidebar.classList.add("open");
+              });
+              closeSidebar.addEventListener("click", () =>
+                sidebar.classList.remove("open")
+              );
+              document.addEventListener("click", (event) => {
+                if (
+                  sidebar &&
+                  sidebar.classList.contains("open") &&
+                  !sidebar.contains(event.target) &&
+                  !menuToggle.contains(event.target)
+                ) {
+                  sidebar.classList.remove("open");
+                }
+              });
+            }
+            if (sidebarLoginLink) {
+              sidebarLoginLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                sidebar.classList.remove("open");
+                setTimeout(() => {
+                  $("#openLoginPopupBtn").trigger("click");
+                }, 150);
+              });
+            }
+
+            // Dummy Withdrawal Data Logic
+            const dummyData = [
+              { name: "isha S.", amount: "113645" },
+              { name: "Sunil K.", amount: "98650" },
+              { name: "neha M.", amount: "124300" },
+              { name: "Pmit P.", amount: "75300" },
+              { name: "Pooja R.", amount: "145600" },
+              { name: "Om B.", amount: "84500" },
+            ];
+            let currentIndex = 0;
+            const nameEl = document.getElementById("name");
+            const withdrawalEl = document.getElementById("withdrawal");
+            if (nameEl && withdrawalEl && dummyData.length > 0) {
+              function updateWithdrawalDisplay() {
+                const data = dummyData[currentIndex];
+                $(nameEl).fadeOut(300, function () {
+                  $(this).text(data.name).fadeIn(300);
+                });
+                $(withdrawalEl).fadeOut(300, function () {
+                  $(this)
+                    .text("₹ " + parseInt(data.amount).toLocaleString("en-IN"))
+                    .fadeIn(300);
+                });
+                currentIndex = (currentIndex + 1) % dummyData.length;
+              }
+              updateWithdrawalDisplay();
+              setInterval(updateWithdrawalDisplay, 3500);
+            } else {
+              if (nameEl) nameEl.innerText = "User";
+              if (withdrawalEl) withdrawalEl.innerText = "₹ ---";
+            }
+          </script>
+
+    <!-- 3. Combined Popup & Form Logic Script -->
+    <script>
+            $(document).ready(function () {
+              // --- References ---
+              const $loginPopupOverlay = $("#loginPopupOverlay");
+              const $openLoginBtn = $("#openLoginPopupBtn");
+              const $openRegisterBtn = $("#openRegisterPopupBtn");
+              const $openLoginBtnPlay = $("#openLoginPopupBtnPlay");
+              const $closeLoginBtn = $("#closeLoginPopupBtn");
+              const $authFormContainer = $("#authFormContainer");
+              const $loginView = $("#loginFormView");
+              const $registerView = $("#registerFormView");
+              const $forgotPasswordView = $("#forgotPasswordView"); // Added
+              const $loadingOverlay = $(".van-overlay"); // Ensure class matches your loading overlay HTML
+
+              // --- Function to Open Popup ---
+              function openPopup(viewToShow = "login") {
+                if (!$loginPopupOverlay.length) return;
+                // Show/Hide Views
+                $loginView.hide().removeClass("active");
+                $registerView.hide().removeClass("active");
+                $forgotPasswordView.hide().removeClass("active");
+
+                if (viewToShow === "register" && $registerView.length) {
+                  $registerView.show().addClass("active");
+                  try {
+                    var url = new URL(window.location.href);
+                    var c = url.searchParams.get("r_code");
+                    if (c) {
+                      $registerView.find("#inviteCode").val(c);
+                    }
+                  } catch (e) { }
+                } else if (viewToShow === "forgot" && $forgotPasswordView.length) {
+                  $forgotPasswordView.show().addClass("active");
+                } else {
+                  // Default to login
+                  $loginView.show().addClass("active");
+                }
+                // Clear previous alerts
+                $authFormContainer.find(".alert-toast").empty().hide();
+                // Clear form fields
+                $authFormContainer
+                  .find(
+                    'input[type="text"], input[type="password"], input[type="number"]'
+                  )
+                  .val("");
+                // Reset checkboxes
+                $authFormContainer
+                  .find(".van-checkbox")
+                  .removeClass("checked")
+                  .attr("aria-checked", "false");
+                $authFormContainer
+                  .find(".van-checkbox__icon")
+                  .removeClass("van-checkbox__icon--checked");
+                $authFormContainer.find(".van-checkbox__icon i").hide();
+                $loginView
+                  .find(".login-checkbox")
+                  .addClass("checked")
+                  .attr("aria-checked", "true");
+                $loginView
+                  .find(".login-checkbox .van-checkbox__icon")
+                  .addClass("van-checkbox__icon--checked");
+                $loginView.find(".login-checkbox .van-checkbox__icon i").show();
+                // Reset OTP button if present in forgot view
+                $forgotPasswordView
+                  .find("#popupForgotOtpBtn")
+                  .prop("disabled", false)
+                  .removeClass("block-click")
+                  .text("Send");
+                // Clear any OTP intervals if necessary (get interval reference if needed)
+
+                // Show overlay
+                $loginPopupOverlay.css("display", "flex").hide().fadeIn(250);
+              }
+
+              // --- Event Handlers for Opening/Closing ---
+              if ($openLoginBtn.length)
+                $openLoginBtn.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("login");
+                });
+              if ($openRegisterBtn.length)
+                $openRegisterBtn.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("register");
+                });
+
+              // Handler for register button in body section
+              const $openRegisterBtnBody = $("#openRegisterPopupBtnBody");
+              if ($openRegisterBtnBody.length)
+                $openRegisterBtnBody.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("register");
+                });
+
+              if ($openLoginBtnPlay.length)
+                $openLoginBtnPlay.on("click", function (e) {
+                  e.preventDefault();
+                  openPopup("login");
+                });
+              if ($closeLoginBtn.length)
+                $closeLoginBtn.on("click", function () {
+                  $loginPopupOverlay.fadeOut(200);
+                });
+              if ($loginPopupOverlay.length)
+                $loginPopupOverlay.on("click", function (event) {
+                  if ($(event.target).is($loginPopupOverlay)) {
+                    $loginPopupOverlay.fadeOut(200);
+                  }
+                });
+
+              // --- showPass Function ---
+              window.showPass = function (inputId, iconId) {
+                var visibleView = $authFormContainer.find(".form-view.active");
+                var x = visibleView.find("#" + inputId)[0];
+                var y = visibleView.find("#" + iconId)[0];
+                if (x && y) {
+                  if (x.type === "password") {
+                    x.type = "text";
+                    y.src = "/index_files/eyeVisible-7bc1c956.png";
+                  } // CHECK PATH
+                  else {
+                    x.type = "password";
+                    y.src = "/index_files/eyeInvisible-2fa5c152.png";
+                  } // CHECK PATH
+                } else if (x) {
+                  console.warn("showPass: Eye icon #" + iconId + " not found.");
+                } else {
+                  console.error("showPass: Input #" + inputId + " not found.");
+                }
+              };
+
+              // --- alertMessPopup Function ---
+              function alertMessPopup(text) {
+                const $alertToast = $authFormContainer.find(
+                  ".form-view.active .alert-toast"
+                );
+                if ($alertToast.length === 0) {
+                  alert(text);
+                  return;
+                }
+                $alertToast.empty();
+                const messageHtml = `<div class="msg"><div class="msg-content">${text}</div></div>`;
+                $alertToast.append(messageHtml).hide().fadeIn(300);
+              }
+
+              // --- Cookie Functions ---
+              function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+                let expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+              }
+
+              // --- View Switching Logic ---
+              if (
+                $authFormContainer.length &&
+                $loginView.length &&
+                $registerView.length &&
+                $forgotPasswordView.length
+              ) {
+                // Switch to Register (from Login)
+                $authFormContainer.on("click", ".switchToRegister", function (e) {
+                  e.preventDefault();
+                  $loginView.fadeOut(150, function () {
+                    $(this).removeClass("active");
+                    $registerView.find(".alert-toast").empty().hide();
+                    $registerView.fadeIn(150).addClass("active");
+                  });
+                });
+                // Switch to Login (from Register or Forgot)
+                $authFormContainer.on("click", ".switchToLogin", function (e) {
+                  e.preventDefault();
+                  var $currentView = $(this).closest(".form-view");
+                  $currentView.fadeOut(150, function () {
+                    $(this).removeClass("active");
+                    $loginView.find(".alert-toast").empty().hide();
+                    $loginView.fadeIn(150).addClass("active");
+                  });
+                });
+                // Switch to Forgot Password (from Login)
+                $authFormContainer.on("click", ".switchToForgot", function (e) {
+                  e.preventDefault();
+                  $loginView.fadeOut(150, function () {
+                    $(this).removeClass("active");
+                    $forgotPasswordView.find(".alert-toast").empty().hide();
+                    $forgotPasswordView.fadeIn(150).addClass("active");
+                  });
+                });
+              }
+
+              // --- Checkbox Logic ---
+              if ($authFormContainer.length) {
+                $authFormContainer.on("click", ".van-checkbox", function (e) {
+                  e.preventDefault();
+                  var $checkbox = $(this);
+                  var $icon = $checkbox.find(".van-checkbox__icon i");
+                  var $iconContainer = $checkbox.find(".van-checkbox__icon");
+                  if ($checkbox.hasClass("checked")) {
+                    $checkbox.removeClass("checked").attr("aria-checked", "false");
+                    $iconContainer.removeClass("van-checkbox__icon--checked");
+                    $icon.hide();
+                  } else {
+                    $checkbox.addClass("checked").attr("aria-checked", "true");
+                    $iconContainer.addClass("van-checkbox__icon--checked");
+                    $icon.show();
+                  }
+                });
+              }
+
+              // --- LOGIN SUBMISSION LOGIC ---
+              const $loginSubmitBtn = $("#popupLoginSubmitBtn");
+              if ($loginSubmitBtn.length && $loginView.length) {
+                $loginSubmitBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $loginView.find(".alert-toast").empty().hide();
+                  let username = $loginView
+                    .find('input[name="username"]')
+                    .val()
+                    ?.trim();
+                  let password = $loginView.find("#passwordfield").val()?.trim();
+                  if (!username || !password) {
+                    alertMessPopup("Phone number and password are required!");
+                    return;
+                  }
+                  if (!/^\d{10}$/.test(username)) {
+                    alertMessPopup("Please enter a valid 10-digit phone number.");
+                    return;
+                  }
+                  if ($loadingOverlay.length) $loadingOverlay.fadeIn(10);
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/login",
+                    data: { username: username, pwd: password },
+                    dataType: "json",
+                    success: function (response) {
+                      if (response.status === true) {
+                        setCookie("token", response.token, 1);
+                        setCookie("auth", response.value, 1);
+
+                        // Now, get the user info to check if admin or not
+                        $.ajax({
+                          type: "GET",
+                          url: "/api/webapi/GetUserInfo",
+                          dataType: "json",
+                          success: function (userinfo) {
+                            if (userinfo.status === true) {
+                              if ($loadingOverlay.length) $loadingOverlay.fadeOut(100);
+                              $loginPopupOverlay.fadeOut(200, function () {
+                                if (userinfo.data.name_user === "Admin") {
+                                  // If admin, redirect
+                                  window.location.href = "/admin/manager/aviator";
+                                } else {
+                                  // If normal user, reload
+                                  window.location.reload();
+                                }
+                              });
+                            } else {
+                              if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                              alertMessPopup(userinfo.message || "Failed to get user info.");
+                            }
+                          },
+                          error: function () {
+                            if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                            alertMessPopup("Error getting user info.");
+                          }
+                        });
+
+                      } else {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                        alertMessPopup(response.message || "Invalid credentials.");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Login AJAX Error:", jqXHR.statusText);
+                      if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                      alertMessPopup("Login failed. Please try again.");
+                    }
+                  });
+
+                });
+              }
+
+              // --- REGISTRATION SUBMISSION LOGIC ---
+              const $registerSubmitBtn = $("#popupRegisterSubmitBtn");
+              if ($registerSubmitBtn.length && $registerView.length) {
+                $registerSubmitBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $registerView.find(".alert-toast").empty().hide();
+                  let username = $registerView
+                    .find('input[name="registerUsername"]')
+                    .val()
+                    ?.trim();
+                  let password = $registerView
+                    .find("#registerPassword")
+                    .val()
+                    ?.trim();
+                  let invite = $registerView.find("#inviteCode").val()?.trim();
+                  let isChecked = $registerView
+                    .find(".register-checkbox")
+                    .hasClass("checked");
+                  let phone = $registerView.find("#registerPhone").val()?.trim();
+                  if (!username || !password) {
+                    alertMessPopup("Please fill in all required fields.");
+                    return;
+                  }
+
+                  console.log(
+                    username,
+                    password,
+                    phone,
+
+                    "yjhkl;ghjklfghjknlmfghjknl"
+                  );
+                  //  if (!/^\d{10}$/.test(username)) { alertMessPopup("Please enter a valid 10-digit phone number."); return; }
+                  //  if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&.\/]{8,}$/.test(password)) { alertMessPopup("Password must be 8+ chars with letters & numbers."); return; }
+                  //  if (!isChecked) { alertMessPopup("Please agree to the Privacy Agreement."); return; }
+                  if ($loadingOverlay.length) $loadingOverlay.fadeIn(10);
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/register",
+                    data: {
+                      username: phone,
+                      pwd: password,
+                      invitecode: invite,
+                      name: username,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                      if (response.status === true) {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(100);
+                        alertMessPopup(
+                          response.message || "Registration successful! Please login."
+                        );
+                        setTimeout(() => {
+                          $registerView.fadeOut(150, function () {
+                            $(this).removeClass("active");
+                            $loginView.find('input[name="username"]').val(username);
+                            $loginView.find("#passwordfield").val("");
+                            $loginView.find(".alert-toast").empty().hide();
+                            $loginView.fadeIn(150).addClass("active");
+                          });
+                        }, 2000);
+                      } else {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                        alertMessPopup(response.message || "Registration failed.");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Register AJAX Error:", jqXHR.statusText);
+                      if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                      alertMessPopup("Registration error. Please try again.");
+                    },
+                  });
+                });
+              }
+
+              // --- FORGOT PASSWORD - SEND OTP LOGIC ---
+              const $forgotOtpBtn = $("#popupForgotOtpBtn");
+              let otpInterval; // Keep track of the interval timer
+              if ($forgotOtpBtn.length && $forgotPasswordView.length) {
+                $forgotOtpBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $forgotPasswordView.find(".alert-toast").empty().hide();
+                  let phone = $forgotPasswordView
+                    .find("#forgotUsername")
+                    .val()
+                    ?.trim();
+                  let $button = $(this);
+                  if (!phone || !/^\d{10}$/.test(phone)) {
+                    alertMessPopup("Please enter a valid 10-digit phone number.");
+                    return;
+                  }
+
+                  $button
+                    .prop("disabled", true)
+                    .addClass("block-click")
+                    .text("Sending...");
+                  let count = 30;
+                  clearInterval(otpInterval); // Clear previous interval if any
+                  otpInterval = setInterval(() => {
+                    // Store interval ID
+                    count--;
+                    if (count > 0) {
+                      $button.text(`Resend (${count}s)`);
+                    } else {
+                      clearInterval(otpInterval);
+                      $button
+                        .prop("disabled", false)
+                        .removeClass("block-click")
+                        .text("Send");
+                    }
+                  }, 1000);
+
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/sent/otp/verify/reset",
+                    data: { phone: phone },
+                    dataType: "json",
+                    success: function (response) {
+                      alertMessPopup(response.message || "OTP request sent.");
+                      if (response.status !== true) {
+                        clearInterval(otpInterval);
+                        $button
+                          .prop("disabled", false)
+                          .removeClass("block-click")
+                          .text("Send");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Forgot OTP AJAX Error:", jqXHR.statusText);
+                      alertMessPopup("Error sending OTP.");
+                      clearInterval(otpInterval);
+                      $button
+                        .prop("disabled", false)
+                        .removeClass("block-click")
+                        .text("Send");
+                    },
+                  });
+                });
+              }
+
+              // --- FORGOT PASSWORD - RESET SUBMISSION LOGIC ---
+              const $forgotSubmitBtn = $("#popupForgotSubmitBtn");
+              if ($forgotSubmitBtn.length && $forgotPasswordView.length) {
+                $forgotSubmitBtn.on("click", function (e) {
+                  e.preventDefault();
+                  $forgotPasswordView.find(".alert-toast").empty().hide();
+                  let username = $forgotPasswordView
+                    .find("#forgotUsername")
+                    .val()
+                    ?.trim();
+                  let otp = $forgotPasswordView.find("#forgotOtp").val()?.trim();
+                  let password = $forgotPasswordView
+                    .find("#forgotNewPassword")
+                    .val()
+                    ?.trim();
+                  if (!username || !otp || !password) {
+                    alertMessPopup("Please fill in phone, OTP, and new password.");
+                    return;
+                  }
+                  if (!/^\d{10}$/.test(username)) {
+                    alertMessPopup("Please enter a valid 10-digit phone number.");
+                    return;
+                  }
+                  if (!/^\d{4,6}$/.test(otp)) {
+                    alertMessPopup("Please enter a valid OTP code.");
+                    return;
+                  }
+                  if (
+                    !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&.\/]{8,}$/.test(password)
+                  ) {
+                    alertMessPopup(
+                      "New password must be 8+ chars with letters & numbers."
+                    );
+                    return;
+                  }
+                  if ($loadingOverlay.length) $loadingOverlay.fadeIn(10);
+                  $.ajax({
+                    type: "POST",
+                    url: "/api/resetPasword",
+                    data: { username: username, otp: otp, pwd: password },
+                    dataType: "json",
+                    success: function (response) {
+                      if (response.status === true) {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(100);
+                        alertMessPopup(
+                          response.message ||
+                          "Password reset successful! Please login."
+                        );
+                        setTimeout(() => {
+                          $forgotPasswordView.fadeOut(150, function () {
+                            $(this).removeClass("active");
+                            $loginView.find('input[name="username"]').val(username);
+                            $loginView.find("#passwordfield").val("");
+                            $loginView.find(".alert-toast").empty().hide();
+                            $loginView.fadeIn(150).addClass("active");
+                          });
+                        }, 2000);
+                      } else {
+                        if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                        alertMessPopup(response.message || "Password reset failed.");
+                      }
+                    },
+                    error: function (jqXHR) {
+                      console.error("Reset Password AJAX Error:", jqXHR.statusText);
+                      if ($loadingOverlay.length) $loadingOverlay.fadeOut(300);
+                      alertMessPopup("Error resetting password.");
+                    },
+                  });
+                });
+              }
+
+              // --- Auto-fill invite code ---
+              try {
+                var url = new URL(window.location.href);
+                var c = url.searchParams.get("r_code");
+                if (c && $registerView.length) {
+                  $registerView.find("#inviteCode").val(c);
+                }
+              } catch (e) {
+                console.warn("Could not parse URL for r_code:", e);
+              }
+            }); // End of $(document).ready()
+          </script>
+    <script src="/Aviator/js/jquery.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="/Aviator/js/popper.min.js"></script>
+    <script src="/Aviator/js/bootstrap.bundle.min.js"></script>
+
+    <!--====== Slimscroll js ======-->
+    <!--<script src="/js/jquery.mCustomScrollbar.js"></script>-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--====== Country Selection js ======-->
+    <script src="Aviator/js/niceCountryInput.js"></script>
+    <script src="/Aviator/js/jquery.ccpicker.js"
+      type="text/javascript"></script>
+
+    <!--====== Animation Selection js ======-->
+    <script src='/Aviator/js/anime.min.js'></script>
+
+    <!--====== Owl Carousel js ======-->
+    <script src='/Aviator/js/owl.carousel.min.js'></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </body>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const track = document.querySelector(".slider-track");
+    const slides = document.querySelectorAll(".slider-track img");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const dotsContainer = document.querySelector(".slider-dots");
+
+    // safety check
+    if (!track || !slides.length || !dotsContainer) return;
+
+    let index = 0;
+    const total = slides.length;
+
+    // create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => moveTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll("span");
+
+    function moveTo(i) {
+      index = i;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(d => d.classList.remove("active"));
+      dots[index].classList.add("active");
+    }
+
+    nextBtn.addEventListener("click", () => {
+      moveTo((index + 1) % total);
+    });
+
+    prevBtn.addEventListener("click", () => {
+      moveTo((index - 1 + total) % total);
+    });
+
+    // --- ENHANCED LIVE WITHDRAWALS FEED LOGIC WITH ANIMATIONS ---
+    const withdrawalsFeed = document.getElementById('withdrawals-feed');
+    if (withdrawalsFeed) {
+      const users = [
+        'Iram S.', 'Pooja C.', 'Suresh K.', 'Salim M.', 'Subhash P.', 'Vishnu P.', 'Ram K.', 'Vijay B.', 'Jeet P.', 'Vidya N.',
+        'Aluddin H.', 'Mrityunjay S.', 'Masheen Y.', 'Syamsunder G.', 'Girjesh K.', 'Narender S.', 'Sattaram J.', 'Amrik S.', 'Vishal K.', 'Yogesh S.',
+        'Mangi R.', 'Habib K.', 'Nayan S.', 'Deepak R.', 'Sunil K.', 'Pradeep K.', 'Narayan R.', 'Suman V.', 'Rahul M.', 'Sabir A.',
+        'Vikrant P.', 'Ravi K.', 'Amit S.', 'Priya M.', 'Neha R.', 'Rohan D.', 'Divya S.', 'Karan V.', 'Anjali T.', 'Mohit G.',
+        'Sneha B.', 'Arjun K.', 'Kavita P.', 'Rajesh M.', 'Simran K.', 'Varun S.', 'Megha R.', 'Siddharth L.', 'Pallavi N.', 'Kunal J.'
+      ];
+
+      let userIndex = 0;
+      const maxItems = 6;
+      let animationQueue = [];
+
+      // Get random amount between 1000 and 50000
+      const getRandomAmount = () => Math.floor(Math.random() * (50000 - 1000) + 1000);
+
+      // Get user initials for avatar
+      const getUserInitials = (name) => {
+        const parts = name.split(' ');
+        return parts.map(p => p[0]).join('');
+      };
+
+      // Format time ago
+      const getTimeAgo = () => {
+        const seconds = Math.floor(Math.random() * 60);
+        if (seconds < 10) return 'Just now';
+        if (seconds < 60) return `${seconds}s ago`;
+        return '1m ago';
+      };
+
+      // Animate number counter
+      const animateCounter = (element, target) => {
+        const duration = 800;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          element.textContent = '₹ ' + Math.floor(current).toLocaleString('en-IN');
+        }, 16);
+      };
+
+      const showRandomWithdrawal = () => {
+        const user = users[userIndex];
+        const amount = getRandomAmount();
+        const initials = getUserInitials(user);
+        const timeAgo = getTimeAgo();
+
+        const newItem = document.createElement('div');
+        newItem.classList.add('withdrawal-item', 'new-entry');
+        newItem.innerHTML = `
+                  <div class="user-section">
+                      <div class="user-avatar">${initials}</div>
+                      <div class="user-info">
+                          <span class="user">${user}</span>
+                          <span class="timestamp">${timeAgo}</span>
+                      </div>
+                  </div>
+                  <div class="amount-section">
+                      <span class="amount">₹ 0</span>
+                      <span class="status-badge">✓ SUCCESS</span>
+                  </div>
+              `;
+
+        // Add with animation
+        withdrawalsFeed.prepend(newItem);
+
+        // Animate the counter
+        const amountElement = newItem.querySelector('.amount');
+        setTimeout(() => {
+          animateCounter(amountElement, amount);
+        }, 100);
+
+        // Remove new-entry class after animation
+        setTimeout(() => {
+          newItem.classList.remove('new-entry');
+        }, 1600);
+
+        // Remove oldest item with animation if exceeds max
+        if (withdrawalsFeed.children.length > maxItems) {
+          const lastItem = withdrawalsFeed.lastElementChild;
+          lastItem.classList.add('removing');
+
+          setTimeout(() => {
+            if (lastItem.parentNode) {
+              lastItem.remove();
+            }
+          }, 500);
+        }
+
+        userIndex = (userIndex + 1) % users.length;
+      };
+
+      // Initial population with staggered animation
+      for (let i = 0; i < maxItems; i++) {
+        setTimeout(() => {
+          showRandomWithdrawal();
+        }, i * 150);
+      }
+
+      // Set interval to add new items every second
+      setTimeout(() => {
+        setInterval(showRandomWithdrawal, 1000);
+      }, maxItems * 150 + 500);
+    }
+
+  });
+</script>
+
+  <!-- <script>
+  var money = <%= money %>
+
+  document.querySelectorAll(".auth-check").forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (money === false) {
+        e.preventDefault();
+        alert("Please login first");
+      }
+    });
+  });
+</script> -->
+
+  <script>
+  const money = <%= money %>;
+
+  document.querySelectorAll(".auth-check").forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (money === false) {
+        e.preventDefault();
+
+        const loginBtn = document.getElementById("openLoginPopupBtn");
+        if (loginBtn) {
+          loginBtn.click();   // 🔥 popup open
+        } else {
+          alert("Please login first");
+        }
+      }
+    });
+  });
+</script>
+
+  <script>
+  let money = <%= money %>;
+
+  document.getElementById("playAviatorBtn")?.addEventListener("click", function () {
+    if (money === false) {
+      const loginBtn = document.getElementById("openLoginPopupBtn");
+      if (loginBtn) {
+        loginBtn.click(); // 🔥 open login popup
+      } else {
+        alert("Please login first");
+      }
+    } else {
+      window.location.href = "/aviator";
+    }
+  });
+</script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    var money = <%= money %>;
+    const aviatorCard = document.getElementById("aviatorCard");
+    const loginBtn = document.getElementById("openLoginPopupBtn");
+
+    if (!aviatorCard) return;
+
+    aviatorCard.addEventListener("click", function () {
+      if (money === false) {
+        // ❌ login nahi hai → popup open
+        if (loginBtn) {
+          loginBtn.click();
+        } else {
+          alert("Please login first");
+        }
+      } else {
+        // ✅ login hai → aviator
+        window.location.href = "/aviator";
+      }
+    });
+
+  });
+</script>
+
+  <script>
+  function handlePlayClick() {
+    var money = <%= money %>;
+
+    console.log(money, "money")
+    if (money >= 50000) {
+      alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+      return;
+
+    }
+
+
+
+    window.location.href = "/aviator";
+  }
+
+  function closePopup() {
+    document.getElementById("withdrawPopup").style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    const popup = document.getElementById("withdrawPopup");
+    if (event.target === popup) {
+      popup.style.display = "none";
+    }
+  }
+</script>
+
+</html>
