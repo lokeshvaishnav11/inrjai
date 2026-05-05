@@ -15,23 +15,23 @@ const mysql = require('mysql2/promise');
 
 // const mysql = require('mysql2/promise');
 
-// const connection = mysql.createPool({
-//         host: '127.0.0.1',
-//         user: 'lokesh',
-//         password: 'lokeshkumar123',
-//         database: 'cgame',
-//         port: 3306
-//     });
+const connection = mysql.createPool({
+        host: '127.0.0.1',
+        user: 'lokesh',
+        password: 'lokeshkumar123',
+        database: 'cgame',
+        port: 3306
+    });
 
 // #1D4268
 
-const connection = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',  // XAMPP's default root password is blank
-    database: '1xbet',
-    port: 3306
-});
+// const connection = mysql.createPool({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',  // XAMPP's default root password is blank
+//     database: '1xbet',
+//     port: 3306
+// });
 
 // const connection = mysql.createPool({
 //   host: 'localhost',
