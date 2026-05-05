@@ -1,312 +1,241 @@
 <!--====== Header Start ======-->
 <style>
-    /* Modal Style */
-    .modal {
-      display: none; 
-      position: fixed; 
-      z-index: 1; 
-      left: 0;
-      top: 0;
-      width: 100%; 
-      height: 100%; 
-      overflow: auto; 
-      background-color: rgb(0,0,0); 
-      background-color: rgba(0,0,0,0.4); 
-      padding-top: 60px;
-    }
-    
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-    }
-    
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  </style>
   
-<header style="<%= money ? 'margin-bottom:0px;' : 'margin-bottom:40px;' %>">
-    <div class="header-top" style="background-color: #22224B;">
-        <div class="header-left">
-            <a>
-                <!-- <img src="../../Aviator/images/logo.png" class="logo1" /> -->
-                <img src="/images/banners/logo.png" class="logo1" />
-            </a>
-        </div>
-        <div class="header-right d-flex align-items-center">
-            <a>
-                <button class="deposite-btn d-flex align-items-center me-2" onclick="window.location.href='/wallet/recharge'">
-                    <span class="material-symbols-outlined me-2"> payments </span>
-                    <!-- <span>$</span> -->
-                    <span class="me-2" id="header_wallet_balance">₹<%= typeof money === 'number' ? money.toLocaleString('en-IN') : money %></span>
-                    DEPOSIT
-                </button>
-            </a>
-            <div class="btn-group">
-                <button type="button"
-                    class="btn btn-transparent dropdown-toggle p-0 d-flex align-items-center justify-content-center caret-none"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="material-symbols-outlined f-24 menu-icon text-white">
-                        menu
-                    </span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark profile-dropdown p-0">
-                        <li class="profile-head d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="{{user('image')}}" class="avtar-ico" id="avatar_img">
-                                <div>
-                                    <div class="profile-name mb-1"><%= username %></div>
-                                    <div class="profile-name" id="username"></div>
-                                </div>
+.purple-home__nav-placeholder[data-v-6666ec94] {
+    height: 1.17333rem
+}
 
-                            </div>
-                        </li>
-					
-			
-			
+.purple-home__nav[data-v-6666ec94] {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 10rem;
+    z-index: 101;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    height: 1.17333rem;
+    /* padding: 0 .4rem; */
+    background-color: var(--bg_color_L1)
+}
 
-            <!-- <li>
-                <a href="/home/" class="f-12 justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <span class="material-symbols-outlined ico f-20">
-                            flight_takeoff
-                        </span>
-                        <img src="../../Aviator/images/logo.svg" class="side_logo">
+@media (max-width: 500px) {
+    .purple-home__nav[data-v-6666ec94] {
+        width:100%;
+        left: 0;
+        -webkit-transform: none;
+        transform: none
+    }
+}
 
-                    </div>
-                </a>
-            </li> -->
+.purple-home__nav-bg[data-v-6666ec94] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0
+}
 
-            <li>
-                <a href="/home/" class="f-12 justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <span class="material-symbols-outlined ico f-20">
-                            flight_takeoff
-                        </span>
-                        Home
+.purple-home__nav-left[data-v-6666ec94] {
+    position: relative;
+    z-index: 1;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0
+}
 
-                    </div>
-                </a>
-            </li>
+.purple-home__nav-left--login[data-v-6666ec94] {
+    position: absolute;
+    left: 0
+}
 
-            <li>
-                <a href="/wallet/recharge" class="f-12 justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <span class="material-symbols-outlined ico f-20">
-                            payments
-                        </span>DEPOSIT FUNDS
-                    </div>
-                </a>
-            </li>
-            <li>
+.purple-home__nav-logo[data-v-6666ec94] {
+    max-width: 2.13333rem;
+    height: .96rem;
+    object-fit: contain
+}
 
-                <li>
-                    <a href="/wallet/withdrawal" class="f-12 justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span class="material-symbols-outlined ico f-20">
-                                payments
-                            </span>WITHDRAW FUNDS FROM THE ACCOUNT
-                        </div>
-                    </a>
-                </li>
-                <li>
+.purple-home__nav-center[data-v-6666ec94] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center
+}
 
-                    <li>
-                        <a href="/wallet/rechargerecord" class="f-12 justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <span class="material-symbols-outlined ico f-20">
-                                    payments
-                                </span>TRANSACTION HISTORY
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <li>
-                            <a href="#" onclick="showReferralPopup()"  class = "f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>REFERRAL CODE
-                                </div>
-                            </a>
-                        </li>
-                        <li>
+.purple-home__nav-center .purple-home__nav-logo[data-v-6666ec94] {
+    max-width: 2.93333rem;
+    height: 1.17333rem
+}
 
-                        <li>
-                            <a   class="f-12 justify-content-between" onclick="signOut()">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>SIGN OUT
-                                </div>
-                            </a>
-                        </li>
-                        <% if (ekyc === false || ekyc ==0) { %>
-                            <li>
-                              <a href="/ekyc" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                  <span class="material-symbols-outlined ico f-20">payments</span>
-                                  E-KYC
-                                </div>
-                              </a>
-                            </li>
-                          <% } %>                        
-					<!-- <li>
-                <a class="f-12 justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <span class="material-symbols-outlined ico f-20">
-                            mode_fan
-                        </span>ANIMATION
-                    </div>
-                    <div>
-                        <div class="form-check form-switch lg-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="animation" checked="">
-                            <label class="form-check-label" for="animation"></label>
-                        </div>
-                    </div>
-                </a>
-            </li> -->
-					<li class="divider"> </li>
-                        <!-- <li>
-                            <a href="/crash" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        flight_takeoff
-                                    </span>
-                                    <img src="../../Aviator/images/logo.svg" class="side_logo">
-                                </div>
-                            </a>
-                        </li>
+.purple-home__nav-right[data-v-6666ec94] {
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    gap: .16rem;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    margin-left: auto
+}
 
+.purple-home__nav-right[data-v-6666ec94] .img {
+    width: .46667rem!important;
+    height: .46667rem!important
+}
 
-                        <li>
-                            <a href="/deposit" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>DEPOSIT FUNDS
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/withdraw" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>WITHDRAW FUNDS FROM THE ACCOUNT
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/amount-transfer" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>AMOUNT TRANSFER
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/profile" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        account_circle
-                                    </span>PERSONAL DETAILS
-                                </div>
-                            </a>
-                        </li>
-                        {{-- <li>
-                            <a href="#" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>TRANSFER FUNDS
-                                </div>
-                            </a>
-                        </li> --}}
-                        <li>
-                            <a href="/deposit_withdrawals" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>TRANSACTION HISTORY
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/level-management" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>LEVEL MANAGEMENT
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/referal" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>REFERRAL
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/logout" class="f-12 justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <span class="material-symbols-outlined ico f-20">
-                                        payments
-                                    </span>SIGN OUT
-                                </div>
-                            </a>
-                        </li> -->
-                    </ul>
+.purple-home__nav-right[data-v-6666ec94] .languageName {
+    color: #f6dfff!important
+}
+
+.purple-home__nav-chip[data-v-6666ec94] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.purple-home__nav-chip__coin[data-v-6666ec94] {
+    width: .64rem;
+    height: .64rem;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    margin-bottom: -.05333rem
+}
+
+.purple-home__nav-chip__amount[data-v-6666ec94] {
+    padding: 0 .08rem;
+    font-size: .32rem;
+    color: #ffcc24;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    width: 2.06667rem;
+    margin-right: .08rem
+}
+
+.purple-home__nav-chip__add[data-v-6666ec94] {
+    width: .48rem;
+    height: .48rem;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    cursor: pointer
+}
+
+.purple-home__nav-download[data-v-6666ec94] {
+    width: .58667rem;
+    height: .58667rem;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    cursor: pointer
+}
+
+.purple-home__nav-download img[data-v-6666ec94] {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.purple-home__nav-auth[data-v-6666ec94] {
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    gap: .21333rem;
+    margin-left: auto
+}
+
+.purple-home__nav-auth button[data-v-6666ec94] {
+    height: .74667rem;
+    padding: 0 .42667rem;
+    border-radius: .37333rem;
+    font-size: .34667rem;
+    font-weight: 600;
+    border: .02667rem solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 2.13333rem
+}
+
+.purple-home__nav-auth__login[data-v-6666ec94] {
+    background: -webkit-linear-gradient(#0c0a1a,#0c0a1a) padding-box,-webkit-linear-gradient(355deg,#a1edff,#3131b9,#fcf5ff,#363bb5,#3d49be,#4a64b4,#efe0ff,#6363da,#ffb184) border-box;
+    background: linear-gradient(#0c0a1a,#0c0a1a) padding-box,linear-gradient(95deg,#a1edff,#3131b9,#fcf5ff,#363bb5,#3d49be,#4a64b4,#efe0ff,#6363da,#ffb184) border-box;
+    color: #fff
+}
+
+.purple-home__nav-auth__register[data-v-6666ec94] {
+    background: -webkit-linear-gradient(355deg,#FB8466 3%,#BD5BD4 30%,#7473FA 65%,#53B2FA 103%) padding-box,-webkit-linear-gradient(355deg,#a1edff,#3131b9,#fcf5ff,#363bb5,#3d49be,#4a64b4,#efe0ff,#6363da,#ffb184) border-box;
+    background: linear-gradient(95deg,#FB8466 3%,#BD5BD4 30%,#7473FA 65%,#53B2FA 103%) padding-box,linear-gradient(95deg,#a1edff,#3131b9,#fcf5ff,#363bb5,#3d49be,#4a64b4,#efe0ff,#6363da,#ffb184) border-box;
+    color: #fff
+}
+
+</style>
+<header style="<%= money ? 'margin-bottom:0px;' : 'margin-bottom:0px;' %>">
+    <div data-v-6666ec94="" class="purple-home__nav">
+        <img data-v-6666ec94="" src="/assets/png/navBg-5e3a04fa.webp" class="purple-home__nav-bg">
+        <!-- 已登录：左(余额) 中(logo) 右(下载+语言) -->
+        <div data-v-6666ec94="" class="purple-home__nav-left purple-home__nav-left--login">
+            <div onclick="window.location.href='/wallet/recharge'" data-v-6666ec94="" class="purple-home__nav-chip">
+                <!-- <img :src="getIcons('home', 'iconBalance')" class="purple-home__nav-chip__coin" /> -->
+                <span data-v-6666ec94="" class="purple-home__nav-chip__amount">₹0.00</span>
+                <img data-v-6666ec94="" src="/assets/png/iconAdd-73a75fb5.webp" class="purple-home__nav-chip__add">
             </div>
-
-
-
-
+        </div>
+        <div data-v-6666ec94="" class="purple-home__nav-center">
+            <img
+                data-v-6666ec94=""
+                src="/images/banners/logo.png"
+                alt="logo"
+                class="purple-home__nav-logo"
+            >
+        </div>
+        <div data-v-6666ec94="" class="purple-home__nav-right">
+            <div data-v-6666ec94="" class="purple-home__nav-download">
+                <img data-v-6666ec94="" src="/assets/png/iconDownload-5263a25b.webp">
+            </div>
+            <div data-v-8610bd15="" data-v-6666ec94="">
+                <div data-v-8610bd15="" class="right">
+                    <img
+                        data-v-8610bd15=""
+                        class="img"
+                        data-origin="/assets/png/en-4c6eba8e.webp"
+                        src="/assets/png/en-4c6eba8e.webp"
+                    >
+                    <span data-v-8610bd15="" class="languageName">EN</span>
+                </div>
+                <!--teleport start-->
+                <!--teleport end-->
+            </div>
         </div>
     </div>
-    <!-- <div class="header-bottom ">
-        <div class="header-left">
-            <img src="../../Aviator/images/logo.svg" class="logo" />
-        </div>
-        <div class="header-right d-flex align-items-center">
-            <button class="btn btn-warning m-font-0 rounded-pill py-1 px-2 f-14 d-flex align-items-center h-26" data-bs-toggle="modal" data-bs-target="#how-to-play">
-            <span class="material-symbols-outlined f-18 me-1">
-                help
-            </span> How to Play
-        </button>
-            <div class="wallet-balance h-26">
-                <span id="wallet_balance">{{ wallet(user('id')) }}</span>
-            </div>
-        </div>
-    </div> -->
-
-    <div id="referralModal" style="display:none;" class="modal">
-        <div class="modal-content">
-          <span onclick="closeReferralPopup()" class="close">&times;</span>
-          <h2>Your Referral Code</h2>
-          <input type="text" id="referralCodeInput" value="https://wongo.site?refer=76890" readonly>
-          <button onclick="copyReferralCode()">Copy Referral Code</button>
-        </div>
-      </div>
 </header>
-
 <script>
     // Show Referral Code Pop-up
     function showReferralPopup() {
@@ -336,9 +265,5 @@
     // Optionally, redirect the user to the login page or home page
     window.location.href = '/home';  // or any other page
 }
-  </script>
-
-
-
-
+</script>
 <!--====== Header End ======-->

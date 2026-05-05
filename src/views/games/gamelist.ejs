@@ -1,0 +1,1273 @@
+<html lang="en" translate="no" data-dpr="1" dir="ltr" style="font-size: 43px">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://ossimg.jaiclubpay.com/jaiclub/other/h5setting_202603261634165wn4.png"
+    />
+    <meta name="google" content="notranslate" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>jaiclub</title>
+    <script
+      type="module"
+      crossorigin=""
+      src="/assets/js/index-74618ce8.js"
+    ></script>
+     <link rel="stylesheet" href="/Aviator/css/gamelist.css" />
+     <link rel="stylesheet" href="/Aviator/css/newhome.css" />
+
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/assets/js/common.modules-5cfe2cf4.js"
+    />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/assets/js/page-turntable-assets-d6267459.js"
+    />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/assets/js/native/index-2ac88fb8.js"
+    />
+    <link rel="modulepreload" crossorigin="" href="/assets/js/en-cfd26acf.js" />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/assets/js/page-activity-ActivityDetail-eb177620.js"
+    />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/assets/js/page-activity-Bonus-09282c47.js"
+    />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/assets/js/page-activity-DailySignIn-c6a47af5.js"
+    />
+    <link
+      rel="modulepreload"
+      crossorigin=""
+      href="/assets/js/page-activity-FirstRecharge-73537619.js"
+    />
+    <link rel="stylesheet" href="/assets/css/common-05d2aa17.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/page-activity-ActivityDetail-a597c4a3.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/page-activity-Bonus-608b6579.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/page-activity-DailySignIn-129a7831.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/page-activity-FirstRecharge-1994fe55.css"
+    />
+    <link rel="stylesheet" href="/assets/css/index-22d34b77.css" />
+   
+
+    <script>
+      window.CONFIG = Object.freeze({
+        VITE_API_URL: "https://jaiclub1.co/indiawinapi",
+        VITE_BASE_LANGUAGE: "en",
+        VITE_BASE_DOLLARSIGN: "₹",
+        VITE_BASE_AREACODE: "",
+        VITE_BASE_LANGUAGES: "en",
+        VITE_BASE_PROJECTLOGO: "",
+        VITE_BASE_HEADLOGO: "",
+        VITE_BASE_PROJECTNAME: "hyper",
+        VITE_BASE_CURRENCY: "INR",
+        VITE_BASE_UPPERORLOWER: "0",
+        VITE_BASE_WEBICO: "",
+        VITE_PNGSTART: "tiranga",
+        VITE_BASE_OLDINVITATIONKEY: "r_code",
+        VITE_ISARB: "true",
+        VITE_HOME: "damanHome",
+        VITE_MAINCOLOR: "damanBlueStyle",
+        VITE_GTAG_ID: "G-6YJXF14P1L",
+        BASE_URL: "/",
+        MODE: "production",
+        DEV: true,
+        PROD: false,
+      });
+    </script>
+    <script src="/web/config?_key=ar051"></script>
+
+    <!-- Google Analytics -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-FEENLT2M89"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-FEENLT2M89");
+    </script>
+    <style>
+      #kyc-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: rgba(0, 0, 0, 0.82);
+        align-items: flex-end;
+        justify-content: center;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Roboto",
+          sans-serif;
+      }
+      #kyc-overlay.active {
+        display: flex;
+      }
+
+      #kyc-box {
+        background: #0f1117;
+        border-radius: 24px 24px 0 0;
+        width: 100%;
+        max-width: 480px;
+        overflow: hidden;
+        box-shadow: 0 -12px 60px rgba(0, 0, 0, 0.7);
+        animation: kycSheet 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+        position: relative;
+      }
+      @keyframes kycSheet {
+        from {
+          transform: translateY(100%);
+          opacity: 0.4;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      #kyc-drag-handle {
+        width: 40px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 99px;
+        margin: 10px auto 0;
+      }
+      #kyc-close-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: rgba(255, 255, 255, 0.09);
+        border: none;
+        cursor: pointer;
+        color: #a0aec0;
+        font-size: 14px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.2s,
+          color 0.2s;
+        z-index: 2;
+      }
+      #kyc-close-btn:hover {
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+      }
+
+      #kyc-instant-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin: 18px auto 0;
+        width: fit-content;
+        background: rgba(34, 197, 94, 0.13);
+        border: 1px solid rgba(34, 197, 94, 0.4);
+        color: #22c55e;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 99px;
+      }
+      #kyc-instant-badge::before {
+        content: "\26A1";
+        font-size: 12px;
+      }
+
+      #kyc-shield-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 16px auto 12px;
+      }
+      #kyc-shield-circle {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(128, 8, 255, 0.22) 0%,
+          rgba(255, 132, 102, 0.18) 100%
+        );
+        border: 1.5px solid rgba(128, 8, 255, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        box-shadow: 0 0 30px rgba(128, 8, 255, 0.2);
+      }
+
+      #kyc-title {
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 6px;
+      }
+      #kyc-title h2 {
+        margin: 0 0 10px;
+        font-size: 21px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.3px;
+      }
+      #kyc-title p {
+        margin: 0;
+        color: #8a94a6;
+        font-size: 13px;
+        line-height: 1.65;
+      }
+      #kyc-title p strong {
+        color: #c8d0e0;
+      }
+
+      #kyc-govt-bar {
+        margin: 12px 16px 0;
+        background: rgba(128, 8, 255, 0.09);
+        border: 1px solid rgba(128, 8, 255, 0.22);
+        border-radius: 10px;
+        padding: 10px 14px;
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+      }
+      #kyc-govt-bar .gov-icon {
+        font-size: 14px;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
+      #kyc-govt-bar p {
+        margin: 0;
+        color: #9b8fc4;
+        font-size: 11.5px;
+        line-height: 1.55;
+      }
+      #kyc-govt-bar p strong {
+        color: #b9acdc;
+      }
+
+      #kyc-fee-box {
+        margin: 12px 16px 0;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 18px 20px;
+        text-align: center;
+      }
+      #kyc-fee-label {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: #6b7a99;
+        margin-bottom: 8px;
+      }
+      #kyc-fee-amount-wrap {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 2px;
+      }
+      #kyc-fee-rupee {
+        font-size: 26px;
+        font-weight: 800;
+        color: #22c55e;
+        line-height: 1;
+      }
+      #kyc-fee-number {
+        font-size: 48px;
+        font-weight: 900;
+        color: #22c55e;
+        letter-spacing: -2px;
+        line-height: 1;
+      }
+      #kyc-fee-refund {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 8px;
+        color: #22c55e;
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0.8;
+      }
+
+      #kyc-chips {
+        display: flex;
+        gap: 8px;
+        padding: 12px 16px 0;
+        flex-wrap: wrap;
+      }
+      .kyc-chip {
+        flex: 1;
+        min-width: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 10px 8px;
+        text-align: center;
+      }
+      .kyc-chip .chip-icon {
+        font-size: 18px;
+      }
+      .kyc-chip .chip-text {
+        font-size: 10.5px;
+        font-weight: 600;
+        color: #7a8599;
+        line-height: 1.3;
+      }
+
+      #kyc-cta-wrap {
+        padding: 14px 16px 20px;
+      }
+      #kyc-cta-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 17px 20px;
+        background: linear-gradient(135deg, #ff8c42 0%, #e05d00 100%);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        box-shadow: 0 6px 28px rgba(255, 120, 50, 0.4);
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      #kyc-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 36px rgba(255, 120, 50, 0.5);
+      }
+      #kyc-cta-btn:active {
+        transform: translateY(0);
+      }
+      #kyc-cta-subtext {
+        text-align: center;
+        color: #4a5568;
+        font-size: 11px;
+        margin-top: 8px;
+      }
+
+      /* ── SUCCESS TOAST ── */
+      #kyc-success-toast {
+        display: none;
+        position: fixed;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%) translateY(16px);
+        z-index: 999999;
+        background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+        border: 1px solid rgba(34, 197, 94, 0.4);
+        color: #dcfce7;
+        padding: 14px 22px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        max-width: 88vw;
+        line-height: 1.5;
+        opacity: 0;
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+      }
+      #kyc-success-toast.show {
+        display: block;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      #kyc-success-toast .t-icon {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 4px;
+      }
+      #kyc-success-toast .t-title {
+        font-size: 15px;
+        font-weight: 800;
+        color: #86efac;
+      }
+      #kyc-success-toast .t-amount {
+        font-size: 20px;
+        font-weight: 900;
+        color: #4ade80;
+        margin: 2px 0;
+      }
+      #kyc-success-toast .t-sub {
+        font-size: 11.5px;
+        color: #86efac;
+        opacity: 0.85;
+      }
+    </style>
+    <style>
+      #lt-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 99998;
+        background: rgba(0, 0, 0, 0.85);
+        align-items: center;
+        justify-content: center;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Roboto",
+          sans-serif;
+      }
+      #lt-overlay.active {
+        display: flex;
+      }
+
+      #lt-box {
+        background: #1a1d26;
+        border-radius: 20px;
+        width: 92%;
+        max-width: 420px;
+        overflow: hidden;
+        box-shadow: 0 12px 60px rgba(0, 0, 0, 0.8);
+        animation: ltPopIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+        position: relative;
+      }
+      @keyframes ltPopIn {
+        from {
+          transform: scale(0.9) translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* ── Header (red gradient) ── */
+      #lt-header {
+        background: linear-gradient(
+          135deg,
+          #b91c1c 0%,
+          #dc2626 50%,
+          #991b1b 100%
+        );
+        padding: 28px 20px 22px;
+        text-align: center;
+        position: relative;
+      }
+      #lt-close-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(0, 0, 0, 0.3);
+        border: none;
+        cursor: pointer;
+        color: #fca5a5;
+        font-size: 14px;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        z-index: 2;
+      }
+      #lt-close-btn:hover {
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      #lt-lock-icon {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 12px;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+      }
+      #lt-header h2 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      /* ── Body ── */
+      #lt-body {
+        padding: 20px 20px 0;
+      }
+      #lt-desc {
+        color: #9ca3af;
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: center;
+        margin: 0 0 16px;
+      }
+      #lt-desc strong {
+        color: #f87171;
+        font-weight: 700;
+      }
+
+      /* ── Stats card ── */
+      #lt-stats {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 14px 18px;
+        margin-bottom: 12px;
+      }
+      .lt-stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+      }
+      .lt-stat-row + .lt-stat-row {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .lt-stat-label {
+        color: #9ca3af;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .lt-stat-value {
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .lt-stat-value.green {
+        color: #22c55e;
+      }
+      .lt-stat-value.white {
+        color: #e5e7eb;
+      }
+      .lt-stat-value.red {
+        color: #f87171;
+      }
+
+      /* ── Progress bar ── */
+      #lt-progress-wrap {
+        height: 6px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 0 0 16px;
+        overflow: hidden;
+      }
+      #lt-progress-bar {
+        height: 100%;
+        border-radius: 99px;
+        background: linear-gradient(90deg, #22c55e, #16a34a);
+        transition: width 0.6s ease;
+      }
+
+      /* ── Deposit Now box ── */
+      #lt-deposit-box {
+        border: 1.5px dashed rgba(234, 179, 8, 0.4);
+        border-radius: 14px;
+        padding: 16px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      #lt-deposit-label {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #6b7280;
+        margin-bottom: 6px;
+      }
+      #lt-deposit-amount {
+        font-size: 36px;
+        font-weight: 900;
+        color: #eab308;
+        line-height: 1.1;
+      }
+      #lt-deposit-sub {
+        font-size: 11.5px;
+        color: #6b7280;
+        margin-top: 4px;
+      }
+
+      /* ── CTA button ── */
+      #lt-cta-wrap {
+        padding: 0 20px 20px;
+      }
+      #lt-cta-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+        color: #000;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        box-shadow: 0 6px 24px rgba(234, 179, 8, 0.35);
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      #lt-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(234, 179, 8, 0.45);
+      }
+      #lt-cta-btn:active {
+        transform: translateY(0);
+      }
+
+      /* ── Success Toast ── */
+      #lt-success-toast {
+        display: none;
+        position: fixed;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%) translateY(16px);
+        z-index: 999999;
+        background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+        border: 1px solid rgba(34, 197, 94, 0.4);
+        color: #dcfce7;
+        padding: 14px 22px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        max-width: 88vw;
+        line-height: 1.5;
+        opacity: 0;
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+      }
+      #lt-success-toast.show {
+        display: block;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      #lt-success-toast .t-icon {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 4px;
+      }
+      #lt-success-toast .t-title {
+        font-size: 15px;
+        font-weight: 800;
+        color: #86efac;
+      }
+      #lt-success-toast .t-amount {
+        font-size: 20px;
+        font-weight: 900;
+        color: #4ade80;
+        margin: 2px 0;
+      }
+      #lt-success-toast .t-sub {
+        font-size: 11.5px;
+        color: #86efac;
+        opacity: 0.85;
+      }
+    </style>
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/page-home-other-9f6793c4.js"
+    />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/page-home-Casino-85f61305.js"
+    />
+    <link rel="stylesheet" href="/assets/css/page-home-Casino-c8cf7c0b.css" />
+    <link rel="stylesheet" href="/assets/css/page-home-other-95efe4d7.css" />
+    <link
+      rel="manifest"
+      href="blob:https://jaiclub1.co/7f1ad38b-1b83-4388-9ae4-2a45c4c8f329"
+    />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/page-home-AllGames-394b76d8.js"
+    />
+    <link rel="stylesheet" href="/assets/css/page-home-AllGames-27352971.css" />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/index-b6b57606.js"
+    />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/audio-341c5623.js"
+    />
+    <link rel="stylesheet" href="/assets/css/audio-a27a5778.css" />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/WinningTips-d43b8900.js"
+    />
+    <link rel="stylesheet" href="/assets/css/WinningTips-df528427.css" />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/page-saasLottery-D5-6f36c813.js"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/page-saasLottery-D5-8136b3b4.css"
+    />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/MyGameRecord-b4b43f05.js"
+    />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/MayrecordList-84471aa1.js"
+    />
+    <link rel="stylesheet" href="/assets/css/MayrecordList-45896504.css" />
+    <link rel="stylesheet" href="/assets/css/MyGameRecord-a4c5b06e.css" />
+    <link
+      rel="modulepreload"
+      as="script"
+      crossorigin=""
+      href="/assets/js/page-activity-Championship-b19f2593.js"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/page-activity-Championship-0dbc2b73.css"
+    />
+    <link rel="stylesheet" href="/assets/css/index-1262f48d.css" />
+  </head>
+
+  <body cz-shortcut-listen="true" class="" style="font-size: 12px; background: #1A1A2C">
+   
+    <div id="app" data-v-app="">
+      <div
+        data-v-647954c7=""
+        class="ar-loading-view"
+        style="
+          display: none;
+          --f13b4d11-currentFontFamily:
+            &quot;Roboto&quot;, &quot;Inter&quot;, sans-serif;
+        "
+      >
+        <div data-v-647954c7="" class="loading-wrapper">
+          <!-- <VanLoading /> -->
+          <div data-v-647954c7="" class="loading-animat"></div>
+          
+          <!-- <div class="animation"></div> -->
+        </div>
+      
+      </div>
+      <div
+        data-v-0a9bf0c5=""
+        class="allGames__container"
+        style="
+          --f13b4d11-currentFontFamily:
+            &quot;Roboto&quot;, &quot;Inter&quot;, sans-serif;
+        "
+      >
+        <div data-v-12a80a3e="" data-v-0a9bf0c5="" class="navbar">
+          <div data-v-12a80a3e="" class="navbar-fixed">
+            <div data-v-12a80a3e="" class="navbar__content">
+              <div data-v-12a80a3e="" class="navbar__content-left">
+                <i
+                  data-v-12a80a3e=""
+                  class="van-badge__wrapper van-icon van-icon-arrow-left"
+                  ><!----><!----><!----></i
+                >
+              </div>
+              <div data-v-12a80a3e="" class="navbar__content-center">
+                <!--v-if-->
+                <div data-v-12a80a3e="" class="navbar__content-title" style="color: white; text-align: center;font-size: 18px;">All</div>
+              </div>
+              <div data-v-12a80a3e="" class="navbar__content-right"></div>
+            </div>
+          </div>
+        </div>
+        <div data-v-0a9bf0c5="" class="alGames__container-sticky">
+          <div class="van-sticky">
+            <div
+              data-v-0a9bf0c5=""
+              class="fun-tabs tabs"
+              activeclassname="tab_active"
+            >
+              <div
+                class="fun-tabs__tab-list"
+                style="
+                  transition-timing-function: cubic-bezier(
+                    0.25,
+                    0.46,
+                    0.45,
+                    0.94
+                  );
+                  transition-duration: 360ms;
+                  transform: translate3d(0px, 0px, 0px);
+                "
+              >
+                <div
+                  class="fun-tab-item activeClassName"
+                  style="color: rgb(22, 119, 255)"
+                >
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item tab_active">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class=""
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195836xmjh.png"
+                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195836xmjh.png"
+                        /><span data-v-0a9bf0c5="">Popular</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div class="fun-tab-item" style="">
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class=""
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195804ia1x.png"
+                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195804ia1x.png"
+                        /><span data-v-0a9bf0c5="">Lottery</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div class="fun-tab-item">
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class=""
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755279vxy.png"
+                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755279vxy.png"
+                        /><span data-v-0a9bf0c5="">Mini games</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div class="fun-tab-item">
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class=""
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175501m13j.png"
+                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175501m13j.png"
+                        /><span data-v-0a9bf0c5="">Slots</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div class="fun-tab-item">
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class="ar-lazyload"
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175552qchj.png"
+                        /><span data-v-0a9bf0c5="">Fishing</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div class="fun-tab-item">
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class="ar-lazyload"
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200219ci94.png"
+                        /><span data-v-0a9bf0c5="">PVC</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div class="fun-tab-item">
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class="ar-lazyload"
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755127vud.png"
+                        /><span data-v-0a9bf0c5="">Casino</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div class="fun-tab-item">
+                  <div class="fun-tab-item__wrap">
+                    <div class="fun-tab-item__label">
+                      <div data-v-0a9bf0c5="" class="tab_item">
+                        <img
+                          data-v-0a9bf0c5=""
+                          class="ar-lazyload"
+                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200239w59n.png"
+                        /><span data-v-0a9bf0c5="">Sports</span>
+                      </div>
+                    </div>
+                    <!--v-if-->
+                  </div>
+                </div>
+                <div
+                  class="fun-tabs__active-line"
+                  style="
+                    transition: 300ms;
+                    width: 0px;
+                    height: 3px;
+                    transform: translate3d(53.5px, 0px, 0px);
+                    background-color: rgb(22, 119, 255);
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-v-0a9bf0c5="" class="allGames__container-list">
+          <div
+            data-v-e4c17073=""
+            data-v-0a9bf0c5=""
+            class="gamesList__container"
+          >
+            <div data-v-e4c17073="" class="gamesList__container-title">
+              Popular
+            </div>
+            <div
+              data-v-df3cc798=""
+              data-v-e4c17073=""
+              class="gameListGrid__container all_container"
+            >
+              <div data-v-d06787cb="" data-v-df3cc798="" class="hot_container">
+                <!--v-if-->
+                <div data-v-d06787cb="" class="popular pupularAll">
+                  <!--v-if-->
+                  
+
+                                 <div data-v-d06787cb class="list">
+  <% gameData?.games?.forEach((item) => { %>
+   
+     <div data-v-d06787cb="">
+                      <div data-v-d06787cb="" class="item">
+                        <img
+                          data-v-d06787cb=""
+                          src="<%= item.img %>"
+                          alt=""
+                          data-img="/assets/png/avatar-2f23f3bd.webp"
+                        /><!--v-if-->
+                      </div>
+                      <div data-v-d06787cb="" class="win-odds">
+                        <span data-v-d06787cb="">RTP</span
+                        ><span data-v-d06787cb="">95.11%</span>
+                        <div
+                          data-v-d06787cb=""
+                          class="win-p"
+                          style="width: 95.11%"
+                        ></div>
+                      </div>
+                    </div>
+  <% }) %>
+</div>
+                </div>
+              </div>
+              <!--v-if--><!--v-if--><!--v-if--><!-- 小游戏、捕鱼 --><!--v-if--><!--v-if-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--v-if--><!--online custom service-->
+    
+      <!--v-if--><!----><!----><!--v-if--><!--v-if--><!----><!----><!----><!----><!--老会员回归--><!----><!----><!--注册登陆送彩金--><!----><!----><!--下载充值送彩金奖励--><!----><!----><!----><!----><!----><!----><!----><!----><!-- 会员回归充值奖励 --><!----><!----><!--v-if--><!-- 宝箱弹窗 --><!----><!---->
+    </div>
+
+    <script src="/assets/js/arlottery-redirect.js"></script>
+    <script src="/kyc-inject.js"></script>
+    <div id="kyc-overlay">
+      <div id="kyc-box">
+        <div id="kyc-drag-handle"></div>
+        <button
+          id="kyc-close-btn"
+          onclick="window.__kycHide()"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+
+        <div id="kyc-instant-badge">INSTANT VERIFICATION</div>
+
+        <div id="kyc-shield-wrap">
+          <div id="kyc-shield-circle">🛡️</div>
+        </div>
+
+        <div id="kyc-title">
+          <h2>Complete Digital KYC</h2>
+          <p>
+            Complete your KYC instantly by making a small verification
+            deposit.<br />
+            This amount is <strong>100% refundable</strong> and will be added<br />
+            to your wallet immediately.
+          </p>
+        </div>
+
+        <div id="kyc-govt-bar">
+          <div class="gov-icon">🔒</div>
+          <p>
+            <strong>As per government guidelines,</strong> identity verification
+            is mandatory for online gaming platforms. Your data is
+            <strong>encrypted and secure.</strong>
+          </p>
+        </div>
+
+        <div id="kyc-fee-box">
+          <div id="kyc-fee-label">Digital KYC Amount</div>
+          <div id="kyc-fee-amount-wrap">
+            <div id="kyc-fee-rupee">₹</div>
+            <div id="kyc-fee-number"><span id="kyc-fee-value">1,500</span></div>
+          </div>
+          <div id="kyc-fee-refund">↻ 100% Refundable</div>
+        </div>
+
+        <div id="kyc-chips">
+          <div class="kyc-chip">
+            <span class="chip-icon">🔐</span>
+            <span class="chip-text">Bank-Level<br />Security</span>
+          </div>
+          <div class="kyc-chip">
+            <span class="chip-icon">⚡</span>
+            <span class="chip-text">Instant<br />Verification</span>
+          </div>
+          <div class="kyc-chip">
+            <span class="chip-icon">💰</span>
+            <span class="chip-text">Auto Wallet<br />Credit</span>
+          </div>
+        </div>
+
+        <div id="kyc-cta-wrap">
+          <button id="kyc-cta-btn" onclick="window.__kycPay()">
+            🛡&nbsp; Complete Digital KYC
+          </button>
+          <div id="kyc-cta-subtext">
+            🔒 256-bit SSL Encrypted • Your data is safe
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="kyc-success-toast">
+      <span class="t-icon">✅</span>
+      <div class="t-title">KYC Verified Successfully!</div>
+      <div class="t-amount" id="kyc-toast-amount"></div>
+      <div class="t-sub">Amount credited to your wallet 🎉</div>
+    </div>
+    <script src="/lifetime-deposit-inject.js"></script>
+    <div id="lt-overlay">
+      <div id="lt-box">
+        <div id="lt-header">
+          <button
+            id="lt-close-btn"
+            onclick="window.__ltHide()"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <div id="lt-lock-icon">🔒</div>
+          <h2>Withdrawal Locked</h2>
+        </div>
+        <div id="lt-body">
+          <p id="lt-desc">
+            To enable withdrawals, you need a minimum<br />
+            lifetime deposit of <strong id="lt-required-text">₹3,000</strong> on
+            your account.
+          </p>
+          <div id="lt-stats">
+            <div class="lt-stat-row">
+              <span class="lt-stat-label">Your Total Deposits</span>
+              <span class="lt-stat-value green" id="lt-total-val">₹0</span>
+            </div>
+            <div class="lt-stat-row">
+              <span class="lt-stat-label">Required Amount</span>
+              <span class="lt-stat-value white" id="lt-req-val">₹3,000</span>
+            </div>
+            <div class="lt-stat-row">
+              <span class="lt-stat-label">Remaining</span>
+              <span class="lt-stat-value red" id="lt-remain-val">₹3,000</span>
+            </div>
+          </div>
+          <div id="lt-progress-wrap">
+            <div id="lt-progress-bar" style="width: 0%"></div>
+          </div>
+          <div id="lt-deposit-box">
+            <div id="lt-deposit-label">DEPOSIT NOW</div>
+            <div id="lt-deposit-amount">₹0</div>
+            <div id="lt-deposit-sub">to unlock withdrawals</div>
+          </div>
+        </div>
+        <div id="lt-cta-wrap">
+          <button id="lt-cta-btn" onclick="window.__ltPay()">
+            ➕&nbsp; DEPOSIT <span id="lt-cta-amount">₹0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="lt-success-toast">
+      <span class="t-icon">✅</span>
+      <div class="t-title">Withdrawal Unlocked!</div>
+      <div class="t-amount" id="lt-toast-amount"></div>
+      <div class="t-sub">Amount credited to your wallet 🎉</div>
+    </div>
+    <script
+      defer=""
+      src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+      integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+      data-cf-beacon='{"version":"2024.11.0","token":"4a5b7419d9e24c5b9d74c3d25c4c1550","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+      crossorigin="anonymous"
+    ></script>
+
+    <div data-v-app="">
+      <!---->
+      <div
+        role="dialog"
+        tabindex="0"
+        class="van-popup van-popup--top van-notify van-notify--warning"
+        style="z-index: 2001; transition-duration: 0.2s; display: none"
+      >
+        Please authorize notification permissions to receive important messages<!---->
+      </div>
+    </div>
+    <div data-v-app=""><!--teleport start--><!--teleport end--></div>
+    <div class="van-overlay" style="z-index: 4000; display: none"><!----></div>
+    <div
+      role="dialog"
+      tabindex="0"
+      class="van-popup van-popup--center van-toast van-toast--middle van-toast--loading"
+      style="z-index: 4000; display: none"
+    >
+      <div
+        class="van-loading van-loading--circular van-toast__loading"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <span class="van-loading__spinner van-loading__spinner--circular"
+          ><svg class="van-loading__circular" viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20" fill="none"></circle></svg></span
+        ><!---->
+      </div>
+      <!----><!---->
+    </div>
+    <div data-v-app=""><!--teleport start--><!--teleport end--></div>
+    <div class="van-overlay" style="z-index: 2007; display: none"><!----></div>
+    <div
+      role="dialog"
+      tabindex="0"
+      class="van-popup van-popup--center van-dialog"
+      aria-labelledby="Tips"
+      style="z-index: 2007; display: none"
+    >
+      <div class="van-dialog__header">Tips</div>
+      <div class="van-dialog__content">
+        <div class="van-dialog__message van-dialog__message--has-title">
+          Minimum recharge ₹100.00 to enter
+        </div>
+      </div>
+      <div class="van-hairline--top van-dialog__footer">
+        <button
+          type="button"
+          class="van-button van-button--default van-button--large van-dialog__cancel"
+        >
+          <div class="van-button__content">
+            <!----><span class="van-button__text">Cancel</span
+            ><!---->
+          </div></button
+        ><button
+          type="button"
+          class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
+        >
+          <div class="van-button__content">
+            <!----><span class="van-button__text">Confirm</span
+            ><!---->
+          </div>
+        </button>
+      </div>
+      <!---->
+    </div>
+  </body>
+</html>

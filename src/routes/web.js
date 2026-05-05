@@ -171,6 +171,11 @@ router.post('/admin/manager/settings/increaseWallet',adminController.middlewareA
    router.get("/notification",middlewareController,homeController.notificationPage)
    router.get("/myProfile", middlewareController, homeController.myProfilePage)
 
+   //games 
+
+   router.get("/gameslist", middlewareController, homeController.gameList)
+
+
    // BET wingo
    router.get("/win", middlewareController, winGoController.winGoPage)
    router.get("/win/3", middlewareController, winGoController.winGoPage3)

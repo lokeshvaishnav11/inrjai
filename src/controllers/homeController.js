@@ -3,6 +3,7 @@ const connection = require("../config/connectDB");
 // import jwt from 'jsonwebtoken'
 // import md5 from "md5";
 // import e from "express";
+const gameData = require("../datagames.json");
 
 const homePage = async (req, res) => {
     let [setting] = await connection.query('SELECT `app`,`telegram` FROM admin');
@@ -467,6 +468,13 @@ const myProfilePage = async (req, res) => {
     return res.render("member/myProfile.ejs");
 }
 
+const gameList = async (req, res) => {
+    // return res.render("games/gamelist.ejs"); 
+    //  agar datagames.json se data chahiye to niche wala code use karna hai
+    return res.render("games/gamelist", { gameData });
+
+}
+
 const getSalaryRecord = async (req, res) => {
     const auth = req.cookies.auth;
 
@@ -728,6 +736,8 @@ const [betHistory] = await connection.execute(
 }
 
 
+
+
 module.exports = {
     homePage,
     checkInPage,
@@ -735,6 +745,7 @@ module.exports = {
     walletPage,
     mianPage,
     myProfilePage,
+    gameList,
     promotionmyTeamPage,
     promotionDesPage,
     tutorialPage,
