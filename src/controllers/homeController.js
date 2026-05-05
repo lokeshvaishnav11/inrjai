@@ -15,7 +15,7 @@ const homePage = async (req, res) => {
     if(!auth){
         let money = false;
 
-        return res.render("home/index.ejs", { app,telegram,money});
+        return res.render("home/index.ejs", { app,telegram,money, gameData });
 
     }
     else{
@@ -27,7 +27,7 @@ const homePage = async (req, res) => {
         let username = user[0]?.name_user
         let ekyc = user[0]?.ekyc
       
-        return res.render("home/index.ejs", { app,telegram,money,username,ekyc});
+        return res.render("home/index.ejs", { app,telegram,money,username,ekyc, gameData });
 
     }
 }
@@ -471,7 +471,7 @@ const myProfilePage = async (req, res) => {
 const gameList = async (req, res) => {
     // return res.render("games/gamelist.ejs"); 
     //  agar datagames.json se data chahiye to niche wala code use karna hai
-    return res.render("games/gamelist", { gameData });
+    return res.render("games/gamelist.ejs", { gameData });
 
 }
 
