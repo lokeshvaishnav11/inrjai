@@ -270,7 +270,7 @@ const getIntCasinoUrl = async(req,res) =>{
         console.log(user,"user is hwere")
 
         let payload = {
-            userid:phone,
+            userid:1234,
             game_uid:gameId.toString(),
             token:"f17da5723b65ab727cd389a047be2537",
             key:"aeb7893969670273abd205582e7f84e0",
