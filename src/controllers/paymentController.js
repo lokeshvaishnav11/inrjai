@@ -266,7 +266,7 @@ const getIntCasinoUrl = async(req,res) =>{
             })
         }
 
-        let phone = user?.phone
+        let phone = user?.id
 
         let payload = {
             userid:phone,
@@ -1044,7 +1044,7 @@ const verifyWowPayPayment = async (req, res) => {
 
 // helpers ---------------
 const getUserDataByAuthToken = async (authToken) => {
-    let [users] = await connection.query('SELECT `phone`, `code`,`name_user`,`invite` FROM users WHERE `token` = ? ', [authToken]);
+    let [users] = await connection.query('SELECT `phone`, `code`,`name_user`,`invite`,`id` FROM users WHERE `token` = ? ', [authToken]);
     const user = users?.[0]
 
 
