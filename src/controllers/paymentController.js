@@ -270,7 +270,7 @@ const getIntCasinoUrl = async(req,res) =>{
 
         let payload = {
             userid:Number(phone),
-            game_uid:gameId,
+            game_uid:gameId.toString(),
             token:"f17da5723b65ab727cd389a047be2537",
             key:"aeb7893969670273abd205582e7f84e0",
             wallet:100
