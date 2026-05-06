@@ -277,6 +277,8 @@ const getIntCasinoUrl = async(req,res) =>{
         }
 
         let getUrl = await axios.post("https://xxxgaming.online/api/v1",payload)
+
+        console.log(getUrl,"getUrl is here ")
        
         if(getUrl.data.status == 1){
             res.status(200).json({status:true,message:getUrl.data.url})
