@@ -90,8 +90,10 @@
       console.log(res.data);
 
       // agar URL return ho raha hai to redirect
-      if(res.data?.url){
-        window.location.href = res.data.url;
+      if(res.data){
+        window.location.href = res.data.message; // assuming the URL is in res.data.message
+      }else{
+        alert("Game URL not found.");
       }
     })
     .catch(err => {
@@ -1021,7 +1023,12 @@
                                  <div data-v-d06787cb class="list">
   <% gameData?.games?.forEach((item) => { %>
    
-     <div data-v-d06787cb="" onclick="openGame('<%= item.gameID %>')">
+     <div data-v-d06787cb="" onclick="<%= item.route 
+    ? `window.location.href='${item.route}'` 
+    : `openGame('${item.gameID}')` 
+  %>">
+
+       
                       <div data-v-d06787cb="" class="item">
                         <img
                           data-v-d06787cb=""

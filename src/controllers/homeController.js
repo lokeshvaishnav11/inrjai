@@ -4,6 +4,42 @@ const connection = require("../config/connectDB");
 // import md5 from "md5";
 // import e from "express";
 const gameData = require("../datagames.json");
+  
+
+const categories = [
+  {
+    name: "Popular",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195836xmjh.png"
+  },
+  {
+    name: "Slots",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195804ia1x.png"
+  },
+  {
+    name: "Crash",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755279vxy.png"
+  },
+  {
+    name: "Slot",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175501m13j.png"
+  },
+  {
+    name: "Fishing",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175552qchj.png"
+  },
+  {
+    name: "Table",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200219ci94.png"
+  },
+  {
+    name: "Casino",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755127vud.png"
+  },
+  {
+    name: "card",
+    icon: "https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200239w59n.png"
+  }
+];
 
 const homePage = async (req, res) => {
     let [setting] = await connection.query('SELECT `app`,`telegram` FROM admin');
@@ -15,7 +51,7 @@ const homePage = async (req, res) => {
     if(!auth){
         let money = false;
 
-        return res.render("home/index.ejs", { app,telegram,money, gameData });
+        return res.render("home/index.ejs", { app,telegram,money, gameData ,categories});
 
     }
     else{
@@ -27,7 +63,7 @@ const homePage = async (req, res) => {
         let username = user[0]?.name_user
         let ekyc = user[0]?.ekyc
       
-        return res.render("home/index.ejs", { app,telegram,money,username,ekyc, gameData });
+        return res.render("home/index.ejs", { app,telegram,money,username,ekyc, gameData ,categories});
 
     }
 }

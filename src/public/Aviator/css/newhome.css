@@ -1446,11 +1446,13 @@ to { background-position: 60px 60px; }
     color: #fff
 }
 
-.game-tabs__scroll-item.active[data-v-2c772a7d] {
+.speciallclass {
     background: transparent;
     border-color: transparent;
     box-shadow: none
 }
+
+
 
 .van-toast[data-v-d5b035b5] {
     word-break: break-word!important
