@@ -267,6 +267,7 @@ const getIntCasinoUrl = async(req,res) =>{
         }
 
         let phone = user?.id
+        console.log(user,"user is hwere")
 
         let payload = {
             userid:phone,
