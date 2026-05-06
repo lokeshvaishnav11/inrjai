@@ -78,30 +78,26 @@
     <link rel="stylesheet" href="/assets/css/index-22d34b77.css" />
    
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script>
-      window.CONFIG = Object.freeze({
-        VITE_API_URL: "https://jaiclub1.co/indiawinapi",
-        VITE_BASE_LANGUAGE: "en",
-        VITE_BASE_DOLLARSIGN: "₹",
-        VITE_BASE_AREACODE: "",
-        VITE_BASE_LANGUAGES: "en",
-        VITE_BASE_PROJECTLOGO: "",
-        VITE_BASE_HEADLOGO: "",
-        VITE_BASE_PROJECTNAME: "hyper",
-        VITE_BASE_CURRENCY: "INR",
-        VITE_BASE_UPPERORLOWER: "0",
-        VITE_BASE_WEBICO: "",
-        VITE_PNGSTART: "tiranga",
-        VITE_BASE_OLDINVITATIONKEY: "r_code",
-        VITE_ISARB: "true",
-        VITE_HOME: "damanHome",
-        VITE_MAINCOLOR: "damanBlueStyle",
-        VITE_GTAG_ID: "G-6YJXF14P1L",
-        BASE_URL: "/",
-        MODE: "production",
-        DEV: true,
-        PROD: false,
-      });
+     function openGame(gameId) {
+      console.log("Opening game with ID:", gameId);
+    axios.post('/get-int-url', {
+      gameId: gameId
+    })
+    .then(res => {
+      console.log(res.data);
+
+      // agar URL return ho raha hai to redirect
+      if(res.data?.url){
+        window.location.href = res.data.url;
+      }
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }
     </script>
     <script src="/web/config?_key=ar051"></script>
 
@@ -1025,7 +1021,7 @@
                                  <div data-v-d06787cb class="list">
   <% gameData?.games?.forEach((item) => { %>
    
-     <div data-v-d06787cb="">
+     <div data-v-d06787cb="" onclick="openGame('<%= item.gameID %>')">
                       <div data-v-d06787cb="" class="item">
                         <img
                           data-v-d06787cb=""

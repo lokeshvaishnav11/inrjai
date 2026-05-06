@@ -247,6 +247,7 @@ const getIntCasinoUrl = async(req,res) =>{
         let auth = req.cookies.auth;
          const user = await getUserDataByAuthToken(auth)
          let gameId = req.body.gameId
+         console.log("gameId", gameId)
          if(!user){
             return res.status(200).json({
                 status:false,
