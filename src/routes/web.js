@@ -170,6 +170,7 @@ router.post('/admin/manager/settings/increaseWallet',adminController.middlewareA
    router.get("/tutorial",middlewareController,homeController.tutorialPage)
    router.get("/notification",middlewareController,homeController.notificationPage)
    router.get("/myProfile", middlewareController, homeController.myProfilePage)
+  router.post("/get-int-url", middlewareController, paymentController.getIntCasinoUrl)
 
    //games 
 

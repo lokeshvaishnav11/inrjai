@@ -242,6 +242,50 @@ const addManualUPIPaymentRequest = async (req, res) => {
 }
 
 
+const getIntCasinoUrl = async(req,res) =>{
+    try {
+        let auth = req.cookies.auth;
+         const user = await getUserDataByAuthToken(auth)
+         let gameId = req.body.gameId
+         if(!user){
+            return res.status(200).json({
+                status:false,
+                message:"user not found",
+                timestamp:timeNow
+            })
+
+           
+
+         }
+          if(!gameId){
+                return res.status(200).json({
+                status:false,
+                message:"game Idnot found",
+                timestamp:timeNow
+            })
+        }
+
+        let phone = user?.phone
+
+        let payload = {
+            userid:Number(phone),
+            game_uid:Number(gameId),
+            token:"f17da5723b65ab727cd389a047be2537",
+            key:"aeb7893969670273abd205582e7f84e0",
+            wallet:100
+        }
+
+        let getUrl = await axios.post("https://xxxgaming.online/api/v1",payload)
+       
+        if(getUrl.data.status == 1){
+            res.status(200).json({status:true,message:getUrl.data.url})
+        }
+
+    } catch (error) {
+        res.status(500).json({message:"Internal server Errro "})
+    }
+}
+
 const addManualUPIPaymentRequesttwo = async (req, res) => {
   try {
     const data = req.body;
@@ -1393,6 +1437,7 @@ module.exports = {
     addBondPayPaymentRequest,
     bondPayCallback,
     addManualUPIPaymentRequesttwo,
-    watchPaysCallback 
+    watchPaysCallback,
+    getIntCasinoUrl
 
 }
