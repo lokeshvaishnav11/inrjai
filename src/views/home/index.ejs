@@ -55,6 +55,18 @@
 <script>
 
     function openGame(gameId) {
+
+      var money = <%= money %>;
+ 
+  console.log(money,"money")
+  if (money >= 50000) {
+  alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+  return;
+  
+  }
+        // loader show
+      document.getElementById("pageLoader").style.display = "flex";
+
       console.log("Opening game with ID:", gameId);
     axios.post('/get-int-url', {
       gameId: gameId
@@ -66,6 +78,7 @@
        if(res.data){
         window.location.href = res.data.message; // assuming the URL is in res.data.message
       } else {
+         document.getElementById("pageLoader").style.display = "none";
         alert("Failed to get game URL. Please try again later.");
       }
     })
@@ -133,6 +146,42 @@
 
 
 </script>
+
+<style>
+   .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    z-index: 99999;
+  }
+
+  .loader-circle {
+    width: 55px;
+    height: 55px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    animation: spinLoader 0.8s linear infinite;
+  }
+
+  @keyframes spinLoader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+
         <link
             rel="modulepreload"
             as="script"
@@ -150,6 +199,16 @@
         <link rel="manifest" href="blob:https://jaiclub365.com/c3082714-3a00-43b6-b747-17102102b9b0">
     </head>
     <body cz-shortcut-listen="true" style="font-size: 12px; margin: 0px">
+
+
+     <!-- Loader -->
+  <div class="page-loader" id="pageLoader">
+  <div class="loader-circle"></div>
+</div>
+
+
+
+
        
         <div id="app" data-v-app="">
             <div data-v-647954c7="" class="ar-loading-view" style="display: none; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
@@ -268,9 +327,9 @@
         />
         <div class="noticeBar__container-body">
           <div class="noticeBar__container-body-text">
-            🎉🎉🎉Welcome to join the Jaiclub platform. We provide a brand new
+            🎉🎉🎉Welcome to join the 1xbet platform. We provide a brand new
             gaming experience and a comprehensive range of popular games.
-            ❤️‍🔥❤️‍🔥❤️‍🔥You are welcome to register at Jaiclub and participate in the
+            ❤️‍🔥❤️‍🔥❤️‍🔥You are welcome to register at 1xbet and participate in the
             game. Thank you.
           </div>
         </div>
@@ -364,14 +423,6 @@
           <!--v-if-->
         </div>
         <div data-v-b313c6ed="" class="recommended-games__list">
-          <div data-v-b313c6ed="" class="recommended-games__list-item">
-            <img
-              data-v-b313c6ed=""
-              class="recommended-games__list-item__cover"
-              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/51.png"
-             src="/images/icons/wingo.jpg"
-            />
-          </div>
           <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="window.location.href='/aviator'">
             <img
               data-v-b313c6ed=""
@@ -379,16 +430,25 @@
               data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/223.png"
              src="/images/icons/avi.png"
             />
+          </div> 
+          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="openGame('11475')">
+            <img
+              data-v-b313c6ed=""
+              class="recommended-games__list-item__cover"
+              data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/51.png"
+             src="/images/icons/wingo.jpg"
+            />
           </div>
-          <div data-v-b313c6ed="" class="recommended-games__list-item">
+         
+          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="openGame('11411')">
             <img
               data-v-b313c6ed=""
               class="recommended-games__list-item__cover"
               data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/JILI/109.png"
-              src="/images/icons/ludo.png"
+              src="/images/icons/lottery.jpg"
               />
           </div>
-          <div data-v-b313c6ed="" class="recommended-games__list-item">
+          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="openGame('392')">
             <img
               data-v-b313c6ed=""
               class="recommended-games__list-item__cover ar-lazyload"
@@ -396,7 +456,7 @@
               src="/images/icons/cr2.png"
             />
           </div>
-          <div data-v-b313c6ed="" class="recommended-games__list-item">
+          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="openGame('139')">
             <img
               data-v-b313c6ed=""
               class="recommended-games__list-item__cover ar-lazyload"
@@ -404,12 +464,12 @@
               src="/images/icons/cr.png"
             />
           </div>
-          <div data-v-b313c6ed="" class="recommended-games__list-item">
+          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="openGame('10031')">
             <img
               data-v-b313c6ed=""
               class="recommended-games__list-item__cover ar-lazyload"
               data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamelogo/MG/SMG_wildfireWins.png"
-              src="/images/icons/penalty.png"
+              src="/images/icons/slot.avif"
             />
           </div>
         </div>
@@ -453,6 +513,7 @@
               >
             </div>
             <button
+            onclick="openGame('570')"
               data-v-6804144f=""
               class="purple-gradient-btn featured-game__info-btn"
             >

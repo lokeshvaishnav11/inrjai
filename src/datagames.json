@@ -3,13 +3,6 @@
   "brand_id": 49,
   "total_games": 243,
   "games": [
-     {
-    "gameID": "11475",
-    "gameNameEn": "Wingo",
-    "img": "/images/icons/wingo.jpg",
-    "category": "Popular",
-    "route": null
-  },
   {
     "gameID": "aviator",
     "gameNameEn": "Aviator",
@@ -17,31 +10,38 @@
     "category": "Popular",
     "route": "/aviator"
   },
-  {
-    "gameID": "ludo",
-    "gameNameEn": "Ludo",
-    "img": "/images/icons/ludo.png",
+    {
+    "gameID": "11475",
+    "gameNameEn": "Wingo",
+    "img": "/images/icons/wingo.jpg",
     "category": "Popular",
     "route": null
   },
   {
-    "gameID": "cricket2",
+    "gameID": "11411",
+    "gameNameEn": "Lottery",
+    "img": "/images/icons/lottery.jpg",
+    "category": "Popular",
+    "route": null
+  },
+  {
+    "gameID": "392",
     "gameNameEn": "Cricket 2",
     "img": "/images/icons/cr2.png",
     "category": "Popular",
     "route": null
   },
   {
-    "gameID": "cricket",
+    "gameID": "139",
     "gameNameEn": "Cricket",
     "img": "/images/icons/cr.png",
     "category": "Popular",
     "route": null
   },
   {
-    "gameID": "penalty",
-    "gameNameEn": "Penalty",
-    "img": "/images/icons/penalty.png",
+    "gameID": "10031",
+    "gameNameEn": "slot",
+    "img": "/images/icons/slot.avif",
     "category": "Popular",
     "route": null
   },

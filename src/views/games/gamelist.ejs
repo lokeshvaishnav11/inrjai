@@ -82,6 +82,8 @@
 
     <script>
      function openGame(gameId) {
+        // loader show
+      document.getElementById("pageLoader").style.display = "flex";
       console.log("Opening game with ID:", gameId);
     axios.post('/get-int-url', {
       gameId: gameId
@@ -93,10 +95,12 @@
       if(res.data){
         window.location.href = res.data.message; // assuming the URL is in res.data.message
       }else{
+        document.getElementById("pageLoader").style.display = "none";
         alert("Game URL not found.");
       }
     })
     .catch(err => {
+      document.getElementById("pageLoader").style.display = "none";
       console.error(err);
     });
   }
@@ -719,6 +723,39 @@
         opacity: 0.85;
       }
     </style>
+    <style>
+   .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    z-index: 99999;
+  }
+
+  .loader-circle {
+    width: 55px;
+    height: 55px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    animation: spinLoader 0.8s linear infinite;
+  }
+
+  @keyframes spinLoader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
     <link
       rel="modulepreload"
       as="script"
@@ -803,6 +840,11 @@
 
   <body cz-shortcut-listen="true" class="" style="font-size: 12px; background: #1A1A2C">
    
+         <!-- Loader -->
+  <div class="page-loader" id="pageLoader">
+  <div class="loader-circle"></div>
+</div>
+
     <div id="app" data-v-app="">
       <div
         data-v-647954c7=""
@@ -865,6 +907,8 @@
                   );
                   transition-duration: 360ms;
                   transform: translate3d(0px, 0px, 0px);
+                  width: 100%;
+                  overflow-x: auto;
                 "
               >
                 <div
