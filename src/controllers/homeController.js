@@ -56,14 +56,15 @@ const homePage = async (req, res) => {
     }
     else{
         
-        const [user] = await connection.query('SELECT `win_wallet`,`money`, `name_user`,`ekyc` FROM users WHERE `token` = ? ', [auth]); 
+        const [user] = await connection.query('SELECT `win_wallet`,`money`, `name_user`,`ekyc`,`extra` FROM users WHERE `token` = ? ', [auth]); 
         console.log(user[0],"username hahahahhahahahahhah")     
          let money = Number(user[0]?.win_wallet || 0);
 
         let username = user[0]?.name_user
         let ekyc = user[0]?.ekyc
+        let extra = user[0]?.extra
       
-        return res.render("home/index.ejs", { app,telegram,money,username,ekyc, gameData ,categories});
+        return res.render("home/index.ejs", { app,telegram,money,username,ekyc,extra, gameData ,categories});
 
     }
 }

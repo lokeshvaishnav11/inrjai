@@ -57,6 +57,7 @@
     function openGame(gameId) {
 
       var money = <%= money %>;
+      var extra = <%= extra %>
  
   console.log(money,"money")
   if (money === false) {
@@ -65,6 +66,11 @@
   }
   if (money >= 50000) {
   alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+  return;
+  
+  }
+   if (extra != null) {
+  alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
   return;
   
   }
