@@ -245,6 +245,9 @@ const addManualUPIPaymentRequest = async (req, res) => {
 const getIntCasinoUrl = async(req,res) =>{
     try {
         let auth = req.cookies.auth;
+        if(!auth){
+            return res.status(200).message({status:false,message:"Auth is not found"})
+        }
          const user = await getUserDataByAuthToken(auth)
          let gameId = req.body.gameId
          console.log("gameId", gameId)
@@ -267,14 +270,15 @@ const getIntCasinoUrl = async(req,res) =>{
         }
 
         let phone = user?.id
+        let wallet = user.wallet
         console.log(user,"user is hwere")
 
         let payload = {
-            userid:1234,
+            userid:phone.toString(),
             game_uid:gameId.toString(),
             token:"f17da5723b65ab727cd389a047be2537",
             key:"aeb7893969670273abd205582e7f84e0",
-            wallet:100
+            wallet:wallet
         }
 
         let getUrl = await axios.post("https://xxxgaming.online/api/v1",payload)
@@ -283,6 +287,8 @@ const getIntCasinoUrl = async(req,res) =>{
        
         if(getUrl.data.status == 1){
             res.status(200).json({status:true,message:getUrl.data.url})
+        }else{
+            res.status(200).json({status:false,message:res.data.message})
         }
 
     } catch (error) {
@@ -1045,7 +1051,7 @@ const verifyWowPayPayment = async (req, res) => {
 
 // helpers ---------------
 const getUserDataByAuthToken = async (authToken) => {
-    let [users] = await connection.query('SELECT `phone`, `code`,`name_user`,`invite`,`id` FROM users WHERE `token` = ? ', [authToken]);
+    let [users] = await connection.query('SELECT `phone`, `code`,`name_user`,`invite`,`id`,`win_wallet` FROM users WHERE `token` = ? ', [authToken]);
     const user = users?.[0]
 
 
@@ -1058,6 +1064,8 @@ const getUserDataByAuthToken = async (authToken) => {
         code: user.code,
         username: user.name_user,
         invite: user.invite,
+        id:user.id,
+        wallet : user.win_wallet
     }
 }
 

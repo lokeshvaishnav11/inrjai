@@ -15,13 +15,13 @@ const mysql = require('mysql2/promise');
 
 // const mysql = require('mysql2/promise');
 
-const connection = mysql.createPool({
-        host: '127.0.0.1',
-        user: 'lokesh',
-        password: 'lokeshkumar123',
-        database: 'cgame',
-        port: 3306
-    });
+// const connection = mysql.createPool({
+//         host: '127.0.0.1',
+//         user: 'lokesh',
+//         password: 'lokeshkumar123',
+//         database: 'cgame',
+//         port: 3306
+//     });
 
 // #1D4268
 
@@ -33,11 +33,11 @@ const connection = mysql.createPool({
 //     port: 3306
 // });
 
-// const connection = mysql.createPool({
-//   host: 'localhost',
-//   user: 'avaitorgame',        // same as MySQL user created
-//   password: 'yourpassword',   // same password as above
-//   database: 'gameavatior'
-// });
+const connection = mysql.createPool({
+  host: '127.0.0.1',  // or '127.0.0.1'
+  user: 'avaitorgame',
+  password: 'Avatior123',
+  database: 'gamedb'
+});
 
 module.exports = connection;
