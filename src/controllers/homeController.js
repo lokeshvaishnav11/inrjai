@@ -50,8 +50,9 @@ const homePage = async (req, res) => {
     console.log(auth,user[0],"guhijoptfyguhij")
     if(!auth){
         let money = false;
+        let extra = null
 
-        return res.render("home/index.ejs", { app,telegram,money, gameData ,categories});
+        return res.render("home/index.ejs", { app,telegram,money,extra, gameData ,categories});
 
     }
     else{
