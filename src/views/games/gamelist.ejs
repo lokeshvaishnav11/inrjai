@@ -94,6 +94,8 @@
       // agar URL return ho raha hai to redirect
       if(res.data){
         window.location.href = res.data.message; // assuming the URL is in res.data.message
+        document.getElementById("pageLoader").style.display = "none";
+
       }else{
         document.getElementById("pageLoader").style.display = "none";
         alert("Game URL not found.");
@@ -104,6 +106,119 @@
       console.error(err);
     });
   }
+
+
+   // all games from backend
+  const allGames = <%- JSON.stringify(gameData.games || []) %>;
+
+  let currentCategory = "Popular";
+
+
+
+  // default render
+  window.onload = () => {
+    renderGames("Popular");
+  };
+
+
+
+  // category select
+  function selectCategory(category, el) {
+
+    currentCategory = category;
+
+    // active class remove
+    document.querySelectorAll(".fun-tab-item")
+      .forEach(item => item.classList.remove("activeClassName"));
+
+    document.querySelectorAll(".tab_item")
+      .forEach(item => item.classList.remove("tab_active"));
+
+      document.getElementById("gameListTitle").innerText = category ;
+
+    // active class add
+    el.classList.add("activeClassName");
+
+    const tab = el.querySelector(".tab_item");
+
+    if(tab){
+      tab.classList.add("tab_active");
+    }
+
+    renderGames(category);
+  }
+
+
+
+  // render games
+  function renderGames(category) {
+
+    const gameList = document.getElementById("gameList");
+
+    let filtered = [];
+
+    if(category === "Popular"){
+      filtered = allGames.filter(
+        g => g.category === "Popular"
+      );
+    } else {
+
+      filtered = allGames.filter(
+        g => g.category?.toLowerCase() === category.toLowerCase()
+      );
+
+    }
+
+
+    gameList.innerHTML = filtered.map(item => {
+
+      return `
+
+        <div
+          data-v-d06787cb=""
+          onclick="${
+            item.route
+              ? `window.location.href='${item.route}'`
+              : `openGame('${item.gameID}')`
+          }"
+        >
+
+          <div data-v-d06787cb="" class="item">
+
+            <img
+              data-v-d06787cb=""
+              src="${item.img}"
+              alt=""
+            />
+
+          </div>
+
+          <div data-v-d06787cb="" class="win-odds">
+
+            <span data-v-d06787cb="">RTP</span>
+
+            <span data-v-d06787cb="">95.11%</span>
+
+            <div
+              data-v-d06787cb=""
+              class="win-p"
+              style="width:95.11%"
+            ></div>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+  }
+
+
+
+
+
     </script>
     <script src="/web/config?_key=ar051"></script>
 
@@ -911,135 +1026,37 @@
                   overflow-x: auto;
                 "
               >
-                <div
-                  class="fun-tab-item activeClassName"
-                  style="color: rgb(22, 119, 255)"
-                >
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item tab_active">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class=""
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195836xmjh.png"
-                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195836xmjh.png"
-                        /><span data-v-0a9bf0c5="">Popular</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div class="fun-tab-item" style="">
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class=""
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195804ia1x.png"
-                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317195804ia1x.png"
-                        /><span data-v-0a9bf0c5="">Lottery</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div class="fun-tab-item">
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class=""
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755279vxy.png"
-                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755279vxy.png"
-                        /><span data-v-0a9bf0c5="">Mini games</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div class="fun-tab-item">
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class=""
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175501m13j.png"
-                          src="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175501m13j.png"
-                        /><span data-v-0a9bf0c5="">Slots</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div class="fun-tab-item">
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class="ar-lazyload"
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260324175552qchj.png"
-                        /><span data-v-0a9bf0c5="">Fishing</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div class="fun-tab-item">
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class="ar-lazyload"
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200219ci94.png"
-                        /><span data-v-0a9bf0c5="">PVC</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div class="fun-tab-item">
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class="ar-lazyload"
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_202603241755127vud.png"
-                        /><span data-v-0a9bf0c5="">Casino</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div class="fun-tab-item">
-                  <div class="fun-tab-item__wrap">
-                    <div class="fun-tab-item__label">
-                      <div data-v-0a9bf0c5="" class="tab_item">
-                        <img
-                          data-v-0a9bf0c5=""
-                          class="ar-lazyload"
-                          data-origin="https://ossimg.jaiclubpay.com/jaiclub/gamecategory/gamecategory_20260317200239w59n.png"
-                        /><span data-v-0a9bf0c5="">Sports</span>
-                      </div>
-                    </div>
-                    <!--v-if-->
-                  </div>
-                </div>
-                <div
-                  class="fun-tabs__active-line"
-                  style="
-                    transition: 300ms;
-                    width: 0px;
-                    height: 3px;
-                    transform: translate3d(53.5px, 0px, 0px);
-                    background-color: rgb(22, 119, 255);
-                  "
-                ></div>
+
+              <% categories.forEach((cat, index) => { %>
+
+    <div
+      class="fun-tab-item <%= index === 0 ? 'activeClassName' : '' %>"
+      onclick="selectCategory('<%= cat.name %>', this)"
+    >
+      <div class="fun-tab-item__wrap">
+        <div class="fun-tab-item__label">
+
+          <div
+            data-v-0a9bf0c5=""
+            class="tab_item <%= index === 0 ? 'tab_active' : '' %>"
+          >
+            <img
+              data-v-0a9bf0c5=""
+              src="<%= cat.icon %>"
+            />
+
+            <span data-v-0a9bf0c5="">
+              <%= cat.name %>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <% }) %>
+
+                
               </div>
             </div>
           </div>
@@ -1050,8 +1067,9 @@
             data-v-0a9bf0c5=""
             class="gamesList__container"
           >
-            <div data-v-e4c17073="" class="gamesList__container-title">
-              Popular
+            <div data-v-e4c17073="" class="gamesList__container-title" id="gameListTitle" style="color: white; font-size: 16px; font-weight: 500;">
+            <span data-v-e4c17073="" class="gamesList__container-title-label">Popular</span>
+              
             </div>
             <div
               data-v-df3cc798=""
@@ -1064,35 +1082,7 @@
                   <!--v-if-->
                   
 
-                                 <div data-v-d06787cb class="list">
-  <% gameData?.games?.forEach((item) => { %>
-   
-     <div data-v-d06787cb="" onclick="<%= item.route 
-    ? `window.location.href='${item.route}'` 
-    : `openGame('${item.gameID}')` 
-  %>">
-
-       
-                      <div data-v-d06787cb="" class="item">
-                        <img
-                          data-v-d06787cb=""
-                          src="<%= item.img %>"
-                          alt=""
-                          data-img="/assets/png/avatar-2f23f3bd.webp"
-                        /><!--v-if-->
-                      </div>
-                      <div data-v-d06787cb="" class="win-odds">
-                        <span data-v-d06787cb="">RTP</span
-                        ><span data-v-d06787cb="">95.11%</span>
-                        <div
-                          data-v-d06787cb=""
-                          class="win-p"
-                          style="width: 95.11%"
-                        ></div>
-                      </div>
-                    </div>
-  <% }) %>
-</div>
+                                 <div data-v-d06787cb class="list" id="gameList" ></div>
                 </div>
               </div>
               <!--v-if--><!--v-if--><!--v-if--><!-- 小游戏、捕鱼 --><!--v-if--><!--v-if-->

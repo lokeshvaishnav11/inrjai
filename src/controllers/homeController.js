@@ -507,7 +507,7 @@ const myProfilePage = async (req, res) => {
 const gameList = async (req, res) => {
     // return res.render("games/gamelist.ejs"); 
     //  agar datagames.json se data chahiye to niche wala code use karna hai
-    return res.render("games/gamelist.ejs", { gameData });
+    return res.render("games/gamelist.ejs", { gameData, categories });
 
 }
 

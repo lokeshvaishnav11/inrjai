@@ -59,6 +59,10 @@
       var money = <%= money %>;
  
   console.log(money,"money")
+  if (money === false) {
+    window.location.href = '/login';
+    return;
+  }
   if (money >= 50000) {
   alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
   return;
@@ -77,6 +81,7 @@
       // agar URL return ho raha hai to redirect
        if(res.data){
         window.location.href = res.data.message; // assuming the URL is in res.data.message
+        document.getElementById("pageLoader").style.display = "none";
       } else {
          document.getElementById("pageLoader").style.display = "none";
         alert("Failed to get game URL. Please try again later.");
