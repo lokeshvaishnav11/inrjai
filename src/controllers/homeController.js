@@ -244,7 +244,12 @@ const comissionDetailsPage = async(req,res)=>{
 
 // wallet
 const walletPage = async (req, res) => {
-    return res.render("wallet/index.ejs");
+    let auth = req.cookies.auth;
+    const [user] = await connection.query('SELECT `level` FROM users WHERE `token` = ? ', [auth]);
+    const [settings] = await connection.query('SELECT `cskh` FROM admin');
+    let cskh = settings[0].cskh;
+    let level = user[0].level;
+    return res.render("member/index.ejs", { level, cskh });
 }
 
 // const rechargePage = async (req, res) => {
