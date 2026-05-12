@@ -81,7 +81,6 @@
       var money = <%= money %>;
       var extra = <%= extra %>
  
-  console.log(money,"money")
   if (money === false) {
     window.location.href = '/login';
     return;
@@ -163,7 +162,7 @@
         <div data-v-d5b035b5="" class="game-section__grid-item"
           onclick="${
             item.route 
-              ? `window.location.href='${item.route}'` 
+              ? `handlePlayClick()` 
               : `openGame('${item.gameID}')`
           }"
         >
@@ -456,7 +455,7 @@
           <!--v-if-->
         </div>
         <div data-v-b313c6ed="" class="recommended-games__list">
-          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick=handlePlayClick()>
+          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="handlePlayClick()">
             <img
               data-v-b313c6ed=""
               class="recommended-games__list-item__cover"
