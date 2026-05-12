@@ -54,6 +54,28 @@
 
 <script>
 
+  function handlePlayClick() {
+  var money = <%= money %>;
+   var extra = <%= extra %>
+ 
+  console.log(money,"money")
+  if (money >= 50000) {
+  alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+  return;
+  
+  }
+
+   if (extra != null) {
+  alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+  return;
+  
+  }
+
+
+
+  window.location.href = "/aviator";
+}
+
     function openGame(gameId) {
 
       var money = <%= money %>;
@@ -434,7 +456,7 @@
           <!--v-if-->
         </div>
         <div data-v-b313c6ed="" class="recommended-games__list">
-          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="window.location.href='/aviator'">
+          <div data-v-b313c6ed="" class="recommended-games__list-item" onclick="handlePlayClick()>
             <img
               data-v-b313c6ed=""
               class="recommended-games__list-item__cover"
