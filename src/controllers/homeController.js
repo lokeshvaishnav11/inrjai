@@ -47,7 +47,6 @@ const homePage = async (req, res) => {
     const [user] = await connection.query('SELECT `win_wallet`,`money` FROM users WHERE `token` = ? ', [auth]);
     let app = setting[0].app;
     let telegram = setting[0].telegram;
-    console.log(auth,user[0],"guhijoptfyguhij")
     if(!auth){
         let money = false;
         let extra = null
