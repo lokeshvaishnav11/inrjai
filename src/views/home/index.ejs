@@ -885,7 +885,7 @@ function openGame(gameId) {
         return `
         <div data-v-d5b035b5="" class="game-section__grid-item"
           onclick="${item.route
-            ? handlePlayClick()
+            ? "handlePlayClick()"
             : `openGame('${item.gameID}')`
           }"
         >
