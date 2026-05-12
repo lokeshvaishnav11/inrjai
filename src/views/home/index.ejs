@@ -47,132 +47,6 @@
 
 
 
-  <script>
-
-    function handlePlayClick() {
-      var money = <%= money %>;
-      var extra = <%= extra %>
-
-        console.log(money, "money")
-      if (money >= 50000) {
-        alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
-        return;
-
-      }
-
-      if (extra != null) {
-        alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
-        return;
-
-      }
-
-
-
-      window.location.href = "/aviator";
-    }
-
-function openGame(gameId) {
-
-      var money = <%= money %>;
-      var extra = <%= extra %>;
- 
-     if (money === false) {
-        window.location.href = '/login';
-        return;
-      }
-      if (money >= 50000) {
-        alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
-        return;
-
-      }
-      if (extra != null) {
-        alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
-        return;
-
-      }
-      // loader show
-      document.getElementById("pageLoader").style.display = "flex";
-
-      console.log("Opening game with ID:", gameId);
-      axios.post('/get-int-url', {
-        gameId: gameId
-      })
-        .then(res => {
-          console.log(res.data);
-
-          // agar URL return ho raha hai to redirect
-          if (res.data) {
-            window.location.href = res.data.message; // assuming the URL is in res.data.message
-            document.getElementById("pageLoader").style.display = "none";
-          } else {
-            document.getElementById("pageLoader").style.display = "none";
-            alert("Failed to get game URL. Please try again later.");
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    }
-  
-
-
-    let currentCategory = "Popular";
-
-    // default render
-    window.onload = () => {
-      renderGames("Popular");
-    };
-
-    function selectCategory(category, el) {
-      currentCategory = category;
-
-      // active class toggle
-      document.querySelectorAll(".game-tabs__scroll-item")
-        .forEach(item => item.classList.remove("speciallclass"));
-
-      el.classList.add("speciallclass");
-
-      renderGames(category);
-    }
-
-    function renderGames(category) {
-      const grid = document.getElementById("gameGrid");
-
-      let filtered = [];
-
-      if (category === "Popular") {
-        filtered = allGames.filter(g => g.category === "Popular");
-      } else {
-        filtered = allGames.filter(g =>
-          g.category?.toLowerCase() === category.toLowerCase()
-        );
-      }
-
-      // max 6 items
-      filtered = filtered.slice(0, 6);
-
-
-
-      grid.innerHTML = filtered.map(item => {
-        return `
-        <div data-v-d5b035b5="" class="game-section__grid-item"
-          onclick="${item.route
-            ? `handlePlayClick()`
-            : `openGame('${item.gameID}')`
-          }"
-        >
-          <img   data-v-d5b035b5="" src="${item.img}" />
-        </div>
-      `;
-      }).join("");
-    }
-
-
-
-
-
-
-  </script>
 
   <style>
     .page-loader {
@@ -902,5 +776,133 @@ function openGame(gameId) {
     </div>
   </div>
 </body>
+
+
+  <script>
+
+    function handlePlayClick() {
+      var money = <%= money %>;
+      var extra = <%= extra %>;
+
+        console.log(money, "money")
+      if (money >= 50000) {
+        alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        return;
+
+      }
+
+      if (extra != null) {
+        alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        return;
+
+      }
+
+
+
+      window.location.href = "/aviator";
+    }
+
+function openGame(gameId) {
+
+      var money = <%= money %>;
+      var extra = <%= extra %>;
+ 
+     if (money === false) {
+        window.location.href = '/login';
+        return;
+      }
+      if (money >= 50000) {
+        alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        return;
+
+      }
+      if (extra != null) {
+        alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        return;
+
+      }
+      // loader show
+      document.getElementById("pageLoader").style.display = "flex";
+
+      console.log("Opening game with ID:", gameId);
+      axios.post('/get-int-url', {
+        gameId: gameId
+      })
+        .then(res => {
+          console.log(res.data);
+
+          // agar URL return ho raha hai to redirect
+          if (res.data) {
+            window.location.href = res.data.message; // assuming the URL is in res.data.message
+            document.getElementById("pageLoader").style.display = "none";
+          } else {
+            document.getElementById("pageLoader").style.display = "none";
+            alert("Failed to get game URL. Please try again later.");
+          }
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+  
+
+
+    let currentCategory = "Popular";
+
+    // default render
+    window.onload = () => {
+      renderGames("Popular");
+    };
+
+    function selectCategory(category, el) {
+      currentCategory = category;
+
+      // active class toggle
+      document.querySelectorAll(".game-tabs__scroll-item")
+        .forEach(item => item.classList.remove("speciallclass"));
+
+      el.classList.add("speciallclass");
+
+      renderGames(category);
+    }
+
+    function renderGames(category) {
+      const grid = document.getElementById("gameGrid");
+
+      let filtered = [];
+
+      if (category === "Popular") {
+        filtered = allGames.filter(g => g.category === "Popular");
+      } else {
+        filtered = allGames.filter(g =>
+          g.category?.toLowerCase() === category.toLowerCase()
+        );
+      }
+
+      // max 6 items
+      filtered = filtered.slice(0, 6);
+
+
+
+      grid.innerHTML = filtered.map(item => {
+        return `
+        <div data-v-d5b035b5="" class="game-section__grid-item"
+          onclick="${item.route
+            ? handlePlayClick()
+            : `openGame('${item.gameID}')`
+          }"
+        >
+          <img   data-v-d5b035b5="" src="${item.img}" />
+        </div>
+      `;
+      }).join("");
+    }
+
+
+
+
+
+
+  </script>
 
 </html>
