@@ -1082,8 +1082,8 @@
                             real
                             guarantee of honesty in the gambling industry.</p>
                         <h6 class="secondary-font">HOW TO PLAY</h6>
-                        <iframe width="420" height="600" src="https://www.youtube.com/embed/PZejs3XDCSY?playsinline=1">
-                        </iframe>
+                        <!-- <iframe width="420" height="600" src="https://www.youtube.com/embed/PZejs3XDCSY?playsinline=1">
+                        </iframe> -->
                         <h6 class="secondary-font mt-2">Aviator is as easy to play as 1-2-3:</h6>
                         <div class="steps-container">
                             <div class="step step-1">
@@ -1431,34 +1431,34 @@
                     swal('Error', errorMessage, "error");
                     'false';
                 }
-                $.ajax({
-                    url: 'get_user_details',
-                    type: 'get',
-                    success: function (result) {
-                        if (result.isSuccess) {
-                            $("#avatar_img").prop('src', result.data.avatar)
-                            $("#username").text(result.data.username)
-                            if (result.data.notification != '') {
-                                swal(
-                                    'Notification',
-                                    result.data.notification,
-                                    'success'
-                                ).then(function () {
-                                    $.ajax({
-                                        url: 'update_is_notify',
-                                        type: 'post',
-                                        data: {
-                                            'id': result.data.id,
-                                            'request_type': result.data.request_type
-                                        },
-                                    });
-                                });
-                            }
-                        }
-                    }
+                // $.ajax({
+                //     url: 'get_user_details',
+                //     type: 'get',
+                //     success: function (result) {
+                //         if (result.isSuccess) {
+                //             $("#avatar_img").prop('src', result.data.avatar)
+                //             $("#username").text(result.data.username)
+                //             if (result.data.notification != '') {
+                //                 swal(
+                //                     'Notification',
+                //                     result.data.notification,
+                //                     'success'
+                //                 ).then(function () {
+                //                     $.ajax({
+                //                         url: 'update_is_notify',
+                //                         type: 'post',
+                //                         data: {
+                //                             'id': result.data.id,
+                //                             'request_type': result.data.request_type
+                //                         },
+                //                     });
+                //                 });
+                //             }
+                //         }
+                //     }
 
 
-                });
+                // });
                 // $.ajax({
                 //     url: '/game/currentlybet',
                 //     type: "POST",
