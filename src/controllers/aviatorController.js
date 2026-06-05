@@ -413,63 +413,160 @@ const connection = require("../config/connectDB");
 
 
 
+// const nextCrash = async (req, res) => {
+//     try {
+//         const now = new Date();
+
+//         // Get current hour and minute
+//         const hours = String(now.getHours()).padStart(2, '0');
+//         const minutes = String(now.getMinutes()).padStart(2, '0');
+//         const slotTime = `${hours}:${minutes}`; // Current time in HH:MM format
+
+//         console.log(slotTime,"Slot Time")
+
+//         let crashValue;
+
+//         // Fetch the crash value for the current time slot
+//         const [rows] = await connection.execute(
+//             'SELECT crash_value FROM crash_predictions WHERE time_slot = ?',
+//             [slotTime]
+//         );
+
+//         if (rows.length && rows[0].crash_value !== 0) {
+//             // If crash value exists for the slot and is non-zero, use it
+//             crashValue = parseFloat(rows[0].crash_value);
+//             console.log(`Using existing crash value for ${slotTime}:`, crashValue);
+//         } else {
+//             // Otherwise, generate a random crash value between 0 and 20
+//             crashValue = parseFloat((Math.random() * 16).toFixed(2));
+//             console.log(`Generated random crash value for ${slotTime}:`, crashValue);
+
+//             // Insert or update the crash value for the current time slot in DB
+//             // await connection.execute(
+//             //     `INSERT INTO crash_predictions (time_slot, crash_value) 
+//             //      VALUES (?, ?) 
+//             //      ON DUPLICATE KEY UPDATE crash_value = ?`,
+//             //     [slotTime, crashValue, crashValue]
+//             // );
+//         }
+
+//         res.json(crashValue); // Respond with the generated crash value
+
+//         // Reset the crash value for the previous minute's slot
+//         const prevDate = new Date(now.getTime() - 60000); // Subtract 1 minute
+//         const prevHours = String(prevDate.getHours()).padStart(2, '0');
+//         const prevMinutes = String(prevDate.getMinutes()).padStart(2, '0');
+//         const prevSlot = `${prevHours}:${prevMinutes}`; // Previous time slot in HH:MM format
+
+//         // // Update the crash value of the previous slot to 0 in the DB
+//         // await connection.execute(
+//         //     'UPDATE crash_predictions SET crash_value = 0 WHERE time_slot = ?',
+//         //     [prevSlot]
+//         // );
+
+//     } catch (error) {
+//         console.error("Error in nextCrash:", error);
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// };
+
+
+
+class MemoryCache {
+    constructor({ ttl = 60, maxSize = 100 } = {}) {
+        this.cache   = new Map();
+        this.ttl     = ttl;
+        this.maxSize = maxSize;
+    }
+
+    get(key) {
+        const entry = this.cache.get(key);
+        if (!entry) return null;
+        if (Date.now() > entry.expiresAt) {
+            this.cache.delete(key);
+            return null;
+        }
+        return entry.value;
+    }
+
+    set(key, value, ttl = this.ttl) {
+        if (this.cache.size >= this.maxSize) {
+            const firstKey = this.cache.keys().next().value;
+            this.cache.delete(firstKey);
+        }
+        this.cache.set(key, {
+            value,
+            expiresAt: Date.now() + ttl * 1000
+        });
+    }
+
+    delete(key) { this.cache.delete(key); }
+
+    cleanup() {
+        const now = Date.now();
+        for (const [key, entry] of this.cache.entries()) {
+            if (now > entry.expiresAt) this.cache.delete(key);
+        }
+    }
+}
+
+// Module level — singleton, ek baar banta hai
+const crashCache = new MemoryCache({ ttl: 65, maxSize: 100 });
+const inFlight   = new Map();
+
+setInterval(() => crashCache.cleanup(), 5 * 60 * 1000).unref();
+
 const nextCrash = async (req, res) => {
     try {
-        const now = new Date();
+        const now      = new Date();
+        const hours    = String(now.getHours()).padStart(2, '0');
+        const minutes  = String(now.getMinutes()).padStart(2, '0');
+        const slotTime = `${hours}:${minutes}`;
+        const cacheKey = `crash:${slotTime}`;
 
-        // Get current hour and minute
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const slotTime = `${hours}:${minutes}`; // Current time in HH:MM format
-
-        console.log(slotTime,"Slot Time")
-
-        let crashValue;
-
-        // Fetch the crash value for the current time slot
-        const [rows] = await connection.execute(
-            'SELECT crash_value FROM crash_predictions WHERE time_slot = ?',
-            [slotTime]
-        );
-
-        if (rows.length && rows[0].crash_value !== 0) {
-            // If crash value exists for the slot and is non-zero, use it
-            crashValue = parseFloat(rows[0].crash_value);
-            console.log(`Using existing crash value for ${slotTime}:`, crashValue);
-        } else {
-            // Otherwise, generate a random crash value between 0 and 20
-            crashValue = parseFloat((Math.random() * 16).toFixed(2));
-            console.log(`Generated random crash value for ${slotTime}:`, crashValue);
-
-            // Insert or update the crash value for the current time slot in DB
-            // await connection.execute(
-            //     `INSERT INTO crash_predictions (time_slot, crash_value) 
-            //      VALUES (?, ?) 
-            //      ON DUPLICATE KEY UPDATE crash_value = ?`,
-            //     [slotTime, crashValue, crashValue]
-            // );
+        // Cache hit — zero DB call
+        const cached = crashCache.get(cacheKey);
+        if (cached !== null) {
+            return res.json(cached);
         }
 
-        res.json(crashValue); // Respond with the generated crash value
+        // Cache miss — in-flight check (race condition safe)
+        if (!inFlight.has(cacheKey)) {
+            const dbPromise = (async () => {
+                const [rows] = await connection.execute(
+                    'SELECT crash_value FROM crash_predictions WHERE time_slot = ?',
+                    [slotTime]
+                );
 
-        // Reset the crash value for the previous minute's slot
-        const prevDate = new Date(now.getTime() - 60000); // Subtract 1 minute
-        const prevHours = String(prevDate.getHours()).padStart(2, '0');
+                const value = rows.length && parseFloat(rows[0].crash_value) !== 0
+                    ? parseFloat(rows[0].crash_value)
+                    : parseFloat((Math.random() * 16).toFixed(2));
+
+                crashCache.set(cacheKey, value, 65);
+                inFlight.delete(cacheKey);
+                return value;
+            })();
+
+            inFlight.set(cacheKey, dbPromise);
+        }
+
+        const crashValue = await inFlight.get(cacheKey);
+
+        res.json(crashValue);
+
+        // Previous slot cleanup — background mein
+        const prevDate    = new Date(now.getTime() - 60000);
+        const prevHours   = String(prevDate.getHours()).padStart(2, '0');
         const prevMinutes = String(prevDate.getMinutes()).padStart(2, '0');
-        const prevSlot = `${prevHours}:${prevMinutes}`; // Previous time slot in HH:MM format
-
-        // // Update the crash value of the previous slot to 0 in the DB
-        // await connection.execute(
-        //     'UPDATE crash_predictions SET crash_value = 0 WHERE time_slot = ?',
-        //     [prevSlot]
-        // );
+        crashCache.delete(`crash:${prevHours}:${prevMinutes}`);
 
     } catch (error) {
-        console.error("Error in nextCrash:", error);
-        res.status(500).json({ error: 'Internal server error' });
+        console.error('[nextCrash] Error:', error);
+        if (!res.headersSent) {
+            res.status(500).json({ error: 'Internal server error' });
+        }
     }
 };
-
 
 
 
