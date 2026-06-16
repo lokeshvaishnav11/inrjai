@@ -178,8 +178,8 @@ const addManualUPIPaymentRequest = async (req, res) => {
             trade_type: 'INRUPI',      //INRUPI         // test channel for collection
             order_sn: orderId,  // unique order number
             money: moneyp * 100,                // order amount
-            notify_url: 'https://1xbet99.vip/callback', // your callback URL
-            return_url: 'https://1xbet99.vip/home', // user redirect URL
+            notify_url: 'https://1xbet365.club/callback', // your callback URL
+            return_url: 'https://1xbet365.club/home', // user redirect URL
             subject: 'Test Order',
             user_id: addon1,
             ip: req.ip        // order description
@@ -335,7 +335,7 @@ const addManualUPIPaymentRequesttwo = async (req, res) => {
     const api_key = "3fabaa49e82e82852f579f77b88c85b5";
 
     const amount = Number(moneyp).toFixed(2);
-    const callback_url = "https://1xbet99.vip/watchpays-callback";
+    const callback_url = "https://1xbet365.club/watchpays-callback";
 
     // ==============================
     // SIGNATURE GENERATION
@@ -481,7 +481,7 @@ const addBondPayPaymentRequest = async (req, res) => {
             api_key: BONDPAY_API_KEY,
             amount: amount.toFixed(2),
             merchant_order_no: merchantOrderNo,
-            callback_url: "https://1xbet99.vip/callback/bondpay",
+            callback_url: "https://1xbet365.club/callback/bondpay",
             extra: 0
         };
 
@@ -1268,7 +1268,7 @@ const callbackfromgateway = async (req, res) => {
         //     msg
         // });
 
-        const resdata = await axios.post("https://1xbet99.vip/api/webapi/admin/rechargeDuyet", {
+        const resdata = await axios.post("https://1xbet365.club/api/webapi/admin/rechargeDuyet", {
             id: rows[0]?.id,
             type: "confirm"
         })
@@ -1341,7 +1341,7 @@ const bondPayCallback = async (req, res) => {
     // 4. Optional: Call internal endpoint after success
     if (newStatus === "success") {
       try {
-        const resdata = await axios.post("https://1xbet99.vip/api/webapi/admin/rechargeDuyet", {
+        const resdata = await axios.post("https://1xbet365.club/api/webapi/admin/rechargeDuyet", {
           id: recharge.id,
           type: "confirm"
         });
@@ -1417,7 +1417,7 @@ const watchPaysCallback = async (req, res) => {
 
     // 6. Credit wallet (optional: your internal API)
      try {
-        const resdata = await axios.post("https://1xbet99.vip/api/webapi/admin/rechargeDuyet", {
+        const resdata = await axios.post("https://1xbet365.club/api/webapi/admin/rechargeDuyet", {
           id: recharge.id,
           type: "confirm"
         });
