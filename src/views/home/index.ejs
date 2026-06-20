@@ -45,6 +45,10 @@
   const allGames = <%- JSON.stringify(gameData?.games || []) %>;
   const extra = <%- JSON.stringify(extra || null) %>;
 
+  function showWithdrawPopup() {
+    document.getElementById("withdrawPopup").style.display = "flex";
+}
+
   window.onload = function() {
 
     console.log("All games data:", extra);
@@ -56,12 +60,14 @@
     var money = <%= money %>;
 
     if (money >= 50000) {
-      alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+      // alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+      showWithdrawPopup();
       return;
     }
 
      if (extra != null) {
-        alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        // alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        showWithdrawPopup();
         return;
 
       }
@@ -75,12 +81,14 @@
     var money = <%= money %>;
 
     if (money >= 50000) {
-      alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+      // alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+      showWithdrawPopup();
       return;
     }
 
      if (extra != null) {
-        alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        // alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        showWithdrawPopup();
         return;
 
       }
@@ -100,7 +108,8 @@
     return;
   }
   if (money >= 50000) {
-  alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+  // alert("100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+  showWithdrawPopup();
   return;
   
   }
@@ -108,7 +117,8 @@
  
 
   if (extra != null) {
-        alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        // alert("games locked !,100% सुरक्षित विड्रॉ के बाद ही दोबारा गेम शुरू करें।");
+        showWithdrawPopup();
         return;
 
       }
@@ -249,7 +259,7 @@
   <link rel="modulepreload" as="script" crossorigin="" href="/assets/js/page-home-Casino-760ce30d.js">
   <link rel="stylesheet" href="/assets/css/page-home-Casino-c8cf7c0b.css">
   <link rel="stylesheet" href="/assets/css/page-home-other-a02667c7.css">
-  <link rel="manifest" href="blob:https://jaiclub365.com/c3082714-3a00-43b6-b747-17102102b9b0">
+  <!-- <link rel="manifest" href="blob:https://jaiclub001.com/c3082714-3a00-43b6-b747-17102102b9b0"> -->
 </head>
 
 <body cz-shortcut-listen="true" style="font-size: 12px; margin: 0px">
@@ -357,7 +367,7 @@
 
                 <!-- 滚动通知栏 -->
                 <div data-v-6666ec94="" class="noticeBar__container">
-                  <img src="https://jaiclub365.com/assets/svg/noticeBarSpeaker-0ddc3721.svg" class="notice_svg" />
+                  <img src="https://jaiclub001.com/assets/svg/noticeBarSpeaker-0ddc3721.svg" class="notice_svg" />
                   <div class="noticeBar__container-body">
                     <div class="noticeBar__container-body-text">
                       🎉🎉🎉Welcome to join the 1xbet platform. We provide a brand new
@@ -510,8 +520,8 @@
                         <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item">
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-img">
                             <img data-v-ffb14677="" class="ar-lazyload"
-                              data-origin="https://jaiclub365.com/assets/png/18-52955242.webp"
-                              src="https://jaiclub365.com/assets/png/18-52955242.webp" />
+                              data-origin="https://jaiclub001.com/assets/png/18-52955242.webp"
+                              src="https://jaiclub001.com/assets/png/18-52955242.webp" />
                           </div>
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-info">
                             <h1 data-v-ffb14677="">Mem***PYQ</h1>
@@ -637,18 +647,18 @@
                             style="order: 2">
                             <!-- 头像框 -->
                             <div data-v-68403b00="" class="profit-rank__podium-item__avatar" style="
-                      background: url(&quot;https://jaiclub365.com/assets/png/border1-3b6518ec.webp&quot;)
+                      background: url(&quot;https://jaiclub001.com/assets/png/border1-3b6518ec.webp&quot;)
                         center center / 100% 100% no-repeat;
                     ">
-                              <img data-v-68403b00="" data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
-                                class="ar-lazyload" data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                                src="https://jaiclub365.com/assets/png/1-a6662edb.webp" />
+                              <img data-v-68403b00="" data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
+                                class="ar-lazyload" data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                                src="https://jaiclub001.com/assets/png/1-a6662edb.webp" />
                             </div>
                             <!-- 头像下方三角形 -->
                             <div data-v-68403b00="" class="profit-rank__podium-item__triangle"></div>
                             <span data-v-68403b00="" class="profit-rank__podium-item__name">Mem***KCX</span>
                             <div data-v-68403b00="" class="profit-rank__podium-item__amount">
-                              <img data-v-68403b00="" src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                              <img data-v-68403b00="" src="https://jaiclub001.com/assets/png/coinStack-85b61210.webp"
                                 class="coin-icon" /><span data-v-68403b00="">₹12,418,671,912.08</span>
                             </div>
                           </div>
@@ -656,18 +666,18 @@
                             style="order: 1">
                             <!-- 头像框 -->
                             <div data-v-68403b00="" class="profit-rank__podium-item__avatar" style="
-                      background: url(&quot;https://jaiclub365.com/assets/png/border2-7a806be7.webp&quot;)
+                      background: url(&quot;https://jaiclub001.com/assets/png/border2-7a806be7.webp&quot;)
                         center center / 100% 100% no-repeat;
                     ">
-                              <img data-v-68403b00="" data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
-                                class="ar-lazyload" data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                                src="https://jaiclub365.com/assets/png/1-a6662edb.webp" />
+                              <img data-v-68403b00="" data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
+                                class="ar-lazyload" data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                                src="https://jaiclub001.com/assets/png/1-a6662edb.webp" />
                             </div>
                             <!-- 头像下方三角形 -->
                             <div data-v-68403b00="" class="profit-rank__podium-item__triangle"></div>
                             <span data-v-68403b00="" class="profit-rank__podium-item__name">Mem***4H1</span>
                             <div data-v-68403b00="" class="profit-rank__podium-item__amount">
-                              <img data-v-68403b00="" src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                              <img data-v-68403b00="" src="https://jaiclub001.com/assets/png/coinStack-85b61210.webp"
                                 class="coin-icon" /><span data-v-68403b00="">₹618,565,853.08</span>
                             </div>
                           </div>
@@ -675,103 +685,103 @@
                             style="order: 3">
                             <!-- 头像框 -->
                             <div data-v-68403b00="" class="profit-rank__podium-item__avatar" style="
-                      background: url(&quot;https://jaiclub365.com/assets/png/border3-cfec4a7d.webp&quot;)
+                      background: url(&quot;https://jaiclub001.com/assets/png/border3-cfec4a7d.webp&quot;)
                         center center / 100% 100% no-repeat;
                     ">
-                              <img data-v-68403b00="" data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
-                                class="ar-lazyload" data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                                src="https://jaiclub365.com/assets/png/1-a6662edb.webp" />
+                              <img data-v-68403b00="" data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
+                                class="ar-lazyload" data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                                src="https://jaiclub001.com/assets/png/1-a6662edb.webp" />
                             </div>
                             <!-- 头像下方三角形 -->
                             <div data-v-68403b00="" class="profit-rank__podium-item__triangle"></div>
                             <span data-v-68403b00="" class="profit-rank__podium-item__name">Mem***CVN</span>
                             <div data-v-68403b00="" class="profit-rank__podium-item__amount">
-                              <img data-v-68403b00="" src="https://jaiclub365.com/assets/png/coinStack-85b61210.webp"
+                              <img data-v-68403b00="" src="https://jaiclub001.com/assets/png/coinStack-85b61210.webp"
                                 class="coin-icon" /><span data-v-68403b00="">₹43,737,680.28</span>
                             </div>
                           </div>
                         </div>
                         <!-- 光圈背景 --><img data-v-68403b00=""
-                          src="https://jaiclub365.com/assets/png/rankHalo-e3eae9c5.webp"
+                          src="https://jaiclub001.com/assets/png/rankHalo-e3eae9c5.webp"
                           class="profit-rank__podium-halo" /><!-- 领奖台图片 --><img data-v-68403b00=""
-                          src="https://jaiclub365.com/assets/png/DailyProfitRankStage-397321b9.webp"
+                          src="https://jaiclub001.com/assets/png/DailyProfitRankStage-397321b9.webp"
                           class="profit-rank__podium-stage" />
                       </div>
                       <!-- 排行列表 -->
                       <div data-v-68403b00="" class="profit-rank__list">
                         <div data-v-68403b00="" class="profit-rank__list-item">
                           <span data-v-68403b00="" class="profit-rank__list-item__rank"><img data-v-68403b00=""
-                              src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
+                              src="https://jaiclub001.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
                               data-v-68403b00="">4</i></span><img data-v-68403b00=""
-                            data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                            data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
                             class="profit-rank__list-item__avatar ar-lazyload"
-                            data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                            src="https://jaiclub365.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
+                            data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                            src="https://jaiclub001.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
                             class="profit-rank__list-item__name">Mem***WD9</span><span data-v-68403b00=""
                             class="profit-rank__list-item__amount">₹34,675,982.88</span>
                         </div>
                         <div data-v-68403b00="" class="profit-rank__list-item">
                           <span data-v-68403b00="" class="profit-rank__list-item__rank"><img data-v-68403b00=""
-                              src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
+                              src="https://jaiclub001.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
                               data-v-68403b00="">5</i></span><img data-v-68403b00=""
-                            data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                            data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
                             class="profit-rank__list-item__avatar ar-lazyload"
-                            data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                            src="https://jaiclub365.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
+                            data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                            src="https://jaiclub001.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
                             class="profit-rank__list-item__name">Mem***J40</span><span data-v-68403b00=""
                             class="profit-rank__list-item__amount">₹12,054,000.00</span>
                         </div>
                         <div data-v-68403b00="" class="profit-rank__list-item">
                           <span data-v-68403b00="" class="profit-rank__list-item__rank"><img data-v-68403b00=""
-                              src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
+                              src="https://jaiclub001.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
                               data-v-68403b00="">6</i></span><img data-v-68403b00=""
-                            data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                            data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
                             class="profit-rank__list-item__avatar ar-lazyload"
-                            data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                            src="https://jaiclub365.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
+                            data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                            src="https://jaiclub001.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
                             class="profit-rank__list-item__name">Mem***GL1</span><span data-v-68403b00=""
                             class="profit-rank__list-item__amount">₹11,760,000.00</span>
                         </div>
                         <div data-v-68403b00="" class="profit-rank__list-item">
                           <span data-v-68403b00="" class="profit-rank__list-item__rank"><img data-v-68403b00=""
-                              src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
+                              src="https://jaiclub001.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
                               data-v-68403b00="">7</i></span><img data-v-68403b00=""
-                            data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                            data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
                             class="profit-rank__list-item__avatar ar-lazyload"
-                            data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                            src="https://jaiclub365.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
+                            data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                            src="https://jaiclub001.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
                             class="profit-rank__list-item__name">Mem***7CF</span><span data-v-68403b00=""
                             class="profit-rank__list-item__amount">₹9,241,400.00</span>
                         </div>
                         <div data-v-68403b00="" class="profit-rank__list-item">
                           <span data-v-68403b00="" class="profit-rank__list-item__rank"><img data-v-68403b00=""
-                              src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
+                              src="https://jaiclub001.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
                               data-v-68403b00="">8</i></span><img data-v-68403b00=""
                             data-img="/assets/png/avatar-fb4c2506.webp"
                             class="profit-rank__list-item__avatar ar-lazyload"
-                            data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                            src="https://jaiclub365.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
+                            data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                            src="https://jaiclub001.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
                             class="profit-rank__list-item__name">Mem***70N</span><span data-v-68403b00=""
                             class="profit-rank__list-item__amount">₹8,986,600.00</span>
                         </div>
                         <div data-v-68403b00="" class="profit-rank__list-item">
                           <span data-v-68403b00="" class="profit-rank__list-item__rank"><img data-v-68403b00=""
-                              src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
+                              src="https://jaiclub001.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
                               data-v-68403b00="">9</i></span><img data-v-68403b00=""
-                            data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                            data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
                             class="profit-rank__list-item__avatar ar-lazyload" data-origin="/assets/png/1-a6662edb.webp"
-                            src="https://jaiclub365.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
+                            src="https://jaiclub001.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
                             class="profit-rank__list-item__name">Mem***IZ7</span><span data-v-68403b00=""
                             class="profit-rank__list-item__amount">₹4,515,840.00</span>
                         </div>
                         <div data-v-68403b00="" class="profit-rank__list-item">
                           <span data-v-68403b00="" class="profit-rank__list-item__rank"><img data-v-68403b00=""
-                              src="https://jaiclub365.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
+                              src="https://jaiclub001.com/assets/png/rankWreath-733d7a66.webp" class="rank-wreath" /><i
                               data-v-68403b00="">10</i></span><img data-v-68403b00=""
-                            data-img="https://jaiclub365.com/assets/png/avatar-fb4c2506.webp"
+                            data-img="https://jaiclub001.com/assets/png/avatar-fb4c2506.webp"
                             class="profit-rank__list-item__avatar ar-lazyload"
-                            data-origin="https://jaiclub365.com/assets/png/1-a6662edb.webp"
-                            src="https://jaiclub365.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
+                            data-origin="https://jaiclub001.com/assets/png/1-a6662edb.webp"
+                            src="https://jaiclub001.com/assets/png/1-a6662edb.webp" /><span data-v-68403b00=""
                             class="profit-rank__list-item__name">Mem***FDH</span><span data-v-68403b00=""
                             class="profit-rank__list-item__amount">₹4,312,392.00</span>
                         </div>
@@ -783,31 +793,31 @@
                 <div data-v-420bb38c="" data-v-6666ec94="" class="partner-logos">
                   <div data-v-420bb38c="" class="partner-logos__grid">
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/PG-1cd445cb.svg" alt="PG" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/PG-1cd445cb.svg" alt="PG" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/JDB-4f6ca794.svg" alt="JDB" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/JDB-4f6ca794.svg" alt="JDB" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/JILI-ff172107.svg" alt="JILI" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/JILI-ff172107.svg" alt="JILI" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/ARpay-000b40c1.svg" alt="AR pay" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/ARpay-000b40c1.svg" alt="AR pay" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/AG-4786cd6a.svg" alt="AG" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/AG-4786cd6a.svg" alt="AG" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/Evo-880723fb.svg" alt="Evo" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/Evo-880723fb.svg" alt="Evo" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/CQ9-e6cb65fb.svg" alt="CQ9" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/CQ9-e6cb65fb.svg" alt="CQ9" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/9G-99701e62.svg" alt="9G" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/9G-99701e62.svg" alt="9G" />
                     </div>
                     <div data-v-420bb38c="" class="partner-logos__grid-item">
-                      <img data-v-420bb38c="" src="https://jaiclub365.com/assets/svg/PP-a3f59e4c.svg" alt="PP" />
+                      <img data-v-420bb38c="" src="https://jaiclub001.com/assets/svg/PP-a3f59e4c.svg" alt="PP" />
                     </div>
                   </div>
                   <div data-v-420bb38c="" class="partner-logos__text">
@@ -855,7 +865,7 @@
                   <div data-v-c0caae78="" class="dialog__container" role="dialog" tabindex="0">
                     <div data-v-c0caae78="" class="dialog__container-img">
                       <img data-v-c0caae78="" alt="" class="" data-origin="/assets/png/superjackpotHome-72bbeb43.webp"
-                        src="https://jaiclub365.com/assets/png/superjackpotHome-72bbeb43.webp" />
+                        src="https://jaiclub001.com/assets/png/superjackpotHome-72bbeb43.webp" />
                     </div>
                     <div data-v-c0caae78="" class="dialog__container-title">
                       <h1 data-v-c0caae78="">Congratulation</h1>
@@ -936,6 +946,36 @@
       <!---->
     </div>
   </div>
+
+
+  <div id="withdrawPopup" style="
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+            height:100%;
+    background:rgba(0,0,0,0.8);
+    z-index:999999;
+    justify-content:center;
+    align-items:center;
+      
+">
+    <img
+        src="/images/withd.jpeg"
+        alt="Withdraw"
+        style="
+           
+             width:89%;
+    height:74%;
+            object-fit:cover;
+            cursor:pointer;
+              border: 1px solid white;
+    border-radius: 17px;
+        "
+        onclick="window.location.href='/wallet/withdrawal'"
+    />
+</div>
  
 
 </body>
