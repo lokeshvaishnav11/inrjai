@@ -284,7 +284,7 @@
               }
             </style>
 
-            <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+            <!-- <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script> -->
             <script src="/plugins/jquery/jquery.min.js"></script>
             <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
             <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
@@ -295,15 +295,15 @@
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
             <script>
-              const socket = io();
+              // const socket = io();
               let totalBet = 0;
               let totalCashout = 0;
 
 
-              socket.on('cashoutNew', msg => {
-                totalCashout = totalCashout + msg;
-                $('#s').text(totalCashout.toFixed(2));
-              })
+              // socket.on('cashoutNew', msg => {
+              //   totalCashout = totalCashout + msg;
+              //   $('#s').text(totalCashout.toFixed(2));
+              // })
 
               function renderBets(data) {
                 totalBet = 0;

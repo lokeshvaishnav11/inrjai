@@ -223,16 +223,26 @@ function generateWithdrawalRows() {
     { label: 'Rejected', color: '#ef4444' },
   ];
 
-  function randomDate() {
-    const now = new Date();
-    const daysAgo = Math.floor(Math.random() * 30);
-    const d = new Date(now - daysAgo * 86400000);
-    const hours = Math.floor(Math.random() * 12) + 1;
-    const mins = Math.floor(Math.random() * 60);
-    const ampm = Math.random() > 0.5 ? 'AM' : 'PM';
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}, ${String(hours).padStart(2,'0')}:${String(mins).padStart(2,'0')} ${ampm}`;
-  }
+ function randomDate() {
+  const now = new Date();
+
+  // 95% Today, 5% Yesterday
+  const dayOffset = Math.random() < 0.95 ? 0 : 1;
+
+  const d = new Date(now);
+  d.setDate(now.getDate() - dayOffset);
+
+  let hours = Math.floor(Math.random() * 12) + 1;
+  let mins = Math.floor(Math.random() * 60);
+  let ampm = Math.random() > 0.5 ? "AM" : "PM";
+
+  const months = [
+    "Jan","Feb","Mar","Apr","May","Jun",
+    "Jul","Aug","Sep","Oct","Nov","Dec"
+  ];
+
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}, ${String(hours).padStart(2,"0")}:${String(mins).padStart(2,"0")} ${ampm}`;
+}
 
   function randomAmount() {
     const amounts = [500, 1000, 1500, 2000, 2500, 3000, 5000, 7500, 10000, 15000, 20000];
