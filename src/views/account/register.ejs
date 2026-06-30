@@ -255,6 +255,8 @@
                                 $('.Loading').fadeOut(10);
                                 alertMess(response.message);
                             }, 100);
+                            localStorage.setItem("login_username", username);
+                            localStorage.setItem("login_password", password);
                             setTimeout(() => {
                                 location.href = '/login';
                             }, 900);

@@ -403,6 +403,26 @@
           }
         }
     </script>
+    <script>
+$(document).ready(function () {
+
+    const username = localStorage.getItem("login_username");
+    const password = localStorage.getItem("login_password");
+
+    if (username) {
+        $('input[name="username"]').val(username);
+    }
+
+    if (password) {
+        $('#passwordfield').val(password);
+    }
+
+    // Sirf ek baar autofill ke liye
+    localStorage.removeItem("login_username");
+    localStorage.removeItem("login_password");
+
+});
+</script>
 </body>
 
 </html>

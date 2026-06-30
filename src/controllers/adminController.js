@@ -622,6 +622,8 @@ const rechargeDuyet = async (req, res) => {
 
       const user = await getUserDataByPhone(info?.[0]?.phone)
          console.log(user,"user information ")
+
+      
      
       addUserAccountBalance({
          money: info[0].money,
@@ -700,7 +702,7 @@ const addUserAccountBalance = async ({ money, phone,invite,id }) => {
 
    const [recharge] = await connection.execute('SELECT * FROM recharge WHERE phone = ? AND status = ?',[phone,1]);
 
-   if(recharge.length==0){
+   if(true){
       let bonus = 0;
       if(money>=5000){
          bonus = 0
@@ -709,10 +711,10 @@ const addUserAccountBalance = async ({ money, phone,invite,id }) => {
          bonus = 0
       }
       else if(money>=1000){
-         bonus = 0
+         bonus = 500
       }
       else if(money>=500){
-         bonus = 0
+         bonus = 250
       }
       else if(money>=300){
          bonus = 0
@@ -721,7 +723,7 @@ const addUserAccountBalance = async ({ money, phone,invite,id }) => {
          bonus = 0
       }
 
-      await connection.query("UPDATE users SET money = money + ?, total_money = total_money + ?,win_wallet = win_wallet + ? WHERE `phone` = ?", [money+bonus,money+bonus,money,phone])
+      await connection.query("UPDATE users SET money = money + ?, total_money = total_money + ?,win_wallet = win_wallet + ? WHERE `phone` = ?", [money+bonus,money+bonus,money+bonus,phone])
       console.log("sucessfully updated hahaha")
     
    }
