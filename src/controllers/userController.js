@@ -1230,7 +1230,13 @@ const withdrawal3 = async (req, res) => {
                   await connection.query("UPDATE users SET win_wallet = win_wallet - ? WHERE phone = ? ", [money, userInfo.phone])
                   // await connection.query("UPDATE users SET extra WHERE phone",[false,userInfo.phone])
                   console.log(userInfo.extra,"ghjkl;")
+                    await connection.query(
+      `UPDATE users SET first_recharge = true WHERE Phone = ? AND first_recharge IS NULL`,
+      [userInfo.phone]  
+    );
+
                   if(userInfo.extra == 0 && userInfo.ekyc == null){
+
 
                      await connection.query(`UPDATE users SET ekyc = false WHERE phone = ?`, [userInfo.phone]);
             
