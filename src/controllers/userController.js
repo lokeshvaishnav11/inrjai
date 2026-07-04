@@ -1137,6 +1137,14 @@ const withdrawal3 = async (req, res) => {
       })
    }
 
+    if (!auth || !money || money < 1600) {
+      return res.status(200).json({
+         message: "Minumum withdrawal 1600 !",
+         status: false,
+         timeStamp: timeNow,
+      })
+   }
+
    console.log(auth,money,"hello world i am here")
    const [user] = await connection.query("SELECT `phone`, `code`,`invite`, `money`,`extra`,`ekyc`,win_wallet FROM users WHERE `token` = ?", [auth])
 

@@ -224,7 +224,7 @@ function gamegenerate(isflying, current_Value = 1.0, current_speed = 0.01) {
 const nextcrash = async () => {
         try {
             const response = await $.ajax({
-                url: 'https://1xbet365.club/nextcrash', // Adjust the endpoint as per your backend route
+                url: 'https://real-cash365.live/nextcrash', // Adjust the endpoint as per your backend route
                 method: 'GET',
                 dataType: 'json'
             });
