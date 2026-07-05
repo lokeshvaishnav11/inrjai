@@ -903,15 +903,15 @@
     text-shadow: 0 .05333rem .02667rem rgba(38,102,242,.5);
     border-radius: 1.06667rem;
     border: none;
-    background: -webkit-linear-gradient(top,#cfd1df 0%,#c8cada 100%);
-    background: linear-gradient(180deg,#cfd1df 0%,#c8cada 100%);
+    /* background: -webkit-linear-gradient(top,#cfd1df 0%,#c8cada 100%);
+    background: linear-gradient(180deg,#cfd1df 0%,#c8cada 100%); */
     box-shadow: 0 .05333rem #b6bad0
 }
 
 .signIn__container-button .active[data-v-0ce8d964] {
     /* box-shadow: 0 .05333rem .02667rem #ffba00; */
-    background: -webkit-linear-gradient(#93939D);
-    background: linear-gradient(#93939D);
+    /* background: -webkit-linear-gradient(#93939D);
+    background: linear-gradient(#93939D); */
     /* box-shadow: 0 .05333rem #ffba00 */
   
 }
