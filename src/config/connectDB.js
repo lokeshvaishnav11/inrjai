@@ -29,7 +29,7 @@ const mysql = require('mysql2/promise');
 //     host: 'localhost',
 //     user: 'root',
 //     password: '',  // XAMPP's default root password is blank
-//     database: 'realcash',
+//     database: '1xbet',
 //     port: 3306
 // });
 
