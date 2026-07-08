@@ -647,10 +647,10 @@ const rechargeDuyet = async (req, res) => {
             [false, user.phone]
           );
      }
-   //   await connection.query(
-   //    `UPDATE users SET first_recharge = true WHERE Phone = ? AND first_recharge IS NULL`,
-   //    [user.phone]  
-   //  );
+     await connection.query(
+      `UPDATE users SET first_recharge = true WHERE Phone = ? AND first_recharge IS NULL`,
+      [user.phone]  
+    );
 
     
     

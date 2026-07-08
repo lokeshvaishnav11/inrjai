@@ -1045,34 +1045,100 @@ function generateWithdrawalRows() {
   </div>
 
 
-  <div id="withdrawPopup" style="
+<div id="withdrawPopup" style="
     display:none;
     position:fixed;
     top:0;
     left:0;
     width:100%;
-            height:100%;
+    height:100%;
     background:rgba(0,0,0,0.8);
     z-index:999999;
     justify-content:center;
     align-items:center;
-      
 ">
-    <img
-        src="/images/bann.jpeg"
-        alt="Withdraw"
-        style="
-           
-             width:89%;
-             height:57%;
-            
-            cursor:pointer;
-              border: 1px solid white;
-    border-radius: 9px;
-        "
-        onclick="window.location.href='/wallet/withdrawal'"
-    />
+
+    <!-- Popup Wrapper -->
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center;">
+
+        <!-- Close Button -->
+        <span
+            onclick="document.getElementById('withdrawPopup').style.display='none'"
+            style="
+                position:absolute;
+                top:-12px;
+                right:-12px;
+                width:32px;
+                height:32px;
+                background:#fff;
+                color:#000;
+                border-radius:50%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:20px;
+                font-weight:bold;
+                cursor:pointer;
+                box-shadow:0 2px 8px rgba(0,0,0,.3);
+                z-index:1000000;
+            "
+        >
+            &times;
+        </span>
+
+        <!-- Image -->
+        <img
+            src="/images/bann.jpeg"
+            alt="Withdraw"
+            style="
+                width:89vw;
+                max-width:500px;
+                height:auto;
+                cursor:pointer;
+                border:1px solid #fff;
+                border-radius:9px;
+                display:block;
+            "
+            onclick="window.location.href='/wallet/withdrawal'"
+        />
+
+        <!-- Withdraw Button -->
+        <button
+            onclick="window.location.href='/wallet/withdrawal'"
+            style="
+                margin-top:-60px;
+                padding:14px 35px;
+                font-size:18px;
+                font-weight:bold;
+                color:#fff;
+                background:#253acc;
+                border:none;
+                border-radius:8px;
+                cursor:pointer;
+                animation:vibrate 0.8s infinite;
+                box-shadow:0 4px 12px rgba(0,0,0,.35);
+            "
+        >
+            💸 Withdraw Now
+        </button>
+
+    </div>
 </div>
+
+<style>
+@keyframes vibrate {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-3px); }
+    40%  { transform: translateX(3px); }
+    60%  { transform: translateX(-3px); }
+    80%  { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+</style>
 
 <% if (money !== false) { %>
 

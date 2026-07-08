@@ -7752,12 +7752,12 @@
             background-color: #22224B;
             color: white;
             /* White background for the pop-up content */
-            margin: 10% auto;
+            margin: 0% auto;
             /* Center the pop-up vertically and horizontally */
             padding: 20px;
             border: 1px solid #888;
             /* Grey border */
-            width: 90%;
+            width: 83%;
             /* Take up 90% of the viewport width */
             max-width: 400px;
             /* But don't exceed 400px in width */
@@ -8042,17 +8042,86 @@
 
 
     </div>
+<% if (extra===null && first==true) { %>
 
-    <% if (extra===null && first==true) { %>
-        <div id="withdrawal-popup">
-            <div id="withdrawal-popup-content">
-                <span id="close-popup">&times;</span>
-               <img id="recharge-now"   onclick="window.location.href ='/wallet/paynow/manual_upi?am=1499&extra=true'" style="height: 100%;width: 100%;" src="/images/popupn.jpeg">
-                <!-- <button id="recharge-now"
-                    onclick="window.location.href ='/wallet/paynow/manual_upi?am=1499&extra=true'">RECHARGE NOW</button> -->
-            </div>
-        </div>
-        <% } %>
+<div id="withdrawal-popup">
+    <div id="withdrawal-popup-content">
+
+        <!-- Image -->
+        <img
+            id="recharge-now"
+            src="/images/popupn.jpeg"
+            style="width:100%;display:block;cursor:pointer;border-radius:8px;"
+            onclick="window.location.href='/wallet/paynow/manual_upi?am=1499&extra=true'"
+        >
+
+        <!-- Recharge Button -->
+        <button
+            id="blink-btn"
+            onclick="window.location.href='/wallet/paynow/manual_upi?am=1499&extra=true'"
+        >
+            ⚡ RECHARGE NOW
+        </button>
+
+    </div>
+</div>
+
+<style>
+#withdrawal-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.75);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+}
+
+#withdrawal-popup-content{
+    width:79%;
+    max-width:420px;
+    text-align:center;
+}
+
+#blink-btn{
+    margin-top:16px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#28a745;
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    animation:pulse .8s infinite;
+    box-shadow:0 5px 15px rgba(40,167,69,.45);
+}
+
+#blink-btn:hover{
+    background:#23913b;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        box-shadow:0 0 0 0 rgba(40,167,69,.7);
+    }
+    70%{
+        transform:scale(1.08);
+        box-shadow:0 0 0 18px rgba(40,167,69,0);
+    }
+    100%{
+        transform:scale(1);
+        box-shadow:0 0 0 0 rgba(40,167,69,0);
+    }
+}
+</style>
+
+<% } %>
 
 
             <% if (ekyc = 0 || ekyc == false) { %>
