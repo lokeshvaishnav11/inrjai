@@ -572,33 +572,64 @@ const nextCrash = async (req, res) => {
 
 const nextCrash2 = async (req, res) => {
     try {
-        const now      = new Date();
-        const hours    = String(now.getHours()).padStart(2, '0');
-        const minutes  = String(now.getMinutes()).padStart(2, '0');
-        const slotTime = `${hours}:${minutes}`;
-        const cacheKey = `crash:${slotTime}`;
+        const now = new Date();
 
-        // Cache hit — zero DB call
-        const cached = crashCache.get(cacheKey);
-        if (cached !== null) {
-            return res.json(cached);
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+
+        // Next 10-minute slot
+        let nextMinute = Math.ceil(minute / 10) * 10;
+
+        if (nextMinute === 60) {
+            nextMinute = 0;
+            hour += 1;
         }
 
-        // Cache miss — in-flight check (race condition safe)
+        if (hour === 24) {
+            hour = 0;
+        }
+
+        const slotTime =
+            `${String(hour).padStart(2, "0")}:${String(nextMinute).padStart(2, "0")}`;
+
+        const cacheKey = `crash:${slotTime}`;
+
+        // ---------------- Cache Hit ----------------
+        const cached = crashCache.get(cacheKey);
+        if (cached !== null && cached !== undefined) {
+            return res.json({
+                value: cached,
+                time: slotTime
+            });
+        }
+
+        // ---------------- In Flight ----------------
         if (!inFlight.has(cacheKey)) {
+
             const dbPromise = (async () => {
+
                 const [rows] = await connection.execute(
-                    'SELECT crash_value FROM crash_predictions WHERE time_slot = ?',
+                    `SELECT crash_value
+                     FROM crash_predictions
+                     WHERE time_slot = ?`,
                     [slotTime]
                 );
 
-                const value = rows.length && parseFloat(rows[0].crash_value) !== 0
-                    ? parseFloat(rows[0].crash_value)
-                    : parseFloat((Math.random() * 16).toFixed(2));
+                let crashValue;
 
-                crashCache.set(cacheKey, value, 65);
+                if (rows.length > 0 && parseFloat(rows[0].crash_value) > 0) {
+                    crashValue = parseFloat(rows[0].crash_value);
+                } else {
+                    // fallback
+                    crashValue = parseFloat((Math.random() * 150).toFixed(2));
+                }
+
+                crashCache.set(cacheKey, crashValue, 70);
+
                 inFlight.delete(cacheKey);
-                return value;
+
+                return crashValue;
+
             })();
 
             inFlight.set(cacheKey, dbPromise);
@@ -606,21 +637,37 @@ const nextCrash2 = async (req, res) => {
 
         const crashValue = await inFlight.get(cacheKey);
 
-        res.json({value:crashValue, time:slotTime
-        }
+        res.json({
+            value: crashValue,
+            time: slotTime
+        });
+
+        // ---------------- Cleanup Previous Slot ----------------
+
+        const prev = new Date(now);
+
+        prev.setMinutes(
+            Math.floor(prev.getMinutes() / 10) * 10,
+            0,
+            0
         );
 
-        // Previous slot cleanup — background mein
-        const prevDate    = new Date(now.getTime() - 60000);
-        const prevHours   = String(prevDate.getHours()).padStart(2, '0');
-        const prevMinutes = String(prevDate.getMinutes()).padStart(2, '0');
-        crashCache.delete(`crash:${prevHours}:${prevMinutes}`);
+        const prevSlot =
+            `${String(prev.getHours()).padStart(2, "0")}:${String(prev.getMinutes()).padStart(2, "0")}`;
 
-    } catch (error) {
-        console.error('[nextCrash] Error:', error);
+        crashCache.delete(`crash:${prevSlot}`);
+
+    } catch (err) {
+
+        console.error("nextCrash2 Error:", err);
+
         if (!res.headersSent) {
-            res.status(500).json({ error: 'Internal server error' });
+            res.status(500).json({
+                success: false,
+                message: "Internal Server Error"
+            });
         }
+
     }
 };
 
