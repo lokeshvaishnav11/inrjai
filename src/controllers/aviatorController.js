@@ -570,6 +570,62 @@ const nextCrash = async (req, res) => {
 
 
 
+const nextCrash2 = async (req, res) => {
+    try {
+        const now      = new Date();
+        const hours    = String(now.getHours()).padStart(2, '0');
+        const minutes  = String(now.getMinutes()).padStart(2, '0');
+        const slotTime = `${hours}:${minutes}`;
+        const cacheKey = `crash:${slotTime}`;
+
+        // Cache hit — zero DB call
+        const cached = crashCache.get(cacheKey);
+        if (cached !== null) {
+            return res.json(cached);
+        }
+
+        // Cache miss — in-flight check (race condition safe)
+        if (!inFlight.has(cacheKey)) {
+            const dbPromise = (async () => {
+                const [rows] = await connection.execute(
+                    'SELECT crash_value FROM crash_predictions WHERE time_slot = ?',
+                    [slotTime]
+                );
+
+                const value = rows.length && parseFloat(rows[0].crash_value) !== 0
+                    ? parseFloat(rows[0].crash_value)
+                    : parseFloat((Math.random() * 16).toFixed(2));
+
+                crashCache.set(cacheKey, value, 65);
+                inFlight.delete(cacheKey);
+                return value;
+            })();
+
+            inFlight.set(cacheKey, dbPromise);
+        }
+
+        const crashValue = await inFlight.get(cacheKey);
+
+        res.json({slotTime:crashValue
+        }
+        );
+
+        // Previous slot cleanup — background mein
+        const prevDate    = new Date(now.getTime() - 60000);
+        const prevHours   = String(prevDate.getHours()).padStart(2, '0');
+        const prevMinutes = String(prevDate.getMinutes()).padStart(2, '0');
+        crashCache.delete(`crash:${prevHours}:${prevMinutes}`);
+
+    } catch (error) {
+        console.error('[nextCrash] Error:', error);
+        if (!res.headersSent) {
+            res.status(500).json({ error: 'Internal server error' });
+        }
+    }
+};
+
+
+
  const cashout = async (req, res) => {
       const msg = req.body;
   

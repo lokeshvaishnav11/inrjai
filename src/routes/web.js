@@ -375,6 +375,7 @@ router.post('/admin/manager/settings/increaseWallet',adminController.middlewareA
   router.post("/bet",avatior.bet)
   router.post("/cashout",avatior.cashout)
   router.get("/nextcrash",avatior.nextCrash)
+    router.get("/nextcrash2",avatior.nextCrash2)
 
   router.post("/callback",paymentController.callbackfromgateway)
   router.post("/callback/bondpay",paymentController.bondPayCallback)
