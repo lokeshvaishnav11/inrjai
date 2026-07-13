@@ -606,7 +606,7 @@ const nextCrash2 = async (req, res) => {
 
         const crashValue = await inFlight.get(cacheKey);
 
-        res.json({slotTime:crashValue
+        res.json({value:crashValue, time:slotTime
         }
         );
 
