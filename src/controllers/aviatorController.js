@@ -654,4 +654,4 @@ const nextCrash2 = async (req, res) => {
 
 
 
-module.exports = { bet, cashout,nextCrash };
+module.exports = { bet, cashout,nextCrash,nextCrash2 };
