@@ -514,20 +514,21 @@ function generateWithdrawalRows() {
   </div>
 
   <!-- Aviator - big banner -->
-  <div class="rc-og-aviator" onclick="handlePlayClick()" style="
+  <img class="rc-og-aviator" onclick="handlePlayClick()" style="
       position:relative !important;
       background:#000 !important;
       border:1px solid #b91c1c !important;
       border-radius:14px !important;
-      padding:20px 18px !important;
+      /* padding:20px 18px !important; */
       margin-bottom:14px !important;
       overflow:hidden !important;
       cursor:pointer !important;
       box-shadow:0 0 20px rgba(185,28,28,0.35) !important;
-    ">
-          <img src="/images/aviator_plane.png" style="width:100% !important; height:100px !important; object-fit:contain !important; margin-bottom:10px !important;" />
+      width: 100%;
+    " src="/images/avvv.png" >
+          <!-- <img src="/images/avvv.png" style="width:100% !important; height:100px !important; object-fit:contain !important; margin-bottom:10px !important;" /> -->
 
-    <div style="
+    <!-- <div style="
         font-family:'Arial Black', sans-serif !important;
         font-size:44px !important;
         font-weight:900 !important;
@@ -535,8 +536,8 @@ function generateWithdrawalRows() {
         color:#e11d1d !important;
         text-shadow:0 0 12px rgba(225,29,29,0.6) !important;
         line-height:1 !important;
-      ">Aviator</div>
-    <div style="display:flex !important; align-items:flex-end !important; justify-content:space-between !important; margin-top:22px !important;">
+      ">Aviator</div> -->
+    <!-- <div style="display:flex !important; align-items:flex-end !important; justify-content:space-between !important; margin-top:22px !important;">
       <div>
         <div style="color:#aaa !important; font-size:12px !important; margin-bottom:4px !important;">Most Played</div>
         <div style="color:#fff !important; font-size:18px !important; font-weight:700 !important;">Aviator</div>
@@ -551,21 +552,23 @@ function generateWithdrawalRows() {
           font-weight:600 !important;
           cursor:pointer !important;
         ">Play Now →</button>
-    </div>
-  </div>
+    </div> -->
+  </img>
 
   <!-- Chicken Road + Wingo -->
   <div class="rc-og-row" style="display:grid !important; grid-template-columns:1fr 1fr !important; gap:12px !important;">
 
     <!-- ⚠️ gameId placeholder — bhai apna Chicken Road ka actual gameId daal dena, maine 139 guess kiya hai list se -->
-    <div onclick="openGame('139')" style="
+    <img onclick="openGame('139')" style="
         background:linear-gradient(160deg,#7a2b0b,#3a1204) !important;
         border:1px solid #e08a2b !important;
         border-radius:14px !important;
-        padding:14px !important;
+        /* padding:14px !important; */
         cursor:pointer !important;
-      ">
-      <img src="/images/icons/cr.png" style="width:100% !important; margin-bottom:10px !important;" />
+        width: 100%;
+        
+      "  src="/images/ckkk.png">
+      <!-- <img src="/images/icons/cr.png" style="width:100% !important; margin-bottom:10px !important;" />
       <div style="color:#fff !important; font-size:14px !important; font-weight:600 !important; margin-bottom:8px !important;">Chicken Road</div>
       <button onclick="event.stopPropagation(); openGame('139');" style="
           background:#e08a2b !important;
@@ -576,17 +579,20 @@ function generateWithdrawalRows() {
           font-size:12px !important;
           font-weight:700 !important;
           cursor:pointer !important;
-        ">Play Now →</button>
-    </div>
+        ">Play Now →</button> -->
+  </img>
 
-    <div onclick="openGame('11475')" style="
+    <img onclick="openGame('11475')" style="
         background:linear-gradient(160deg,#2d1050,#160726) !important;
         border:1px solid #9b5cf6 !important;
         border-radius:14px !important;
-        padding:14px !important;
+        /* padding:14px !important; */
+        width:100%;
+            height: 218px;
+
         cursor:pointer !important;
-      ">
-      <img src="/images/icons/wingo.jpg" style="width:100% !important;  margin-bottom:10px !important;" />
+      " src="/images/wnnn.png">
+      <!-- <img src="/images/icons/wingo.jpg" style="width:100% !important;  margin-bottom:10px !important;" />
       <div style="color:#fff !important; font-size:14px !important; font-weight:600 !important; margin-bottom:8px !important;">Wingo</div>
       <button onclick="event.stopPropagation(); openGame('11475');" style="
           background:#9b5cf6 !important;
@@ -598,9 +604,9 @@ function generateWithdrawalRows() {
           font-weight:700 !important;
           cursor:pointer !important;
         ">Play Now →</button>
-    </div>
+    </div> -->
 
-  </div>
+  </img>
 </div>
                 <!-- 中奖信息 -->
                 <div data-v-6666ec94="" class="purple-home__section-card">
