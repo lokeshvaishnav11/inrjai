@@ -126,7 +126,7 @@ export default function History() {
                   <span className="font-bold ">🎟️Number:</span> {ticket.number}
                 </div>
                 <div>
-                  <span className="font-bold "> 💰Price:</span> ₹{ticket.price}
+                  <span className="font-bold "> 💰Price:</span> PKR{ticket.price}
                 </div>
               </div>
 

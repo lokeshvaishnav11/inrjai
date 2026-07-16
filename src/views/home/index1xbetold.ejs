@@ -1665,7 +1665,7 @@
                 });
                 $(withdrawalEl).fadeOut(300, function () {
                   $(this)
-                    .text("₹ " + parseInt(data.amount).toLocaleString("en-IN"))
+                    .text("PKR " + parseInt(data.amount).toLocaleString("en-IN"))
                     .fadeIn(300);
                 });
                 currentIndex = (currentIndex + 1) % dummyData.length;
@@ -1674,7 +1674,7 @@
               setInterval(updateWithdrawalDisplay, 3500);
             } else {
               if (nameEl) nameEl.innerText = "User";
-              if (withdrawalEl) withdrawalEl.innerText = "₹ ---";
+              if (withdrawalEl) withdrawalEl.innerText = "PKR ---";
             }
           </script>
 
@@ -2298,7 +2298,7 @@
             current = target;
             clearInterval(timer);
           }
-          element.textContent = '₹ ' + Math.floor(current).toLocaleString('en-IN');
+          element.textContent = 'PKR ' + Math.floor(current).toLocaleString('en-IN');
         }, 16);
       };
 
@@ -2319,7 +2319,7 @@
                       </div>
                   </div>
                   <div class="amount-section">
-                      <span class="amount">₹ 0</span>
+                      <span class="amount">PKR 0</span>
                       <span class="status-badge">✓ SUCCESS</span>
                   </div>
               `;

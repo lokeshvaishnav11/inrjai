@@ -2846,7 +2846,7 @@
 								</svg>
 								<div class="van-circle__text">0%</div>
 							</div>
-							<h3 data-v-4109dec7="">₹0.00</h3><span data-v-4109dec7="">3rd party wallet</span>
+							<h3 data-v-4109dec7="">PKR0.00</h3><span data-v-4109dec7="">3rd party wallet</span>
 						</div> -->
 					</div>
 					<!-- <div data-v-4109dec7="" class="recycleBtnD"><button data-v-4109dec7="" class="recycleBtn">Main
@@ -2963,7 +2963,7 @@
 					let user = response.data;
 					$('.wallet-user .name').text(user.name_user);
 					const amt = user.money_user + user.win_wallet;
-					$('.money').text("₹" + amt + ".00");
+					$('.money').text("PKR" + amt + ".00");
 				}
 			});
 		});
@@ -2975,9 +2975,9 @@
 				let user = response.data;
 				$('.wallet-user .name').text(user.name_user);
 				const amt = user.money_user + user.win_wallet;
-				$('.money').text("₹" + amt + ".00");
-				$('.balance .item:eq(0) div:eq(1)').text("₹" + response.totalRecharge + ".00");
-				$('.balance .item:eq(1) div:eq(1)').text("₹" + response.totalWithdraw + ".00");
+				$('.money').text("PKR" + amt + ".00");
+				$('.balance .item:eq(0) div:eq(1)').text("PKR" + response.totalRecharge + ".00");
+				$('.balance .item:eq(1) div:eq(1)').text("PKR" + response.totalWithdraw + ".00");
 			}
 		});
 	</script>

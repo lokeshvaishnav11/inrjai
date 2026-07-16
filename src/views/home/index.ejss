@@ -1952,7 +1952,7 @@
                   src="/index_files/WinGo-f48e5435.png">
               </div>
               <div data-v-84210c68="" class="luckyWinners__container-wrapper__item-winAmount">
-                <h1 data-v-84210c68="">Receive ₹160.00</h1>
+                <h1 data-v-84210c68="">Receive PKR160.00</h1>
                 <span data-v-84210c68="">Winning amount</span>
               </div>
             </div>
@@ -1970,7 +1970,7 @@
                   src="/index_files/WinGo-f48e5435.png">
               </div>
               <div data-v-84210c68="" class="luckyWinners__container-wrapper__item-winAmount">
-                <h1 data-v-84210c68="">Receive ₹510.00</h1>
+                <h1 data-v-84210c68="">Receive PKR510.00</h1>
                 <span data-v-84210c68="">Winning amount</span>
               </div>
             </div>
@@ -1988,7 +1988,7 @@
                   src="/index_files/WinGo-f48e5435.png">
               </div>
               <div data-v-84210c68="" class="luckyWinners__container-wrapper__item-winAmount">
-                <h1 data-v-84210c68="">Receive ₹3,020.00</h1>
+                <h1 data-v-84210c68="">Receive PKR3,020.00</h1>
                 <span data-v-84210c68="">Winning amount</span>
               </div>
             </div>
@@ -2006,7 +2006,7 @@
                   src="/index_files/WinGo-f48e5435.png">
               </div>
               <div data-v-84210c68="" class="luckyWinners__container-wrapper__item-winAmount">
-                <h1 data-v-84210c68="">Receive ₹120.00</h1>
+                <h1 data-v-84210c68="">Receive PKR120.00</h1>
                 <span data-v-84210c68="">Winning amount</span>
               </div>
             </div>
@@ -2024,7 +2024,7 @@
                   src="/index_files/WinGo-f48e5435.png">
               </div>
               <div data-v-84210c68="" class="luckyWinners__container-wrapper__item-winAmount">
-                <h1 data-v-84210c68="">Receive ₹120.00</h1>
+                <h1 data-v-84210c68="">Receive PKR120.00</h1>
                 <span data-v-84210c68="">Winning amount</span>
               </div>
             </div>
@@ -2042,7 +2042,7 @@
                   src="/index_files/WinGo-f48e5435.png">
               </div>
               <div data-v-84210c68="" class="luckyWinners__container-wrapper__item-winAmount">
-                <h1 data-v-84210c68="">Receive ₹180.00</h1>
+                <h1 data-v-84210c68="">Receive PKR180.00</h1>
                 <span data-v-84210c68="">Winning amount</span>
               </div>
             </div>
@@ -2069,7 +2069,7 @@
                   src="./index_files/place1-c2ee5099.png">
               </div>
               <span data-v-c310f7df="">Mem***SJE</span>
-              <span data-v-c310f7df="">₹153,076,0.00</span>
+              <span data-v-c310f7df="">PKR153,076,0.00</span>
             </div>
             <div data-v-c310f7df="" class="dailyProfitRank__content-topThree__item" style="order: 1; top: -20px;">
               <div data-v-c310f7df=""
@@ -2087,7 +2087,7 @@
                   src="./index_files/place2-2e2fac0d.png">
               </div>
               <span data-v-c310f7df="">Mem***RAP</span>
-              <span data-v-c310f7df="">₹125,744.60</span>
+              <span data-v-c310f7df="">PKR125,744.60</span>
             </div>
             <div data-v-c310f7df="" class="dailyProfitRank__content-topThree__item" style="order: 3; top: -20px;">
               <div data-v-c310f7df=""
@@ -2105,7 +2105,7 @@
                   src="./index_files/place3-d9b0be38.png">
               </div>
               <span data-v-c310f7df="">Mem***FEW</span>
-              <span data-v-c310f7df="">₹62,667.00</span>
+              <span data-v-c310f7df="">PKR62,667.00</span>
             </div>
           </div>
           <div data-v-c310f7df="" class="dailyProfitRank__content-list">
@@ -2115,7 +2115,7 @@
                 data-origin="https://www.bigdaddygame2.com/assets/png/19-2ac9fd83.png"
                 src="./index_files/19-2ac9fd83.png">
               <span data-v-c310f7df="" class="middle-name">Mem***JHT</span>
-              <span data-v-c310f7df="" class="right-box">₹30,825.20</span>
+              <span data-v-c310f7df="" class="right-box">PKR30,825.20</span>
             </div>
             <div data-v-c310f7df="" class="dailyProfitRank__content-list__item">
               <span data-v-c310f7df="" class="left-rank">5</span>
@@ -2123,7 +2123,7 @@
                 data-origin="https://www.bigdaddygame2.com/assets/png/7-00479cfa.png"
                 src="./index_files/7-00479cfa.png">
               <span data-v-c310f7df="" class="middle-name">Mem***AGB</span>
-              <span data-v-c310f7df="" class="right-box">₹12,679.56</span>
+              <span data-v-c310f7df="" class="right-box">PKR12,679.56</span>
             </div>
           </div>
         </div>
@@ -2297,7 +2297,7 @@
   <script>
     function generateRandomAmount() {
       // Generate a random amount between 1 and 5000 (you can adjust the range as needed)
-      return "₹" + (Math.floor(Math.random() * 5000) + 1).toFixed(2);
+      return "PKR" + (Math.floor(Math.random() * 5000) + 1).toFixed(2);
     }
 
     // Function to generate a random user name

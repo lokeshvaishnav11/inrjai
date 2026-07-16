@@ -117,7 +117,7 @@ const addManualUPIPaymentRequest = async (req, res) => {
 
         if (!moneyp || !(moneyp >= minimumMoneyAllowed)) {
             return res.status(400).json({
-                message: `Money is Required and it should be ₹${minimumMoneyAllowed} or above!`,
+                message: `Money is Required and it should be PKR${minimumMoneyAllowed} or above!`,
                 status: false,
                 timeStamp: timeNow,
             })
@@ -164,10 +164,12 @@ const addManualUPIPaymentRequest = async (req, res) => {
 
 
         const url = 'https://www.lg-pay.com/api/order/create';
-        const key = 'VN8NHNnda0Rn72UqeIvTwhQuEV2yXVcn';
+        const key = 'UjNje5bSYAlRALt7x32psLTRYU1w799'
+        // 'VN8NHNnda0Rn72UqeIvTwhQuEV2yXVcn';
         // const key = 'O2UyHC65eofVs2xsGCjDzY2qVbybifea';
 
-        const app_id = "YD4569"
+        const app_id = 'PKR3248'
+        // "YD4569"
         // 'YD4555';
         //
 
@@ -175,7 +177,7 @@ const addManualUPIPaymentRequest = async (req, res) => {
         console.log(addon1)
         const params = {
             app_id,
-            trade_type: 'INRUPI',      //INRUPI         // test channel for collection
+            trade_type: 'PKRPH',      //INRUPI         // test channel for collection
             order_sn: orderId,  // unique order number
             money: moneyp * 100,                // order amount
             notify_url: 'https://real-cash365.live/callback', // your callback URL
@@ -305,7 +307,7 @@ const addManualUPIPaymentRequesttwo = async (req, res) => {
 
     if (!moneyp || moneyp < minimumMoneyAllowed) {
       return res.status(400).json({
-        message: `Money is Required and it should be ₹${minimumMoneyAllowed} or above!`,
+        message: `Money is Required and it should be PKR${minimumMoneyAllowed} or above!`,
         status: false,
       });
     }
@@ -449,7 +451,7 @@ const addBondPayPaymentRequest = async (req, res) => {
         if (!amount || amount < 100) {
             return res.status(400).json({
                 status: false,
-                message: "Minimum recharge ₹100"
+                message: "Minimum recharge PKR100"
             });
         }
 
@@ -543,7 +545,7 @@ const addBondPayPaymentRequest = async (req, res) => {
 
 //         if (!money || !(money >= minimumMoneyAllowed)) {
 //             return res.status(400).json({
-//                 message: `Money is Required and it should be ₹${minimumMoneyAllowed} or above!`,
+//                 message: `Money is Required and it should be PKR${minimumMoneyAllowed} or above!`,
 //                 status: false,
 //                 timeStamp: timeNow,
 //             })
@@ -614,7 +616,7 @@ const addManualUSDTPaymentRequest = async (req, res) => {
 
         if (!money || !(money >= minimumMoneyAllowed)) {
             return res.status(400).json({
-                message: `Money is Required and it should be ₹${minimumMoneyAllowed} or ${(minimumMoneyAllowed / 82).toFixed(2)} or above!`,
+                message: `Money is Required and it should be PKR${minimumMoneyAllowed} or ${(minimumMoneyAllowed / 82).toFixed(2)} or above!`,
                 status: false,
                 timeStamp: timeNow,
             })
@@ -683,7 +685,7 @@ const initiateUPIPayment = async (req, res) => {
 
     if (!money || !(money >= minimumMoneyAllowed)) {
         return res.status(400).json({
-            message: `Money is Required and it should be ₹${minimumMoneyAllowed} or above!`,
+            message: `Money is Required and it should be PKR${minimumMoneyAllowed} or above!`,
             status: false,
             timeStamp: timeNow,
         })
@@ -860,7 +862,7 @@ const initiateWowPayPayment = async (req, res) => {
 
     if (!money || !(money >= minimumMoneyAllowed)) {
         return res.status(400).json({
-            message: `Money is Required and it should be ₹${minimumMoneyAllowed} or above!`,
+            message: `Money is Required and it should be PKR${minimumMoneyAllowed} or above!`,
             status: false,
             timeStamp: timeNow,
         })

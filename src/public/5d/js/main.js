@@ -236,7 +236,7 @@ function reload_money() {
                 return false;
             }
             const amt = data.data.money_user + data.data.win_wallet;
-            $(".num span").text(`₹ ${amt}.00 `);
+            $(".num span").text(`PKR ${amt}.00 `);
             $('.Loading').fadeOut(0);
         });
 }
@@ -562,7 +562,7 @@ $('.foot .right').click(function (e) {
             }, 500);
             if (response.status == true) {
                 const amt = response.money + response.win_wallet;
-                $('#money_show').text("₹ " + amt + '.00');
+                $('#money_show').text("PKR " + amt + '.00');
                 showMeJoin();
             }
         }

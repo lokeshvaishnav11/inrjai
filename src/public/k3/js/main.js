@@ -127,7 +127,7 @@ function reload_money() {
                 return false;
             }
             const amt = data.data.money_user + data.data.win_wallet;
-            $(".num .moneyU").text(`₹ ${amt}.00 `);
+            $(".num .moneyU").text(`PKR ${amt}.00 `);
             $(".Loading").fadeOut(0);
         });
 }

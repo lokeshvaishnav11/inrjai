@@ -210,10 +210,10 @@ const UserMenu = ({ menu, onClose2 }) => {
                 </p>
 
                 {[
-                  { label: "Min bet:", value: "₹10" },
-                  { label: "Max bet:", value: "₹100000" },
-                  { label: "Min win:", value: "₹10" },
-                  { label: "Max win:", value: "₹10000" },
+                  { label: "Min bet:", value: "PKR10" },
+                  { label: "Max bet:", value: "PKR100000" },
+                  { label: "Min win:", value: "PKR10" },
+                  { label: "Max win:", value: "PKR10000" },
                 ].map((item, index) => (
                   <div
                     key={index}
