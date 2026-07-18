@@ -1,0 +1,184 @@
+
+<style>
+.withdraw-slider{
+    width:100%;
+    height:420px;
+    overflow:hidden;
+    background:linear-gradient(180deg,#003566,#001d3d);
+    border-radius:15px;
+    padding:12px;
+    position:relative;
+    color:#fff;
+    box-sizing:border-box;
+}
+
+.withdraw-list{
+    animation:withdrawScroll 80s linear infinite;
+}
+
+.withdraw-slider:hover .withdraw-list{
+    animation-play-state:paused;
+}
+
+.withdraw-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.08);
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:12px;
+}
+
+.withdraw-left{
+    display:flex;
+    align-items:center;
+}
+
+.withdraw-avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+.withdraw-name{
+    font-weight:bold;
+    font-size:15px;
+}
+
+.withdraw-date{
+    font-size:12px;
+    opacity:.75;
+    margin-top:4px;
+}
+
+.withdraw-amount{
+    color:#42ff8c;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.withdraw-status{
+    color:#42ff8c;
+    font-size:13px;
+    margin-top:4px;
+}
+
+@keyframes withdrawScroll{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-50%);
+    }
+}
+
+@media(max-width:768px){
+
+.withdraw-slider{
+    height:350px;
+}
+
+.withdraw-avatar{
+    width:40px;
+    height:40px;
+}
+
+.withdraw-amount{
+    font-size:15px;
+}
+
+}
+
+</style>
+
+<div class="withdraw-slider">
+    <div class="withdraw-list" id="withdrawList"></div>
+</div>
+
+
+<script>
+
+
+const firstNames=[
+"Ahmed","Muhammad","Ali","Usman","Bilal","Hamza","Ahsan","Hassan",
+"Hussain","Abdullah","Saad","Talha","Fahad","Zubair","Shahzaib",
+"Imran","Sajid","Rizwan","Asad","Yasir","Noman","Danish","Irfan",
+"Waqar","Junaid","Khurram","Adnan","Tariq","Shahid","Farhan"
+];
+
+const lastNames=[
+"Khan","Ahmed","Malik","Sheikh","Butt","Qureshi","Raza","Abbasi",
+"Chaudhry","Siddiqui","Bhatti","Awan","Jutt","Mughal","Ansari"
+];
+
+function randomName(){
+    return firstNames[Math.floor(Math.random()*firstNames.length)]+" "+
+           lastNames[Math.floor(Math.random()*lastNames.length)];
+}
+
+function randomAmount(){
+    return (Math.floor(Math.random()*250000)+5000).toLocaleString("en-PK");
+}
+
+function randomDate(){
+
+    const d=new Date(Date.now()-Math.random()*86400000);
+
+    return d.toLocaleString("en-PK");
+}
+
+const list=document.getElementById("withdrawList");
+
+let html="";
+
+for(let i=0;i<120;i++){
+
+    const avatar=Math.floor(Math.random()*70)+1;
+
+    html+=`
+    <div class="withdraw-card">
+
+        <div class="withdraw-left">
+
+            <img
+            class="withdraw-avatar"
+            src="https://i.pravatar.cc/100?img=${avatar}">
+
+            <div>
+
+                <div class="withdraw-name">
+                    ${randomName()}
+                </div>
+
+                <div class="withdraw-date">
+                    ${randomDate()}
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="text-align:right">
+
+            <div class="withdraw-amount">
+                PKR ${randomAmount()}
+            </div>
+
+            <div class="withdraw-status">
+                ✔ Success
+            </div>
+
+        </div>
+
+    </div>
+    `;
+}
+
+// Duplicate list for seamless loop
+list.innerHTML = html + html;
+
+</script>
