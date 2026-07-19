@@ -164,12 +164,10 @@ const addManualUPIPaymentRequest = async (req, res) => {
 
 
         const url = 'https://www.lg-pay.com/api/order/create';
-        const key = 'VN8NHNnda0Rn72UqeIvTwhQuEV2yXVcn'
-        // 'VN8NHNnda0Rn72UqeIvTwhQuEV2yXVcn';
+        const key = 'VN8NHNnda0Rn72UqeIvTwhQuEV2yXVcn';
         // const key = 'O2UyHC65eofVs2xsGCjDzY2qVbybifea';
 
-        const app_id = 'YD4569'
-        // "YD4569"
+        const app_id = "YD4569"
         // 'YD4555';
         //
 
