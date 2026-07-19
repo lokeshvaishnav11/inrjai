@@ -267,7 +267,7 @@ function generateWithdrawalRows() {
   container.innerHTML = rows.map(r => `
     <div style="display:grid; grid-template-columns:2fr 1.1fr 1.2fr 1fr; padding:11px 0; border-bottom:1px solid #2a2a3a; align-items:center;">
       <span style="color:#ccc; font-size:11.5px; line-height:1.4;">${r.date}</span>
-      <span style="color:#fff; font-size:12px; font-weight:500;">PKR${r.amount}</span>
+      <span style="color:#fff; font-size:12px; font-weight:500;">₹${r.amount}</span>
       <span style="color:#ccc; font-size:12px;">${r.method}</span>
       <span style="color:${r.status.color}; font-size:12px; font-weight:500;">${r.status.label} ›</span>
     </div>
@@ -507,7 +507,7 @@ function generateWithdrawalRows() {
                 <!-- 当前分类的游戏区块 --><!-- 彩票类型 --><!-- 其他类型（通用网格） -->
               <!-- Original Games Section -->
 
-                  <%- include('bot') %>
+                  <!-- <%- include('bot') %> -->
 
 <div data-v-6666ec94="" class="rc-og-section" style="padding:16px !important; background:transparent !important;">
   
@@ -642,7 +642,7 @@ function generateWithdrawalRows() {
                               src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png" />
                           </div>
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-winAmount">
-                            <h1 data-v-ffb14677="">Receive PKR1,625.00</h1>
+                            <h1 data-v-ffb14677="">Receive ₹1,625.00</h1>
                             <span data-v-ffb14677="">Winning amount</span>
                           </div>
                         </div>
@@ -659,7 +659,7 @@ function generateWithdrawalRows() {
                               src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png" />
                           </div>
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-winAmount">
-                            <h1 data-v-ffb14677="">Receive PKR573.50</h1>
+                            <h1 data-v-ffb14677="">Receive ₹573.50</h1>
                             <span data-v-ffb14677="">Winning amount</span>
                           </div>
                         </div>
@@ -676,7 +676,7 @@ function generateWithdrawalRows() {
                               src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260423171751p8q5.png" />
                           </div>
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-winAmount">
-                            <h1 data-v-ffb14677="">Receive PKR85.96</h1>
+                            <h1 data-v-ffb14677="">Receive ₹85.96</h1>
                             <span data-v-ffb14677="">Winning amount</span>
                           </div>
                         </div>
@@ -693,7 +693,7 @@ function generateWithdrawalRows() {
                               src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png" />
                           </div>
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-winAmount">
-                            <h1 data-v-ffb14677="">Receive PKR442.00</h1>
+                            <h1 data-v-ffb14677="">Receive ₹442.00</h1>
                             <span data-v-ffb14677="">Winning amount</span>
                           </div>
                         </div>
@@ -710,7 +710,7 @@ function generateWithdrawalRows() {
                               src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png" />
                           </div>
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-winAmount">
-                            <h1 data-v-ffb14677="">Receive PKR387.96</h1>
+                            <h1 data-v-ffb14677="">Receive ₹387.96</h1>
                             <span data-v-ffb14677="">Winning amount</span>
                           </div>
                         </div>
@@ -727,7 +727,7 @@ function generateWithdrawalRows() {
                               src="https://ossimg.jaiclubpay.com/jaiclub/vendorlogo/vendorlogo_20260317181711ruc9.png" />
                           </div>
                           <div data-v-ffb14677="" class="luckyWinners__container-wrapper__item-winAmount">
-                            <h1 data-v-ffb14677="">Receive PKR700.80</h1>
+                            <h1 data-v-ffb14677="">Receive ₹700.80</h1>
                             <span data-v-ffb14677="">Winning amount</span>
                           </div>
                         </div>
@@ -942,7 +942,7 @@ function generateWithdrawalRows() {
 
         <!-- Image -->
         <img
-            src="/images/pkr4.jpeg"
+            src="/images/₹4.jpeg"
             alt="Withdraw"
             style="
                 width:89vw;
@@ -1022,7 +1022,7 @@ button:hover {
     ">&times;</button>
 
     <!-- Bonus Image -->
-  <img src="/images/pkr1.jpeg"
+  <img src="/images/₹1.jpeg"
      onclick="window.location.href='/wallet/recharge'"
      style="width:100%; border-radius:16px; display:block; cursor:pointer;" />
 

@@ -171,7 +171,7 @@ socket.on("data-server", function (msg) {
                return false
             }
             const amt = data.data.money_user + data.data.win_wallet;
-            $(".num span").text(`PKR ${amt}.00 `);
+            $(".num span").text(`₹ ${amt}.00 `);
          })
       $(".Loading").fadeOut(0)
    }, 1000)
@@ -220,7 +220,7 @@ fetch("/api/webapi/GetUserInfo")
          return false
       }
       const amt = data.data.money_user + data.data.win_wallet;
-      $(".num span").text(`PKR ${amt}.00 `);
+      $(".num span").text(`₹ ${amt}.00 `);
    })
 $(".reload_money").click(function (e) {
    e.preventDefault()
@@ -236,7 +236,7 @@ $(".reload_money").click(function (e) {
             return false
          }
          const amt = data.data.money_user + data.data.win_wallet;
-      $(".num span").text(`PKR ${amt}.00 `);
+      $(".num span").text(`₹ ${amt}.00 `);
       })
 })
 $(".van-overlay, .foot .left").click(function (e) {
@@ -673,7 +673,7 @@ $(".foot .right").click(function (e) {
          if (response.status === false) return
          $("#history-order").prepend(response.data);
          const amt = response.money + response.win_wallet;
-         $(".total-box .num span").text("PKR " + amt + ".00")
+         $(".total-box .num span").text("₹ " + amt + ".00")
          socket.emit('data-server_2', { money: x * money, join, time: Date.now(), change: response.change,win_wallet:response.win_wallet,wallet:response.money});
       },
    })

@@ -100,7 +100,7 @@ const [depositAmount, setDepositAmount] = useState('');
                   {user.ekyc}
                 </span>
               </td>
-              <td>PKR{user.wallet}</td>
+              <td>₹{user.wallet}</td>
               <td>
                 <span className={`badge ${user.firstDeposit ? 'bg-success' : 'bg-secondary'}`}>
                   {user.firstDeposit ? 'Yes' : 'No'}

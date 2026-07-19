@@ -140,7 +140,7 @@ function currentid() {
 //                                     <div class="column-2">
 //                                         <button
 //                                             class="btn btn-transparent previous-history d-flex align-items-center mx-auto fw-normal">
-//                                             `+data[$i].amount+`PKR
+//                                             `+data[$i].amount+`₹
 //                                         </button>
 //                                     </div>
 //                                     <div class="column-3">
@@ -149,7 +149,7 @@ function currentid() {
 //                                             `+data[$i].cashout_multiplier+`x</div>
 //                                     </div>
 //                                     <div class="column-4 fw-normal">
-//                                         `+Math.round(data[$i].cashout_multiplier*data[$i].amount)+`PKR
+//                                         `+Math.round(data[$i].cashout_multiplier*data[$i].amount)+`₹
 //                                     </div>
 //                                 </div>
 //                                 `);
@@ -337,7 +337,7 @@ nextcrash();
         //                             </div>
         //                             <div class="column-2">
         //                                 <button class="btn btn-transparent previous-history d-flex align-items-center mx-auto fw-normal">
-        //                                     ${betHistory[i].amount}PKR
+        //                                     ${betHistory[i].amount}₹
         //                                 </button>
         //                             </div>
         //                             <div class="column-3">
@@ -346,7 +346,7 @@ nextcrash();
         //                                 </div>
         //                             </div>
         //                             <div class="column-4 fw-normal">
-        //                                 ${parseFloat(betHistory[i].crash) > 1 ? (parseFloat(betHistory[i].crash) * betHistory[i].amount) + 'PKR' : ''}
+        //                                 ${parseFloat(betHistory[i].crash) > 1 ? (parseFloat(betHistory[i].crash) * betHistory[i].amount) + '₹' : ''}
         //                             </div>
         //                         </div>
         //                     `);
@@ -421,7 +421,7 @@ nextcrash();
                 //                         </div>
                 //                         <div class="column-2">
                 //                             <button class="btn btn-transparent previous-history d-flex align-items-center mx-auto fw-normal">
-                //                                 ${bet.amount}PKR
+                //                                 ${bet.amount}₹
                 //                             </button>
                 //                         </div>
                 //                         <div class="column-3">
@@ -430,7 +430,7 @@ nextcrash();
                 //                             </div>
                 //                         </div>
                 //                         <div class="column-4 fw-normal">
-                //                             ${parseFloat(bet.crash) > 1 ? (parseFloat(bet.crash) * bet.amount) + 'PKR' : ''}
+                //                             ${parseFloat(bet.crash) > 1 ? (parseFloat(bet.crash) * bet.amount) + '₹' : ''}
                 //                         </div>
                 //                     </div>
                 //                 `);

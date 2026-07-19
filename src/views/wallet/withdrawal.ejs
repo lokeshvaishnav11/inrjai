@@ -7910,7 +7910,7 @@
                         <div data-v-25d9c352="" class="c-row c-row-middle">
                             <div data-v-25d9c352="" class="money">
                                 
-                                <div data-v-25d9c352="">PKR<span data-v-25d9c352="" class="p-l-10">Loading...</span></div>
+                                <div data-v-25d9c352="">₹<span data-v-25d9c352="" class="p-l-10">Loading...</span></div>
                                 
                             </div>
                             <div data-v-25d9c352="" class="van-image img m-l-15" style="width: 26px; height: 26px;"><img
@@ -7929,7 +7929,7 @@
                                     </i>
                                 </div>
                                 <div data-v-25d9c352="" class="c-tc">Withdrable/Win Wallet</div>
-                                <div class="c-tc" style="font-size: 22px;font-weight: bold; margin-top: 10px;">PKR<span
+                                <div class="c-tc" style="font-size: 22px;font-weight: bold; margin-top: 10px;">₹<span
                                         class="winWallet"></span></div>
                                 <div data-v-25d9c352="" class="icons"><i data-v-25d9c352=""
                                         class="van-icon van-icon-success"
@@ -7942,7 +7942,7 @@
                     </div>
                 </div>
                 <div data-v-25d9c352="" class="number-box c-row">
-                    <div data-v-25d9c352="" class="symbol c-row c-row-middle">PKR</div>
+                    <div data-v-25d9c352="" class="symbol c-row c-row-middle">₹</div>
                     <div data-v-25d9c352="" class="input c-row c-row-middle van-cell van-field">
                         <div class="van-cell__value van-cell__value--alone van-field__value">
                             <div class="van-field__body">
@@ -8012,7 +8012,7 @@
                         </div>
                         <div style="font-size: 14px; color: #9ca3af">
                             <!-- Display formatted money or '0.00' if undefined/false -->
-                            PKR<%= (typeof money==='number' ) ? money.toLocaleString('en-IN') : (money ? money : '0.00' )
+                            ₹<%= (typeof money==='number' ) ? money.toLocaleString('en-IN') : (money ? money : '0.00' )
                                 %>
                         </div>
                     </div>
@@ -8050,7 +8050,7 @@
         <!-- Image -->
         <img
             id="recharge-now"
-            src="/images/pkr3.jpeg"
+            src="/images/₹3.jpeg"
             style="width:100%;display:block;cursor:pointer;border-radius:8px;"
             onclick="window.location.href='/wallet/paynow/manual_upi?am=2199&extra=true'"
         >
@@ -8128,7 +8128,7 @@
                 <div id="withdrawal-popup">
                     <div id="withdrawal-popup-content">
                         <span id="close-popup">&times;</span>
-                                       <img id="recharge-now"   onclick="window.location.href ='/wallet/paynow/manual_upi?am=1349&extra=false&ekyc=true'" style="height: 100%;width: 100%;" src="/images/pkr2.jpeg">
+                                       <img id="recharge-now"   onclick="window.location.href ='/wallet/paynow/manual_upi?am=1349&extra=false&ekyc=true'" style="height: 100%;width: 100%;" src="/images/₹2.jpeg">
 
                         <!-- <button id="recharge-now"
                             onclick="window.location.href ='/wallet/paynow/manual_upi?am=899&extra=false&ekyc=true'">RECHARGE
@@ -8156,10 +8156,10 @@
                             success: function (response) {
                                 let user = response.userInfo[0];
                                 console.log(user.win_wallet, 'first')
-                                $('.money').text("PKR" + user.money);
+                                $('.money').text("₹" + user.money);
                                 $('.winWallet').text(user.win_wallet);
                                 console.log(user);
-                                $('.bankBox .box .item:eq(1) div:eq(1)').text(`2. Complete Bet PKR ${response.result}`);
+                                $('.bankBox .box .item:eq(1) div:eq(1)').text(`2. Complete Bet ₹ ${response.result}`);
                                 if (!response.datas[0]) return;
                                 let data = response.datas[0];
                                 $('.conBox .list').append(
@@ -8240,7 +8240,7 @@
                                     success: function (response) {
                                         $(this).addClass('block-click');
                                         if (response.status == true) {
-                                            $('.money').text("PKR" + response.money + '.00');
+                                            $('.money').text("₹" + response.money + '.00');
                                             $('.winWallet').text(response.win_wallet)
                                             window.location.href = "/home"
                                         }

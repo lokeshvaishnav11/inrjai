@@ -232,7 +232,7 @@
               </div>
               <p data-v-58b21e90="" class="totalSavings__container-header__subtitle">
                 <span data-v-58b21e90="">
-                  PKR0
+                  ₹0
                 </span>
                 <img data-v-58b21e90="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAAAOVBMVEUAAACjo6OgoKCjo6OhoaGjo6Ofn5+np6ejo6Ojo6OlpaWioqKkpKSjo6Ojo6Ojo6Ojo6OkpKSjo6PuE3LfAAAAEnRSTlMAf0C/H98QIM/vMGCfj29Qr1+b1SuLAAAA4UlEQVQ4y+3Sy3aEIBBF0eJR8hCx+/7/x8amdCVCZYUMetZnpm4BBfr05hbblX+lEX2pBJ1uUDKTK1ojUGgyA2z/sHmcbVetG4YNDHBQaEXqxjykbj3gbzceSIdUbUcN8ARyQlz+oBUwHqC7dTF8000ehISNXpQsflh5T6gBrHw8L0JpBR6nlDmE7ucOZ7CnRsVe9AVio4GvAexCjcqFPaG8Vw6a27RXQrvEAg7sh189VNHa7/sFWP24AEY5F0qri3VcVwo0GYNnbU7g56xlgIvp0mfyBWNMer4W11Xp03v7Att9D7xKb3uAAAAAAElFTkSuQmCC">
               </p>
@@ -290,7 +290,7 @@
                   </span>
                   <div data-v-88c90fd8="" class="financialServices__container-footer-des">
                     <h4 data-v-88c90fd8="">
-                      PKR0.00
+                      ₹0.00
                     </h4>
                     <i data-v-88c90fd8="" class="van-badge__wrapper van-icon van-icon-arrow">
                       <!---->
@@ -478,7 +478,7 @@
                       </div>
                       <div data-v-1b2464ab="" class="settingPanel__container-items-right">
                         <!-- <h5 data-v-1b2464ab="" style="background: #66BB6A;">
-                          PKR5.00
+                          ₹5.00
                         </h5> -->
                         <span data-v-1b2464ab="" style="display: none;">
                           English
@@ -854,17 +854,17 @@
             $('.money-value').text(user.money_user.toFixed(2)); // Assuming user.money_user is a number
             
             // Display total withdraw and total deposit amounts
-            $('.total.total-withdraw').text("PKR" + response.totalWithdraw.toFixed(2));
-            $('.total.total-deposit').text("PKR" + response.totalRecharge.toFixed(2));
+            $('.total.total-withdraw').text("₹" + response.totalWithdraw.toFixed(2));
+            $('.total.total-deposit').text("₹" + response.totalRecharge.toFixed(2));
             
             // Update total savings
             const amt = user.money_user + user.win_wallet;
-            $('.totalSavings__container-header__subtitle span').text("PKR" + amt + '.00');
+            $('.totalSavings__container-header__subtitle span').text("₹" + amt + '.00');
         }
     });
 
     // Set initial value for total savings
-    $('.totalSavings__container-header__subtitle span').text("PKR0.00");
+    $('.totalSavings__container-header__subtitle span').text("₹0.00");
 });
 
     </script>

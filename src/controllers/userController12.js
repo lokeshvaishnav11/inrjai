@@ -206,7 +206,7 @@ const checkInHandling = async (req, res) => {
                 await connection.query('UPDATE users SET money = money + ? WHERE phone = ? ', [point_list.total1, rows[0].phone]);
                 await connection.query('UPDATE point_list SET total1 = ? WHERE phone = ? ', [0, rows[0].phone]);
                 return res.status(200).json({
-                    message: `You just received PKR ${point_list.total1}.00`,
+                    message: `You just received ₹ ${point_list.total1}.00`,
                     status: true,
                     timeStamp: timeNow,
                 });
@@ -233,7 +233,7 @@ const checkInHandling = async (req, res) => {
                 await connection.query('UPDATE users SET money = money + ? WHERE phone = ? ', [point_list.total2, rows[0].phone]);
                 await connection.query('UPDATE point_list SET total2 = ? WHERE phone = ? ', [0, rows[0].phone]);
                 return res.status(200).json({
-                    message: `You just received PKR ${point_list.total2}.00`,
+                    message: `You just received ₹ ${point_list.total2}.00`,
                     status: true,
                     timeStamp: timeNow,
                 });
@@ -260,7 +260,7 @@ const checkInHandling = async (req, res) => {
                 await connection.query('UPDATE users SET money = money + ? WHERE phone = ? ', [point_list.total3, rows[0].phone]);
                 await connection.query('UPDATE point_list SET total3 = ? WHERE phone = ? ', [0, rows[0].phone]);
                 return res.status(200).json({
-                    message: `You just received PKR ${point_list.total3}.00`,
+                    message: `You just received ₹ ${point_list.total3}.00`,
                     status: true,
                     timeStamp: timeNow,
                 });
@@ -287,7 +287,7 @@ const checkInHandling = async (req, res) => {
                 await connection.query('UPDATE users SET money = money + ? WHERE phone = ? ', [point_list.total4, rows[0].phone]);
                 await connection.query('UPDATE point_list SET total4 = ? WHERE phone = ? ', [0, rows[0].phone]);
                 return res.status(200).json({
-                    message: `You just received PKR ${point_list.total4}.00`,
+                    message: `You just received ₹ ${point_list.total4}.00`,
                     status: true,
                     timeStamp: timeNow,
                 });
@@ -314,7 +314,7 @@ const checkInHandling = async (req, res) => {
                 await connection.query('UPDATE users SET money = money + ? WHERE phone = ? ', [point_list.total5, rows[0].phone]);
                 await connection.query('UPDATE point_list SET total5 = ? WHERE phone = ? ', [0, rows[0].phone]);
                 return res.status(200).json({
-                    message: `You just received PKR ${point_list.total5}.00`,
+                    message: `You just received ₹ ${point_list.total5}.00`,
                     status: true,
                     timeStamp: timeNow,
                 });
@@ -341,7 +341,7 @@ const checkInHandling = async (req, res) => {
                 await connection.query('UPDATE users SET money = money + ? WHERE phone = ? ', [point_list.total6, rows[0].phone]);
                 await connection.query('UPDATE point_list SET total6 = ? WHERE phone = ? ', [0, rows[0].phone]);
                 return res.status(200).json({
-                    message: `You just received PKR ${point_list.total6}.00`,
+                    message: `You just received ₹ ${point_list.total6}.00`,
                     status: true,
                     timeStamp: timeNow,
                 });
@@ -368,7 +368,7 @@ const checkInHandling = async (req, res) => {
                 await connection.query('UPDATE users SET money = money + ? WHERE phone = ? ', [point_list.total7, rows[0].phone]);
                 await connection.query('UPDATE point_list SET total7 = ? WHERE phone = ? ', [0, rows[0].phone]);
                 return res.status(200).json({
-                    message: `You just received PKR ${point_list.total7}.00`,
+                    message: `You just received ₹ ${point_list.total7}.00`,
                     status: true,
                     timeStamp: timeNow,
                 });

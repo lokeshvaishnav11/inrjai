@@ -51,14 +51,14 @@ const CbetHistory = () => {
                 history.map((item, index) => (
                   <tr key={index} className="border-t bg-gray-50">
                     <td className="px-4 py-2">{item.roundId}</td>
-                    <td className="px-4 py-2">PKR{item.amount}</td>
+                    <td className="px-4 py-2">₹{item.amount}</td>
                     <td className="px-4 py-2">{item.crash}</td>
                     <td
                       className={`px-4 py-2 font-medium ${
                         item.win !== "0" ? "text-green-600" : "text-red-500"
                       }`}
                     >
-                      {item.win !== "0" ? `PKR${item.win}` : "Lost"}
+                      {item.win !== "0" ? `₹${item.win}` : "Lost"}
                     </td>
                     <td className="px-4 py-2">
                       {new Date(item.created_at).toLocaleString("en-IN", {

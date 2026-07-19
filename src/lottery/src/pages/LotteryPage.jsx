@@ -173,7 +173,7 @@ const LotteryPage = () => {
           />
 
      <div className="date-tim text-nowrap  text-xs round-id-input">
-            <span>PKR{userData || 0}</span>
+            <span>₹{userData || 0}</span>
             {/* <span>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span> */}
           </div>
           </div>

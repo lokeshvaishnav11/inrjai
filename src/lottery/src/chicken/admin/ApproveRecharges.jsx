@@ -90,7 +90,7 @@ const ApproveRecharges = () => {
                  <tr key={item._id}>
                    <td>{index + 1}</td>
                    <td>{item.phone}</td>
-                   <td>PKR{item.amount}</td>
+                   <td>₹{item.amount}</td>
                    <td>{item.utr}</td>
                    <td>{item.firstDeposit ? '✅' : '❌'}</td>
                    <td>{item.nextDeposit ? '✅' : '❌'}</td>

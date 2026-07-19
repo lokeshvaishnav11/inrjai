@@ -5,16 +5,16 @@ const WinnerSlider = () => {
     
 
     const winnersData = [
-        { name: "Hiroshi", flag: "🇯🇵", amount: "+PKR189.00" },
-  { name: "Amit", flag: "🇮🇳", amount: "+PKR250.00" },
-  { name: "Elena", flag: "🇪🇸", amount: "+PKR300.00" },
-  { name: "Liam", flag: "🇬🇧", amount: "+PKR145.00" },
-  { name: "Chen", flag: "🇨🇳", amount: "+PKR210.00" },
-  { name: "Sophia", flag: "🇺🇸", amount: "+PKR275.00" },
-  { name: "Ivan", flag: "🇷🇺", amount: "+PKR320.00" },
-  { name: "Fatima", flag: "🇦🇪", amount: "+PKR195.00" },
-  { name: "Lucas", flag: "🇧🇷", amount: "+PKR230.00" },
-  { name: "Mei", flag: "🇹🇼", amount: "+PKR160.00" },
+        { name: "Hiroshi", flag: "🇯🇵", amount: "+₹189.00" },
+  { name: "Amit", flag: "🇮🇳", amount: "+₹250.00" },
+  { name: "Elena", flag: "🇪🇸", amount: "+₹300.00" },
+  { name: "Liam", flag: "🇬🇧", amount: "+₹145.00" },
+  { name: "Chen", flag: "🇨🇳", amount: "+₹210.00" },
+  { name: "Sophia", flag: "🇺🇸", amount: "+₹275.00" },
+  { name: "Ivan", flag: "🇷🇺", amount: "+₹320.00" },
+  { name: "Fatima", flag: "🇦🇪", amount: "+₹195.00" },
+  { name: "Lucas", flag: "🇧🇷", amount: "+₹230.00" },
+  { name: "Mei", flag: "🇹🇼", amount: "+₹160.00" },
       ];
     
       

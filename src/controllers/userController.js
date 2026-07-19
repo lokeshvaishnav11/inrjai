@@ -257,7 +257,7 @@ const checkInHandling = async (req, res) => {
      const [newData] = await connection.query('INSERT INTO attendance_record SET phone = ? , amount = ? , day = ?',[rows[0].phone,get,data]);
      console.log(newData,'newaData');
      return res.status(200).json({
-      message: `You just received PKR ${point_list.total1}.00`,
+      message: `You just received ₹ ${point_list.total1}.00`,
       status: true,
       timeStamp: timeNow,
    })

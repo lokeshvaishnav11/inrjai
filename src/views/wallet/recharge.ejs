@@ -508,7 +508,7 @@
         }
 
         .selected-amount-display::before {
-            /* content: 'PKR'; */
+            /* content: '₹'; */
             position: absolute;
             top: 50%;
             left: 10px;
@@ -779,7 +779,7 @@
             <div class="header-right">
                 <button class="deposit-balance-btn">
                     <i class="fa-solid fa-wallet"></i>
-                    PKR<span id="balance-display">0.00</span> DEPOSIT <!-- Added space -->
+                    ₹<span id="balance-display">0.00</span> DEPOSIT <!-- Added space -->
                 </button>
 
             </div>
@@ -805,7 +805,7 @@
             <div class="amount-input-group" style="border: 1px solid #FB8466;">
                 <input type="number" id="amount-input" placeholder="500+" value="1000" class="amount-input"
                     inputmode="numeric" />
-                <span class="currency-symbol">PKR</span>
+                <span class="currency-symbol">₹</span>
                 <button id="deposit-button" class="deposit-action-btn"
                     style="background: linear-gradient(90deg, #00c853 0%, #00e676 25%, #7b1fa2 60%, #ab47bc 100%)">
                     DEPOSIT
@@ -823,7 +823,7 @@
                 <button class="preset-amount-btn" data-amount="95000">95000</button>
             </div>
 
-            <p class="selected-amount-display">Recharge Amount Select: PKR<span id="selected-amount-value">1000</span></p>
+            <p class="selected-amount-display">Recharge Amount Select: ₹<span id="selected-amount-value">1000</span></p>
         </section>
 
         <!-- Footer -->
@@ -862,7 +862,7 @@
                         </div>
                         <div style="font-size: 14px; color: #9ca3af">
                             <!-- Display formatted money or '0.00' if undefined/false -->
-                            PKR<%= (typeof money==='number' ) ? money.toLocaleString('en-IN') : (money ? money : '0.00' )
+                            ₹<%= (typeof money==='number' ) ? money.toLocaleString('en-IN') : (money ? money : '0.00' )
                                 %>
                         </div>
                     </div>
@@ -971,7 +971,7 @@
             const finalAmount = parseInt(amountInput.value, 10);
 
             if (isNaN(finalAmount) || finalAmount < minimumMoneyAllowed) {
-                alertMessage(`Minimum deposit amount is PKR${minimumMoneyAllowed}. Please enter a valid amount.`);
+                alertMessage(`Minimum deposit amount is ₹${minimumMoneyAllowed}. Please enter a valid amount.`);
                 amountInput.focus(); // Focus the input field
                 return;
             }
@@ -979,7 +979,7 @@
             // **IMPORTANT**: Confirm this is the correct function for your main UPI flow.
             // If your backend uses a different endpoint/method for the main UPI button shown,
             // call that specific function instead (e.g., handleUPIGatewayPaymentRequest).
-            console.log(`Initiating deposit for PKR${finalAmount} via Manual UPI`);
+            console.log(`Initiating deposit for ₹${finalAmount} via Manual UPI`);
             // Disable button temporarily? Add loading state?
             depositButton.disabled = true;
             depositButton.textContent = 'Processing...';
@@ -1008,7 +1008,7 @@
 
         // Optional: UPI Gateway Request (Example - Keep if you have another UPI option)
         const handleUPIGatewayPaymentRequest = async (moneyAmount) => {
-            console.log(`Initiating deposit for PKR${moneyAmount} via UPI Gateway`);
+            console.log(`Initiating deposit for ₹${moneyAmount} via UPI Gateway`);
             depositButton.disabled = true;
             depositButton.textContent = 'Redirecting...';
             try {
@@ -1072,7 +1072,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Set minimum amount text and input placeholder
             minimumRechargeSpan.textContent = minimumMoneyAllowed;
-            amountInput.placeholder = `PKR${minimumMoneyAllowed}+`; // Set placeholder dynamically
+            amountInput.placeholder = `₹${minimumMoneyAllowed}+`; // Set placeholder dynamically
 
             updateSelectedAmount(currentAmount); // Set initial state (e.g., for 1000)
             updateTotalBalance(); // Fetch and display balance on load

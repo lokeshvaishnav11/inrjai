@@ -223,7 +223,7 @@ const AuthPage = () => {
             Play
           </button>
 
-            <span class=" d-flex align-items-center justify-content-center bg-white text-black rounded-circle" style={{ width: "16px", height: "16px", fontSize: "10px" }}>PKR</span> {userInfo ? userInfo?.wallet : "0"}
+            <span class=" d-flex align-items-center justify-content-center bg-white text-black rounded-circle" style={{ width: "16px", height: "16px", fontSize: "10px" }}>₹</span> {userInfo ? userInfo?.wallet : "0"}
 
 
             <button

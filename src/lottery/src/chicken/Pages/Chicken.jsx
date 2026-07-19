@@ -535,7 +535,7 @@ const placeBet = async (betAmount, crashIndex , profit) => {
 
     const profit = (multipliers[currentStep] * betAmount).toFixed(2);
     setMessage(
-      `✅ Cashed out at ${multipliers[currentStep].toFixed(2)}x: +PKR ${profit}`
+      `✅ Cashed out at ${multipliers[currentStep].toFixed(2)}x: +₹ ${profit}`
     );
     setPop2(true);
 
@@ -677,7 +677,7 @@ const placeBet = async (betAmount, crashIndex , profit) => {
             </button>
 
             <div className="d-flex gap-3 justify-content-center">
-              {/* PKR10000 Stat Box */}
+              {/* ₹10000 Stat Box */}
               <div
                 className="d-flex justify-content-center align-items-center px-2 py-1 gap-2 rounded"
                 style={{
@@ -688,7 +688,7 @@ const placeBet = async (betAmount, crashIndex , profit) => {
                   background: "rgba(255, 255, 255, 0.1)",
                 }}
               >
-                PKR10000
+                ₹10000
               </div>
 
               {/* Balance Stat Box */}
@@ -702,7 +702,7 @@ const placeBet = async (betAmount, crashIndex , profit) => {
                   background: "rgba(255, 255, 255, 0.1)",
                 }}
               >
-                PKR{balance.toFixed(2)}
+                ₹{balance.toFixed(2)}
               </div>
             </div>
           </div>
@@ -747,7 +747,7 @@ const placeBet = async (betAmount, crashIndex , profit) => {
               className="me-1 d-flex align-items-center justify-content-center bg-white text-black rounded-circle"
               style={{ width: "16px", height: "16px", fontSize: "10px" }}
             >
-              PKR
+              ₹
             </span>
             {balance.toFixed(2)}
           </button>
@@ -1015,8 +1015,8 @@ style={{
         {/* Bet Amount Controls */}
         <div className="bet-controls">
           <div className="bet-range">
-            <span>MIN PKR50</span>
-            <span>MAX PKR{balance.toFixed(2)}</span>
+            <span>MIN ₹50</span>
+            <span>MAX ₹{balance.toFixed(2)}</span>
           </div>
 
           <div className="bet-input-container">
@@ -1059,7 +1059,7 @@ style={{
                 onClick={() => handleSetBet(val)}
                 disabled={isRunning}
               >
-                PKR{val}
+                ₹{val}
               </button>
             ))}
           </div>
@@ -1123,7 +1123,7 @@ style={{
             disabled={!isRunning}
           >
             <div className="cash-out-label">CASH OUT</div>
-            <div className="cash-out-value">PKR{cashOutValue}</div>
+            <div className="cash-out-value">₹{cashOutValue}</div>
           </button>
 
           <button

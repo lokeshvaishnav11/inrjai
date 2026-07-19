@@ -36,7 +36,7 @@
 //     res.render('aviator.ejs', {
 //         csrfToken: 'your_csrf_token',
 //         user: {
-//             currency: 'PKR',
+//             currency: '₹',
 //             id: 12345,
 //         },
 //         wallet: user[0]?.money+user[0]?.win_wallet,

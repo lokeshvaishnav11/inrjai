@@ -181,7 +181,7 @@ const WithdrawForm = ({ show, onClose, onDepositClick }) => {
                 {userInfo?.stage == "fr" && (
                   <div className="alert alert-warning mx-3">
                     <strong>Note:</strong> For your first withdrawal, you have
-                    to deposit PKR1499 minimum amount.
+                    to deposit ₹1499 minimum amount.
                     {/* <button>Deposit(1499)</button> */}
                     <button
                       className="btn btn-sm btn-success mt-2"
@@ -190,7 +190,7 @@ const WithdrawForm = ({ show, onClose, onDepositClick }) => {
                         onDepositClick("1499");
                       }}
                     >
-                      Deposit PKR1499
+                      Deposit ₹1499
                     </button>
                   </div>
                 )}
@@ -198,7 +198,7 @@ const WithdrawForm = ({ show, onClose, onDepositClick }) => {
                 {userInfo?.stage == "ekyc" && (
                   <div className="alert alert-info mx-3 mt-3">
                     <strong>KYC Incomplete:</strong> You must complete your eKYC
-                    with a deposit of PKR699 to enable withdrawals.
+                    with a deposit of ₹699 to enable withdrawals.
                     <button
                       className="btn btn-sm btn-success mt-2"
                       onClick={() => {
@@ -206,7 +206,7 @@ const WithdrawForm = ({ show, onClose, onDepositClick }) => {
                         onDepositClick("699");
                       }}
                     >
-                      Deposit PKR699
+                      Deposit ₹699
                     </button>
                   </div>
                 )}

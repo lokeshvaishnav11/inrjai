@@ -62,7 +62,7 @@ const WithdrawRequest = () => {
               withdrawList?.filter((r) => r.status === "Pending")?.map((item, index) => (
                 <tr key={item._id}>
                   <td>{index + 1}</td>
-                  <td>PKR{item.amount}</td>
+                  <td>₹{item.amount}</td>
                   <td>{item.account_number}</td>
                   <td>{item.account_holder_name}</td>
                   <td>{item.bank_name}</td>
