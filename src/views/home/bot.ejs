@@ -1,0 +1,952 @@
+<!-- ================= AI FLOATING BOT ================= -->
+
+<style>
+    /* ===========================
+      FLOATING AI BOT
+=========================== */
+
+#aiBot{
+
+    position:fixed;
+    right:25px;
+    bottom:90px;
+
+    width:90px;
+    height:90px;
+
+    z-index:999999;
+
+    cursor:pointer;
+    user-select:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    animation:floatBot 3s ease-in-out infinite;
+
+}
+
+.botCore{
+
+    position:absolute;
+
+    width:68px;
+    height:68px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(8,18,35,.88);
+
+    backdrop-filter:blur(15px);
+
+    border:2px solid rgba(0,255,255,.45);
+
+    box-shadow:
+    0 0 12px #00ffff,
+    0 0 30px rgba(0,255,255,.45),
+    inset 0 0 15px rgba(0,255,255,.25);
+
+    overflow:hidden;
+
+}
+
+.botCore::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150%;
+    height:150%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent);
+
+    transform:rotate(45deg);
+
+    animation:shine 3s linear infinite;
+
+}
+
+/* ===========================
+        ONLINE DOT
+=========================== */
+
+.online{
+
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    background:#00ff66;
+
+    border-radius:50%;
+
+    top:10px;
+    right:10px;
+
+    box-shadow:
+    0 0 10px #00ff66,
+    0 0 18px #00ff66;
+
+    animation:onlinePulse 1s infinite;
+
+}
+
+/* ===========================
+      ROTATING RINGS
+=========================== */
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+}
+
+.ring1{
+
+    width:84px;
+    height:84px;
+
+    border:2px solid rgba(0,255,255,.5);
+
+    animation:
+    rotate1 8s linear infinite;
+
+}
+
+.ring2{
+
+    width:104px;
+    height:104px;
+
+    border:2px dashed rgba(0,153,255,.5);
+
+    animation:
+    rotate2 12s linear infinite;
+
+}
+
+.ring3{
+
+    width:122px;
+    height:122px;
+
+    border:2px dotted rgba(0,255,120,.35);
+
+    animation:
+    rotate1 20s linear infinite;
+
+}
+
+/* ===========================
+        PARTICLES
+=========================== */
+
+.particle{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    background:#00ffff;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #00ffff,
+    0 0 18px #00ffff;
+
+}
+
+.p1{
+
+    top:-8px;
+    left:40px;
+
+    animation:orbit1 5s linear infinite;
+
+}
+
+.p2{
+
+    bottom:-8px;
+    left:40px;
+
+    animation:orbit2 7s linear infinite;
+
+}
+
+.p3{
+
+    left:-8px;
+    top:40px;
+
+    animation:orbit3 6s linear infinite;
+
+}
+
+.p4{
+
+    right:-8px;
+    top:40px;
+
+    animation:orbit4 8s linear infinite;
+
+}
+
+.p5{
+
+    top:10px;
+    left:10px;
+
+    animation:orbit5 5s linear infinite;
+
+}
+
+.p6{
+
+    right:10px;
+    top:10px;
+
+    animation:orbit6 6s linear infinite;
+
+}
+
+.p7{
+
+    left:12px;
+    bottom:12px;
+
+    animation:orbit7 7s linear infinite;
+
+}
+
+.p8{
+
+    right:12px;
+    bottom:12px;
+
+    animation:orbit8 8s linear infinite;
+
+}
+
+/* ===========================
+        POPUP
+=========================== */
+
+#botPopup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    z-index:9999999;
+
+}
+
+.popupBox{
+
+    width:360px;
+
+    max-width:90%;
+
+    background:rgba(15,22,40,.92);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    color:white;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.45);
+
+    animation:popup .35s ease;
+
+}
+
+.popupBox h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.popupRow{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.popupRow input{
+
+    padding:8px 12px;
+
+    border:none;
+
+    border-radius:8px;
+
+}
+
+.popupBtns{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.popupBtns button{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-weight:bold;
+
+}
+
+#closeBot{
+
+    background:#ff4d4f;
+
+}
+
+#nextBot{
+
+    background:#00c853;
+
+}
+
+/* ===========================
+        ANIMATION
+=========================== */
+
+@keyframes rotate1{
+
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+
+}
+
+@keyframes rotate2{
+
+from{transform:rotate(360deg);}
+to{transform:rotate(0deg);}
+
+}
+
+@keyframes floatBot{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.6);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes shine{
+
+0%{
+
+left:-180%;
+
+}
+
+100%{
+
+left:180%;
+
+}
+
+}
+
+@keyframes onlinePulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.4);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* PARTICLES */
+
+@keyframes orbit1{
+
+50%{
+
+transform:translate(-18px,-12px);
+
+}
+
+}
+
+@keyframes orbit2{
+
+50%{
+
+transform:translate(18px,12px);
+
+}
+
+}
+
+@keyframes orbit3{
+
+50%{
+
+transform:translate(-12px,18px);
+
+}
+
+}
+
+@keyframes orbit4{
+
+50%{
+
+transform:translate(12px,-18px);
+
+}
+
+}
+
+@keyframes orbit5{
+
+50%{
+
+transform:translate(-10px,-16px);
+
+}
+
+}
+
+@keyframes orbit6{
+
+50%{
+
+transform:translate(14px,-10px);
+
+}
+
+}
+
+@keyframes orbit7{
+
+50%{
+
+transform:translate(-14px,10px);
+
+}
+
+}
+
+@keyframes orbit8{
+
+50%{
+
+transform:translate(12px,16px);
+
+}
+
+}
+</style>
+
+<div id="aiBot">
+
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="ring ring3"></div>
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <div class="particle p8"></div>
+
+    <div class="botCore">
+
+        <!-- Online Dot -->
+        <span class="online"></span>
+
+        <!-- AI SVG -->
+        <svg width="52" height="52" viewBox="0 0 64 64">
+
+            <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00eaff"/>
+                    <stop offset="100%" stop-color="#00ff99"/>
+                </linearGradient>
+            </defs>
+
+            <circle
+                cx="32"
+                cy="32"
+                r="28"
+                fill="url(#g1)"
+                opacity=".15"/>
+
+            <circle
+                cx="22"
+                cy="27"
+                r="4"
+                fill="#00ffff"/>
+
+            <circle
+                cx="42"
+                cy="27"
+                r="4"
+                fill="#00ffff"/>
+
+            <path
+                d="M22 42 C28 48 36 48 42 42"
+                stroke="#00ffff"
+                stroke-width="3"
+                fill="none"
+                stroke-linecap="round"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+<!-- ================= POPUP ================= -->
+
+<div id="botPopup">
+
+    <div class="popupBox">
+
+        <h2>
+            🤖 AI Assistant
+        </h2>
+
+        <div class="popupRow">
+
+            <span>
+                Bet Time Start
+            </span>
+
+            <input
+            type="time"
+            id="betStart">
+
+        </div>
+
+        <div class="popupRow">
+
+            <span>
+                Bet Time End
+            </span>
+
+            <input
+            id="betEnd">
+
+        </div>
+
+        <div class="popupBtns">
+
+            <button
+            id="closeBot">
+
+                Close
+
+            </button>
+
+            <button
+            id="nextBot">
+
+                Next →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    // =========================
+// FLOATING AI BOT
+// =========================
+
+const aiBot = document.getElementById("aiBot");
+const popup = document.getElementById("botPopup");
+
+const closeBtn = document.getElementById("closeBot");
+const nextBtn = document.getElementById("nextBot");
+
+let isDragging = false;
+let moved = false;
+
+let startX = 0;
+let startY = 0;
+
+let initialX = 0;
+let initialY = 0;
+
+// =========================
+// RESTORE POSITION
+// =========================
+
+const saved = localStorage.getItem("bot-position");
+
+if(saved){
+
+    const pos = JSON.parse(saved);
+
+    aiBot.style.left = pos.left + "px";
+    aiBot.style.top = pos.top + "px";
+
+    aiBot.style.right = "auto";
+    aiBot.style.bottom = "auto";
+
+}
+
+// =========================
+// MOUSE
+// =========================
+
+aiBot.addEventListener("mousedown",dragStart);
+
+document.addEventListener("mousemove",dragMove);
+
+document.addEventListener("mouseup",dragEnd);
+
+// =========================
+// TOUCH
+// =========================
+
+aiBot.addEventListener("touchstart",dragStart,{passive:false});
+
+document.addEventListener("touchmove",dragMove,{passive:false});
+
+document.addEventListener("touchend",dragEnd);
+
+// =========================
+
+function dragStart(e){
+
+    moved=false;
+
+    isDragging=true;
+
+    const point=e.touches?e.touches[0]:e;
+
+    startX=point.clientX;
+
+    startY=point.clientY;
+
+    const rect=aiBot.getBoundingClientRect();
+
+    initialX=rect.left;
+
+    initialY=rect.top;
+
+}
+
+// =========================
+
+function dragMove(e){
+
+    if(!isDragging) return;
+
+    e.preventDefault();
+
+    const point=e.touches?e.touches[0]:e;
+
+    let dx=point.clientX-startX;
+
+    let dy=point.clientY-startY;
+
+    if(Math.abs(dx)>3 || Math.abs(dy)>3){
+
+        moved=true;
+
+    }
+
+    let left=initialX+dx;
+
+    let top=initialY+dy;
+
+    // Screen Limits
+
+    left=Math.max(
+        0,
+        Math.min(
+            window.innerWidth-aiBot.offsetWidth,
+            left
+        )
+    );
+
+    top=Math.max(
+        0,
+        Math.min(
+            window.innerHeight-aiBot.offsetHeight,
+            top
+        )
+    );
+
+    aiBot.style.left=left+"px";
+
+    aiBot.style.top=top+"px";
+
+    aiBot.style.right="auto";
+
+    aiBot.style.bottom="auto";
+
+}
+
+// =========================
+
+function dragEnd(){
+
+    if(!isDragging) return;
+
+    isDragging=false;
+
+    const rect=aiBot.getBoundingClientRect();
+
+    let left=rect.left;
+
+    const top=rect.top;
+
+    // SNAP LEFT / RIGHT
+
+    if(rect.left+rect.width/2<window.innerWidth/2){
+
+        left=15;
+
+    }else{
+
+        left=window.innerWidth-rect.width-15;
+
+    }
+
+    aiBot.style.transition=".25s";
+
+    aiBot.style.left=left+"px";
+
+    aiBot.style.top=top+"px";
+
+    setTimeout(()=>{
+
+        aiBot.style.transition="";
+
+    },250);
+
+    localStorage.setItem(
+
+        "bot-position",
+
+        JSON.stringify({
+
+            left,
+
+            top
+
+        })
+
+    );
+
+}
+
+// =========================
+// CLICK OPEN POPUP
+// =========================
+
+aiBot.addEventListener("click",()=>{
+
+    if(moved) return;
+
+    popup.style.display="flex";
+
+});
+
+// =========================
+// CLOSE
+// =========================
+
+closeBtn.onclick=()=>{
+
+    popup.style.display="none";
+
+};
+
+// =========================
+// NEXT
+// =========================
+
+// nextBtn.onclick = async () => {
+
+//     try {
+
+//         nextBtn.disabled = true;
+//         nextBtn.innerHTML = "Loading...";
+
+//         const res = await fetch("https://api.ai-pro-bot.com/nextcrash2", {
+//             method: "GET",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             }
+//         });
+
+//         const data = await res.data.json();
+
+//         if (true) {
+
+//             document.getElementById("betStart").value = data.time;
+//             document.getElementById("betEnd").value = data.value;
+
+//         } else {
+
+//             alert("Bet time nahi mila.");
+
+//         }
+
+//     } catch (err) {
+
+//         console.error(err);
+//         alert("Server Error");
+
+//     } finally {
+
+//         nextBtn.disabled = false;
+//         nextBtn.innerHTML = "Next →";
+
+//     }
+
+// };
+
+
+nextBtn.onclick = async () => {
+
+    try {
+
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = "Loading...";
+
+        const res = await fetch("https://api.ai-pro-bot.com/nextcrash2");
+
+        const data = await res.json();
+
+        document.getElementById("betStart").value = data.time;
+        document.getElementById("betEnd").value = data.value.toString();
+
+    } catch (err) {
+
+        console.error(err);
+        alert("Server Error");
+
+    } finally {
+
+        nextBtn.disabled = false;
+        nextBtn.innerHTML = "Next →";
+
+    }
+
+};
+
+// =========================
+// CLICK OUTSIDE CLOSE
+// =========================
+
+popup.addEventListener("click",(e)=>{
+
+    if(e.target===popup){
+
+        popup.style.display="none";
+
+    }
+
+});
+</script>
+<!-- ================= END ================= -->
