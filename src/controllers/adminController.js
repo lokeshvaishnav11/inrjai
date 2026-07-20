@@ -639,7 +639,7 @@ const rechargeDuyet = async (req, res) => {
       
 
 
-      if (info[0].money == 2199 && user.extra === null) {
+      if (info[0].money == 1499 && user.extra === null) {
          console.log ("hello world haahaha")
          // await connection.query(`UPDATE users SET extra = true, ekyc = false WHERE phone = ?`, [user.phone]);
          await connection.query(
@@ -656,7 +656,7 @@ const rechargeDuyet = async (req, res) => {
     
 
 
-     if (info[0].money == 1349 && user.ekyc === 0) {
+     if (info[0].money == 899 && user.ekyc === 0) {
       await connection.query(`UPDATE users SET extra = true, ekyc = true WHERE phone = ?`, [user.phone]);
      } 
 
