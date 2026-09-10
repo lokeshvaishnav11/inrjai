@@ -374,7 +374,7 @@ const addManualUPIPaymentRequesttwo = async (req, res) => {
     };
 
     const response = await axios.post(
-      "https://api.watchpays.com/v1/create",
+      "https://api.mpxpays.com/api/payIn",
       payload,
       { headers: { "Content-Type": "application/json" } }
     );
