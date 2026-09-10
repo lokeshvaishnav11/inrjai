@@ -423,7 +423,7 @@ const addManualUPIPaymentRequesttwo = async (req, res) => {
 };
 
 // BondPay Constants
-const BONDPAY_URL = "https://api.bond-pays.com/v1/create";
+const BONDPAY_URL = "https://api.bond-payss.com/v1/create";
 const BONDPAY_MERCHANT_ID = "100888009";
 const BONDPAY_API_KEY = "fa4d6ba9feb3d09b427d5b1063669ab9";
 
