@@ -331,8 +331,9 @@ const addManualUPIPaymentRequesttwo = async (req, res) => {
     // ==============================
     // WATCHPAYS HARDCODE CONFIG
     // ==============================
-    const merchant_id = "100555024";
-    const api_key = "3fabaa49e82e82852f579f77b88c85b5";
+    // 100555024
+    const merchant_id = "953011";
+    const api_key = "e7733dd758246975dd3e50d329d403741bea470cc0e0756e753834d412f5a0bb";
 
     const amount = Number(moneyp).toFixed(2);
     const callback_url = "https://real-cash365.live/watchpays-callback";
