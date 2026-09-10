@@ -384,7 +384,7 @@ const addManualUPIPaymentRequesttwo = async (req, res) => {
 
     console.log(wpRes,"wpRes")
 
-    if (wpRes.success) {
+    if (wpRes.status) {
       const newRecharge = {
                 orderId: orderId,
                 transactionId: 'NULL',
@@ -402,7 +402,7 @@ const addManualUPIPaymentRequesttwo = async (req, res) => {
 
       return res.status(200).json({
         message: "Payment link generated successfully!",
-        url: wpRes.payment_url,
+        url: wpRes.url,
         recharge,
         status: true,
       });
